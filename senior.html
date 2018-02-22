@@ -6,11 +6,15 @@
 	<title>fullPage.js One Page Scroll Sites</title>
 	<link rel="stylesheet" type="text/css" href="jquery.fullPage.css" />
 	<link rel="stylesheet" type="text/css" href="examples.css" />
-	<link rel="stylesheet" type="text/css" href="demo.css">
-	 <!-- Bootstrap -->
-	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
+	<link rel="stylesheet" type="text/css" href="demo.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script type="text/javascript" src="accordion.js"></script>
+	<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+	<!-- Bootstrap -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<style>
 		#menu li{
 		}
@@ -516,6 +520,48 @@
 		</section>
 	</div>
   <script>
+      var data_url_bool = false;
+      var before_id = undefined;
+      var before_quest_id = undefined;
+      var data_url;
+      //<![CDATA[
+      // // 사용할 앱의 JavaScript 키를 설정해 주세요.
+      Kakao.init('5d654cdd07d375ebcb6f95df92741523');
+      // // 카카오링크 버튼을 생성합니다. 처음 한번만 호출하면 됩니다.
+
+      function sendLink() {
+          console.log(data_url);
+          data_url = "https://www.naver.com/";
+          console.log(data_url);
+          Kakao.Link.sendDefault({
+              objectType: 'feed',
+              content: {
+                  title: '너로 정했다! 퀘스트 완료!',
+                  description: '#너로 정했다! #선배님 밥사주세요',
+                  imageUrl: 'http://mud-kage.kakao.co.kr/dn/Q2iNx/btqgeRgV54P/VLdBs9cvyn8BJXB3o7N8UK/kakaolink40_original.png',
+                  link: {
+                      mobileWebUrl: "https://www.naver.com/",
+                      webUrl: "https://www.naver.com/"
+                  }
+              },
+              social: {
+                  likeCount: 286,
+                  commentCount: 45,
+                  sharedCount: 845
+              },
+              buttons: [
+                  {
+                      title: '완료하기!',
+                      link: {
+                          mobileWebUrl: "https://www.naver.com/",
+                          webUrl: "https://www.naver.com/"
+                      }
+                  }
+              ]
+          });
+      }
+
+
     // 쿠키 생성
     function setCookie(cName, cValue, cDay){
       var expire = new Date();
@@ -538,13 +584,159 @@
       }
       return unescape(cValue);
     }
+
     $(document).ready(function(){
-      $('#fullpage').fullpage({
-        // sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff','deepskyblue','tomato'],
-        anchors: ['firstPage', 'secondPage', '3rdPage','lastPage'],
-        menu: '#menu'
-      });
+        $.ajax({
+            url : "http://52.79.41.31:3000/api/v1g1/user/authenticate",
+            type : "post",
+            accept: "application/json",
+            contentType: "application/json; charset=utf-8",
+            data : JSON.stringify({id : "20170294", password : "20170294qkrgodud"}),
+            dataType: "json",
+            success: function(data) {
+                console.log("login data : " + JSON.stringify(data));
+                setCookie('x-access-token', data.token, 1);
+                setCookie('id', data.id, 1);
+
+
+            },
+            error: function(jqXHR,textStatus,errorThrown) {
+                console.log(jqXHR);
+                console.log(textStatus);
+                console.log(errorThrown);
+            }
+        });
+
+        var headers={};
+        headers['x-access-token']=getCookie('x-access-token');
+        var id = getCookie('id');
+        console.log("id : " + id);
+        console.log("headers : " + JSON.stringify(headers));
+        $.ajax({
+            url : "http://52.79.41.31:3000/api/v1g1/user/ranking/" + id,
+            type:'get',
+            dataType : "json",
+            headers : headers,
+            success : function(data){
+                console.log("data" , data);
+                var show1 = data.top_ranking[0].name+data.top_ranking[0].score;
+                var show2 = data.top_ranking[1].name+data.top_ranking[1].score;
+                var show3 = data.top_ranking[2].name+data.top_ranking[2].score;
+                var showMe = data.my_ranking;
+                $("#firstMan").append(show1);
+                $("#secondMan").append(show2);
+                $("#thirdMan").append(show3);
+                $("#myScore").append(showMe);
+            }
+        });
+        $.ajax({
+            url : "http://52.79.41.31:3000/api/v1g1/senior/" + id,
+            type : "get",
+            accept: "application/json",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            headers: headers,
+            success: function(data) {
+                console.log(data);
+                var cnt=0;
+                var inner_html = "";
+                var length=data.result.accept_user_list.length;
+                console.log(length);
+                for(var i=0; i < data.result.accept_user_list.length;i++){
+                    if(cnt == 0){
+                        console.log("cnt in 0",cnt);
+                        inner_html = inner_html + '<div class="slide">\n';
+                    }
+                    inner_html = inner_html + '<section class="w3-container" style="text-align:left;">\n'+
+                        '<hr>\n'+
+                        data.result.accept_user_list[i].name +'<br>\n'+
+                        data.result.accept_user_list[i].phone_number +'<br>\n';
+                    if(data.result.accept_user_list[i].difficulty <= 1){
+                        inner_html = inner_html + 'Easy 모드 수락!\n';
+                    }
+                    else{
+                        inner_html = inner_html + 'Hard 모드 수락!\n';
+                    }
+                    inner_html = inner_html + '<div value="ho" id="success_' + data.result.accept_user_list[i].quest_id + '"><button class="goto_success_button" type = "button" junior_id="'+data.result.accept_user_list[i].id+'" quest_id = "'+ data.result.accept_user_list[i].quest_id +'"> 로그인 테스트 </button></div>>'
+                    if(length == i+1 || cnt == 3){
+                        inner_html = inner_html +
+                            '<hr>\n' +
+                            '</section>\n' +
+                            '</div>\n';
+                        cnt = 0;
+                    }else{
+                        inner_html = inner_html + '</section>\n';
+                        cnt++;
+                    }
+                }
+                console.log(inner_html);
+                $('#accept_list').html(inner_html);
+                $('#fullpage').fullpage({
+                    // sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff','deepskyblue','tomato'],
+                    anchors: ['firstPage', 'secondPage', '3rdPage','lastPage'],
+                    menu: '#menu'
+                });
+            },
+            error: function(jqXHR,textStatus,errorThrown) {
+                console.log(jqXHR);
+                console.log(textStatus);
+                console.log(errorThrown);
+            }
+        })
     });
+
+    $('body').on('click', '.goto_success_button', function(){
+        var global_data;
+        var quest_id = $(this).attr('quest_id');
+        var junior_id = $(this).attr('junior_id');
+        var id = getCookie('id');
+        var headers={};
+        headers['x-access-token']=getCookie('x-access-token');
+        var url = "http://52.79.41.31:3000/api/v1g1/senior/complete_quest_init/" + id + "/" + junior_id + "/" + quest_id;
+        $.ajax({
+            url : url,
+            type : "post",
+            headers: headers,
+            accept: "application/json",
+            contentType: "application/json; charset=utf-8",
+            data : JSON.stringify({}),
+            dataType: "json",
+            success: function(data) {
+                console.log(data);
+                global_data = data;
+                console.log('#success_' + quest_id);
+                var inner_html = '<a id="kakao-link-btn" href="javascript:sendLink()">\n' +
+                    '                  <img src="//developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png"/>\n' +
+                    '              </a>'
+                data_url = data.link;
+                console.log($('#success_' + quest_id).html(inner_html));
+                if(data_url_bool === false){
+                    before_id = data.result.accept_user_list[i].id;
+                    before_quest_id = data.result.accept_user_list[i].quest_id;
+                    data_url_bool = true;
+				}else{
+
+                    var before_inner_html = '<button class="goto_success_button" type = "button" junior_id="'+ before_id +'" quest_id = "'+ before_quest_id +'"> 퀘스트 완료 </button>'
+
+                    console.log($('#success_' + before_quest_id).html(before_inner_html));
+
+                    before_id = data.result.accept_user_list[i].id;
+                    before_quest_id = data.result.accept_user_list[i].quest_id;
+                    data_url_bool = true;
+				}
+            },
+            error: function(jqXHR,textStatus,errorThrown) {
+                console.log(jqXHR);
+                console.log(textStatus);
+                console.log(errorThrown);
+            },
+            complete: function(data){
+                console.log(global_data);
+            }
+        });
+
+    })
+
     $('body').on('click', '#test_login', function(){
       $.ajax({
         url : "http://52.79.41.31:3000/api/v1g1/user/authenticate",
@@ -557,80 +749,8 @@
             console.log("login data : " + JSON.stringify(data));
             setCookie('x-access-token', data.token, 1);
             setCookie('id', data.id, 1);
-            
-            $(document).ready(function(){
-              var headers={};
-              headers['x-access-token']=getCookie('x-access-token');
-              var id = getCookie('id');
-              console.log("id : " + id);
-              console.log("headers : " + JSON.stringify(headers));
-              $.ajax({
-                url : "http://52.79.41.31:3000/api/v1g1/user/ranking/" + id,
-                type:'get',
-                dataType : "json",
-                headers : headers,
-                success : function(data){
-                  console.log("data" , data);
-                  var show1 = data.top_ranking[0].name+data.top_ranking[0].score;
-                  var show2 = data.top_ranking[1].name+data.top_ranking[1].score;
-                  var show3 = data.top_ranking[2].name+data.top_ranking[2].score;
-                  var showMe = data.my_ranking;
-                  $("#firstMan").append(show1);
-                  $("#secondMan").append(show2);
-                  $("#thirdMan").append(show3);
-                  $("#myScore").append(showMe);
-                }
-              });
-              $.ajax({
-                url : "http://52.79.41.31:3000/api/v1g1/senior/" + id,
-                type : "get",
-                accept: "application/json",
-                contentType: "application/json; charset=utf-8",
-                dataType: "json",
-                headers: headers,
-                success: function(data) {
-                  console.log(data);
-                  var cnt=0;
-                  var inner_html = "";
-                  var length=data.result.accept_user_list.length;
-                  console.log(length);
-                  for(var i=0; i < data.result.accept_user_list.length;i++){
-                    if(cnt == 0){
-                      console.log("cnt in 0",cnt);
-                      inner_html = inner_html + '<div class="slide">\n';
-                    }
-                    inner_html = inner_html + '<section class="w3-container" style="text-align:left;">\n'+
-                    '<hr>\n'+
-                    data.result.accept_user_list[i].name +'<br>\n'+
-                    data.result.accept_user_list[i].phone_number +'<br>\n';
-                    if(data.result.accept_user_list[i].difficulty <= 1){
-                      inner_html = inner_html + 'Easy 모드 수락!\n';
-                    }
-                    else{
-                      inner_html = inner_html + 'Hard 모드 수락!\n';
-                    }
-                    if(length == i+1 || cnt == 3){
-                      inner_html = inner_html +
-                      '<hr>\n' +
-                      '</section>\n' +
-                      '</div>\n';
-                      cnt = 0;
-                    }else{
-                      inner_html = inner_html + '</section>\n';
-                      cnt++;
-                    }
-                  }
-                  console.log(inner_html);
-                  $('#accept_list').html(inner_html);
 
-                },
-                error: function(jqXHR,textStatus,errorThrown) {
-                  console.log(jqXHR);
-                  console.log(textStatus);
-                  console.log(errorThrown);
-                }
-              })
-            });
+
           },
           error: function(jqXHR,textStatus,errorThrown) {
               console.log(jqXHR);
