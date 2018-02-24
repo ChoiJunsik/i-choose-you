@@ -2,1103 +2,1103 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>fullPage.js One Page Scroll Sites</title>
-	<link rel="stylesheet" type="text/css" href="jquery.fullPage.css" />
-	<link rel="stylesheet" type="text/css" href="examples.css" />
-	<link rel="stylesheet" type="text/css" href="demo.css">
-	 <!-- Bootstrap -->
-	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>fullPage.js One Page Scroll Sites</title>
+    <link rel="stylesheet" type="text/css" href="jquery.fullPage.css" />
+    <link rel="stylesheet" type="text/css" href="examples.css" />
+    <link rel="stylesheet" type="text/css" href="demo.css">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
-	<style>
-		.background{
-			background-image: url("background.jpeg");
-		}
-		#menu li{
-		}
-		/* Sections
-		 * --------------------------------------- */
-		@font-face {
-	    font-family: morris9;
-	    src: url(fonts/morris9.ttf) format('truetype');
-	  }
-		body{
-			font-family: morris9;
-		}
-		#section3 .col-md-12{
-			padding: 10px;
-		}
-		#section3 .col-md-12 .col-md-2,#section3 .col-md-12 .col-md-10{
-			border:1px solid black;
-			font-size: 2rem;
-		}
-		#section4 {
-		  height: 100vh;
-		  background: radial-gradient(circle at top center, #333 0%, #111 100%);
-		  overflow: hidden;
-		}
-		#section6 .col-md-12{
-			border:1px solid black;
-			height:500px;
-		}
-		.wrapperC {
-		  position: absolute;
-		  top: 100%;
-		  left: 50%;
-		  width: 400px;
-		  margin-left: -200px;
-		  font: 300 30px/1 'Open Sans Condensed', sans-serif;
-		  text-align: center;
-		  text-transform: uppercase;
-		  color: #fff;
-		  animation: 60s credits linear infinite;
-		}
-		.crew {
-		  margin-bottom: 50px;
-		  font-size: 50px;
-		}
-		.job {
-		  margin-bottom: 5px;
-		  font-size: 18px;
-		}
+    <style>
+        #menu li{
+        }
+        /* Sections
+         * --------------------------------------- */
+        @font-face {
+            font-family: morris9;
+            src: url(fonts/morris9.ttf) format('truetype');
+        }
+        body{
+            font-family: morris9;
+            background-image: url('back.png');
+            background-color: #D9E5FF;
+            background-repeat: no-repeat;
+        }
+        #section3 .col-md-12{
+            padding: 10px;
+        }
+        #section3 .col-md-12 .col-md-2,#section3 .col-md-12 .col-md-10{
+            border:1px solid black;
+            font-size: 2rem;
+        }
+        #section4 {
+            height: 100vh;
+            background: radial-gradient(circle at top center, #333 0%, #111 100%);
+            overflow: hidden;
+        }
+        #section6 .col-md-12{
+            border:1px solid black;
+            height:500px;
+        }
+        .wrapperC {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            width: 400px;
+            margin-left: -200px;
+            font: 300 30px/1 'Open Sans Condensed', sans-serif;
+            text-align: center;
+            text-transform: uppercase;
+            color: #fff;
+            animation: 60s credits linear infinite;
+        }
+        .crew {
+            margin-bottom: 50px;
+            font-size: 50px;
+        }
+        .job {
+            margin-bottom: 5px;
+            font-size: 18px;
+        }
 
-		.name {
-		  margin-bottom: 50px;
-		  font-size: 35px;
-		}
+        .name {
+            margin-bottom: 50px;
+            font-size: 35px;
+        }
 
-		@keyframes credits {
-		  0% {
-		    top: 100%;
-		  }
-		  100% {
-		    top: -500%;
-		  }
-		}
-		/* Acordeon styles */
-		.tab {
-      position: relative;
-      margin-bottom: 1px;
-      width: 100%;
-      color: #fff;
-      overflow: hidden;
-    }
-    input {
-      position: absolute;
-      opacity: 0;
-      z-index: -1;
-    }
-    label {
-      position: relative;
-      display: block;
-      padding: 0 0 0 1em;
-      font-weight: bold;
-      line-height: 3;
-      cursor: pointer;
-    }
-    .blue label {
-      background: #2980b9; /* 제목 배경색 */
-    }
-    .tab-content {
-      max-height: 0;
-      overflow: hidden;
-      background: #1abc9c;
-      -webkit-transition: max-height .35s;
-      -o-transition: max-height .35s;
-      transition: max-height .35s;
-    }
-    .blue .tab-content {
-      background: #3498db;
-    }
-    .tab-content p {
-      margin: 1em;
-    }
-    /* :checked */
-    input:checked ~ .tab-content {
-      max-height: 10em;
-    }
-    /* Icon */
-    label::after {
-      position: absolute;
-      right: 0;
-      top: 0;
-      display: block;
-      width: 3em;
-      height: 3em;
-      line-height: 3;
-      text-align: center;
-      -webkit-transition: all .35s;
-      -o-transition: all .35s;
-      transition: all .35s;
-    }
-	</style>
-	<script src="jquery.min.js"></script>
-	<script src="jquery-ui.min.js"></script>
-	<script type="text/javascript" src="accordion.js"></script>
-	<script type="text/javascript" src="jquery.fullPage.js"></script>
-	<!-- <script src="js/bootstrap.min.js"></script> -->
+        @keyframes credits {
+            0% {
+                top: 100%;
+            }
+            100% {
+                top: -500%;
+            }
+        }
+        /* Acordeon styles */
+        .tab {
+            position: relative;
+            margin-bottom: 1px;
+            width: 100%;
+            color: #fff;
+            overflow: hidden;
+        }
+        input {
+            position: absolute;
+            opacity: 0;
+            z-index: -1;
+        }
+        label {
+            position: relative;
+            display: block;
+            padding: 0 0 0 1em;
+            font-weight: bold;
+            line-height: 3;
+            cursor: pointer;
+        }
+        .blue label {
+            background: #2980b9; /* 제목 배경색 */
+        }
+        .tab-content {
+            max-height: 0;
+            overflow: hidden;
+            background: #1abc9c;
+            -webkit-transition: max-height .35s;
+            -o-transition: max-height .35s;
+            transition: max-height .35s;
+        }
+        .blue .tab-content {
+            background: #3498db;
+        }
+        .tab-content p {
+            margin: 1em;
+        }
+        /* :checked */
+        input:checked ~ .tab-content {
+            max-height: 10em;
+        }
+        /* Icon */
+        label::after {
+            position: absolute;
+            right: 0;
+            top: 0;
+            display: block;
+            width: 3em;
+            height: 3em;
+            line-height: 3;
+            text-align: center;
+            -webkit-transition: all .35s;
+            -o-transition: all .35s;
+            transition: all .35s;
+        }
+
+    </style>
+    <script src="jquery.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script type="text/javascript" src="accordion.js"></script>
+    <script type="text/javascript" src="jquery.fullPage.js"></script>
+    <!-- <script src="js/bootstrap.min.js"></script> -->
 
 
 </head>
 <body>
-	<ul id="menu">
-		<li data-menuanchor="firstPage"><a href="#firstPage">의뢰</a></li>
-		<li data-menuanchor="secondPage"><a href="#secondPage">도감</a></li>
-		<li data-menuanchor="3rdPage"><a href="#3rdPage">랭킹</a></li>
-		<li data-menuanchor="lastPage"><a href="#lastPage" onClick="window.location.reload()">크레딧</a></li>
-	</ul>
-
-	<div id="fullpage" class="background">
-		<section id="section1" class="section">
-			<div class="container">
-        <button id="test_login" type="button"> 로그인 테스트 </button>
-				<div class="container">
-					<div class="slide">
-						<div class="main">
-							<div class="accordion">
-								<div class="accordion-section">
-									<a id="quest_index_11" class="accordion-section-title" href="#quest_accordion-1" questId = "11" >Accordion Section #1</a>
-									<div id="quest_accordion-1" class="accordion-section-content">
-										<div id="quest_11">로딩중...</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-								<div class="accordion-section">
-									<a  id="quest_index_12"class="accordion-section-title" href="#quest_accordion-2"  questId = "12"><del style="opacity:0.5;">Accordion Section #2</del></a>
-									<div id="quest_accordion-2" class="accordion-section-content">
-										<div id="quest_12">로딩중...</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-								<div class="accordion-section">
-									<a id="quest_index_21" class="accordion-section-title" href="#quest_accordion-3" questId = "21">Accordion Section #3</a>
-									<div id="quest_accordion-3" class="accordion-section-content">
-										<div id="quest_21">로딩중...</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-								<div class="accordion-section">
-									<a id="quest_index_22" class="accordion-section-title" href="#quest_accordion-4" questId = "22">Accordion Section #4</a>
-									<div id="quest_accordion-4" class="accordion-section-content">
-										<div id="quest_22">로딩중...</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-								<div class="accordion-section">
-									<a id="quest_index_31" class="accordion-section-title" href="#quest_accordion-5" questId = "31">Accordion Section #5</a>
-									<div id="quest_accordion-5" class="accordion-section-content">
-										<div id="quest_31">로딩중...</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-							</div><!--end .accordion-->
-						</div>
-					</div>
-
-					<div class="slide">
-						<div class="main">
-							<div class="accordion">
-								<div class="accordion-section">
-									<a id="quest_index_32" class="accordion-section-title" href="#quest_accordion-6" questId = "32">Accordion Section #5</a>
-									<div id="quest_accordion-6" class="accordion-section-content">
-										<div id="quest_32">로딩중...</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-								<div class="accordion-section">
-									<a id="quest_index_41" class="accordion-section-title" href="#quest_accordion-7" questId = "41" ><del style="opacity:0.5;">Accordion Section #7</del></a>
-									<div id="quest_accordion-7" class="accordion-section-content">
-										<div id="quest_41">로딩중...</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-								<div class="accordion-section">
-									<a id="quest_index_42" class="accordion-section-title" href="#quest_accordion-8" questId = "42">Accordion Section #8</a>
-									<div id="quest_accordion-8" class="accordion-section-content">
-										<div id="quest_42">로딩중...</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-								<div class="accordion-section">
-									<a id="quest_index_51" class="accordion-section-title" href="#quest_accordion-9" questId = "51">Accordion Section #9</a>
-									<div id="quest_accordion-9" class="accordion-section-content">
-										<div id="quest_51">로딩중...</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-								<div class="accordion-section">
-									<a id="quest_index_52" class="accordion-section-title" href="#quest_accordion-10" questId = "52">Accordion Section #10</a>
-									<div id="quest_accordion-10" class="accordion-section-content">
-										<div id="quest_52">로딩중...</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-							</div><!--end .accordion-->
-						</div>
-					</div>
-					<div class="slide">
-						<div class="main">
-							<div class="accordion">
-								<div class="accordion-section">
-									<a id="quest_index_61" class="accordion-section-title" href="#quest_accordion-11" questId = "61">Accordion Section #6</a>
-									<div id="quest_accordion-11" class="accordion-section-content">
-										<div id="quest_61">로딩중...</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-								<div class="accordion-section">
-									<a id="quest_index_62" class="accordion-section-title" href="#quest_accordion-12" questId = "62" ><del style="opacity:0.5;">Accordion Section #7</del></a>
-									<div id="quest_accordion-12" class="accordion-section-content">
-										<div id="quest_62">로딩중...</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-								<div class="accordion-section">
-									<a id="quest_index_71" class="accordion-section-title" href="#quest_accordion-13" questId = "71">Accordion Section #8</a>
-									<div id="quest_accordion-13" class="accordion-section-content">
-										<div id="quest_71">로딩중...</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-								<div class="accordion-section">
-									<a id="quest_index_72" class="accordion-section-title" href="#quest_accordion-14" questId = "72">Accordion Section #9</a>
-									<div id="quest_accordion-14" class="accordion-section-content">
-										<div id="quest_72">로딩중...</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-								<div class="accordion-section">
-									<a id="quest_index_81" class="accordion-section-title" href="#quest_accordion-15" questId = "81">Accordion Section #10</a>
-									<div id="quest_accordion-15" class="accordion-section-content">
-										<div id="quest_81">로딩중...</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-							</div><!--end .accordion-->
-						</div>
-					</div>
-
-
-					<div class="slide">
-						<div class="main">
-							<div class="accordion">
-								<div class="accordion-section">
-									<a id="quest_index_82" class="accordion-section-title" href="#quest_accordion-16" questId = "82">Accordion Section #6</a>
-									<div id="quest_accordion-16" class="accordion-section-content">
-										<div id="quest_82">로딩중...</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-								<div class="accordion-section">
-									<a id="quest_index_91" class="accordion-section-title" href="#quest_accordion-17" questId = "91" ><del style="opacity:0.5;">Accordion Section #7</del></a>
-									<div id="quest_accordion-17" class="accordion-section-content">
-										<div id="quest_91">로딩중...</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-								<div class="accordion-section">
-									<a id="quest_index_92" class="accordion-section-title" href="#quest_accordion-18" questId = "92">Accordion Section #8</a>
-									<div id="quest_accordion-18" class="accordion-section-content">
-										<div id="quest_92">로딩중...</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-								<div class="accordion-section">
-									<a id="quest_index_101" class="accordion-section-title" href="#quest_accordion-19" questId = "101">Accordion Section #9</a>
-									<div id="quest_accordion-19" class="accordion-section-content">
-										<div id="quest_101">로딩중...</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-								<div class="accordion-section">
-									<a id="quest_index_102" class="accordion-section-title" href="#quest_accordion-20" questId = "102">Accordion Section #10</a>
-									<div id="quest_accordion-20" class="accordion-section-content">
-										<div id="quest_102">로딩중...</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-							</div><!--end .accordion-->
-						</div>
-					</div>
-					<div class="slide">
-						<div class="main">
-							<div class="accordion">
-								<div class="accordion-section">
-									<a id="quest_index_111" class="accordion-section-title" href="#quest_accordion-21" questId = "111">Accordion Section #6</a>
-									<div id="quest_accordion-21" class="accordion-section-content">
-										<div id="quest_111">로딩중...</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-								<div class="accordion-section">
-									<a id="quest_index_112" class="accordion-section-title" href="#quest_accordion-22" questId = "112" ><del style="opacity:0.5;">Accordion Section #7</del></a>
-									<div id="quest_accordion-22" class="accordion-section-content">
-										<div id="quest_112">로딩중...</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-								<div class="accordion-section">
-									<a id="quest_index_121" class="accordion-section-title" href="#quest_accordion-23" questId = "121">Accordion Section #8</a>
-									<div id="quest_accordion-23" class="accordion-section-content">
-										<div id="quest_121">로딩중...</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-								<div class="accordion-section">
-									<a id="quest_index_122" class="accordion-section-title" href="#quest_accordion-24" questId = "122">Accordion Section #9</a>
-									<div id="quest_accordion-24" class="accordion-section-content">
-										<div id="quest_122">로딩중...</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-								<div class="accordion-section">
-									<a id="quest_index_131" class="accordion-section-title" href="#quest_accordion-25" questId = "131">Accordion Section #10</a>
-									<div id="quest_accordion-25" class="accordion-section-content">
-										<div id="quest_131">로딩중...</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-							</div><!--end .accordion-->
-						</div>
-					</div>
-					<div class="slide">
-						<div class="main">
-							<div class="accordion">
-								<div class="accordion-section">
-									<a id="quest_index_132" class="accordion-section-title" href="#quest_accordion-26" questId = "132">Accordion Section #6</a>
-									<div id="quest_accordion-26" class="accordion-section-content">
-										<div id="quest_132">로딩중...</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-								<div class="accordion-section">
-									<a id="quest_index_141" class="accordion-section-title" href="#quest_accordion-27" questId = "141" ><del style="opacity:0.5;">Accordion Section #7</del></a>
-									<div id="quest_accordion-27" class="accordion-section-content">
-										<div id="quest_141">로딩중...</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-								<div class="accordion-section">
-									<a id="quest_index_142" class="accordion-section-title" href="#quest_accordion-28" questId = "142">Accordion Section #8</a>
-									<div id="quest_accordion-28" class="accordion-section-content">
-										<div id="quest_142">로딩중...</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-								<div class="accordion-section">
-									<a id="quest_index_151" class="accordion-section-title" href="#quest_accordion-29" questId = "151">Accordion Section #9</a>
-									<div id="quest_accordion-29" class="accordion-section-content">
-										<div id="quest_151">로딩중...</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-								<div class="accordion-section">
-									<a id="quest_index_152" class="accordion-section-title" href="#quest_accordion-30" questId = "152">Accordion Section #10</a>
-									<div id="quest_accordion-30" class="accordion-section-content">
-										<div id="quest_152">로딩중...</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-							</div><!--end .accordion-->
-						</div>
-					</div>
-					<div class="slide">
-						<div class="main">
-							<div class="accordion">
-								<div class="accordion-section">
-									<a id="quest_index_161" class="accordion-section-title" href="#quest_accordion-31" questId = "161">Accordion Section #6</a>
-									<div id="quest_accordion-31" class="accordion-section-content">
-										<div id="quest_161">로딩중...</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-								<div class="accordion-section">
-									<a id="quest_index_162" class="accordion-section-title" href="#quest_accordion-32" questId = "162" ><del style="opacity:0.5;">Accordion Section #7</del></a>
-									<div id="quest_accordion-32" class="accordion-section-content">
-										<div id="quest_162">로딩중...</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-								<div class="accordion-section">
-									<a id="quest_index_171" class="accordion-section-title" href="#quest_accordion-33" questId = "171">Accordion Section #8</a>
-									<div id="quest_accordion-33" class="accordion-section-content">
-										<div id="quest_171">로딩중...</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-								<div class="accordion-section">
-									<a id="quest_index_172" class="accordion-section-title" href="#quest_accordion-34" questId = "172">Accordion Section #9</a>
-									<div id="quest_accordion-34" class="accordion-section-content">
-										<div id="quest_172">로딩중...</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-								<div class="accordion-section">
-									<a id="quest_index_181" class="accordion-section-title" href="#quest_accordion-35" questId = "181">Accordion Section #10</a>
-									<div id="quest_accordion-35" class="accordion-section-content">
-										<div id="quest_181">로딩중...</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-							</div><!--end .accordion-->
-						</div>
-					</div>
-
-					<div class="slide">
-						<div class="main">
-							<div class="accordion">
-								<div class="accordion-section">
-									<a id="quest_index_182" class="accordion-section-title" href="#quest_accordion-36" questId = "182">Accordion Section #6</a>
-									<div id="quest_accordion-36" class="accordion-section-content">
-										<div id="quest_182">로딩중...</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-								<div class="accordion-section">
-									<a id="quest_index_191" class="accordion-section-title" href="#quest_accordion-37" questId = "191" ><del style="opacity:0.5;">Accordion Section #7</del></a>
-									<div id="quest_accordion-37" class="accordion-section-content">
-										<div id="quest_191">로딩중...</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-								<div class="accordion-section">
-									<a id="quest_index_192" class="accordion-section-title" href="#quest_accordion-38" questId = "192">Accordion Section #8</a>
-									<div id="quest_accordion-38" class="accordion-section-content">
-										<div id="quest_192">로딩중...</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-								<div class="accordion-section">
-									<a id="quest_index_201" class="accordion-section-title" href="#quest_accordion-39" questId = "201">Accordion Section #9</a>
-									<div id="quest_accordion-39" class="accordion-section-content">
-										<div id="quest_201">로딩중...</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-								<div class="accordion-section">
-									<a id="quest_index_202" class="accordion-section-title" href="#quest_accordion-40" questId = "202">Accordion Section #10</a>
-									<div id="quest_accordion-40" class="accordion-section-content">
-										<div id="quest_202">로딩중...</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-							</div><!--end .accordion-->
-						</div>
-					</div>
-					<div class="slide">
-						<div class="main">
-							<div class="accordion">
-								<div class="accordion-section">
-									<a id="quest_index_211" class="accordion-section-title" href="#quest_accordion-41" questId = "211">Accordion Section #6</a>
-									<div id="quest_accordion-41" class="accordion-section-content">
-										<div id="quest_211">로딩중...</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-								<div class="accordion-section">
-									<a id="quest_index_212" class="accordion-section-title" href="#quest_accordion-42" questId = "212" ><del style="opacity:0.5;">Accordion Section #7</del></a>
-									<div id="quest_accordion-42" class="accordion-section-content">
-										<div id="quest_212">로딩중...</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-								<div class="accordion-section">
-									<a id="quest_index_221" class="accordion-section-title" href="#quest_accordion-43" questId = "221">Accordion Section #8</a>
-									<div id="quest_accordion-43" class="accordion-section-content">
-										<div id="quest_221">로딩중...</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-								<div class="accordion-section">
-									<a id="quest_index_222" class="accordion-section-title" href="#quest_accordion-44" questId = "222">Accordion Section #9</a>
-									<div id="quest_accordion-44" class="accordion-section-content">
-										<div id="quest_222">로딩중...</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-								<div class="accordion-section">
-									<a id="quest_index_231" class="accordion-section-title" href="#quest_accordion-45" questId = "231">Accordion Section #10</a>
-									<div id="quest_accordion-45" class="accordion-section-content">
-										<div id="quest_231">로딩중...</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-							</div><!--end .accordion-->
-						</div>
-					</div>
-					<div class="slide">
-						<div class="main">
-							<div class="accordion">
-								<div class="accordion-section">
-									<a id="quest_index_232" class="accordion-section-title" href="#quest_accordion-46" questId = "232">Accordion Section #6</a>
-									<div id="quest_accordion-46" class="accordion-section-content">
-										<div id="quest_232">로딩중...</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-								<div class="accordion-section">
-									<a id="quest_index_241" class="accordion-section-title" href="#quest_accordion-47" questId = "241" ><del style="opacity:0.5;">Accordion Section #7</del></a>
-									<div id="quest_accordion-47" class="accordion-section-content">
-										<div id="quest_241">로딩중...</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-								<div class="accordion-section">
-									<a id="quest_index_242" class="accordion-section-title" href="#quest_accordion-48" questId = "242">Accordion Section #8</a>
-									<div id="quest_accordion-48" class="accordion-section-content">
-										<div id="quest_242">로딩중...</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-								<div class="accordion-section">
-									<a id="quest_index_251" class="accordion-section-title" href="#quest_accordion-49" questId = "251">Accordion Section #9</a>
-									<div id="quest_accordion-49" class="accordion-section-content">
-										<div id="quest_251">로딩중...</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-								<div class="accordion-section">
-									<a id="quest_index_252" class="accordion-section-title" href="#quest_accordion-50" questId = "252">Accordion Section #10</a>
-									<div id="quest_accordion-50" class="accordion-section-content">
-										<div id="quest_252">로딩중...</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-							</div><!--end .accordion-->
-						</div>
-					</div>
-					<div class="slide">
-						<div class="main">
-							<div class="accordion">
-								<div class="accordion-section">
-									<a id="quest_index_261" class="accordion-section-title" href="#quest_accordion-51" questId = "261">Accordion Section #6</a>
-									<div id="quest_accordion-51" class="accordion-section-content">
-										<div id="quest_261">로딩중...</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-								<div class="accordion-section">
-									<a id="quest_index_262" class="accordion-section-title" href="#quest_accordion-52" questId = "262" ><del style="opacity:0.5;">Accordion Section #7</del></a>
-									<div id="quest_accordion-52" class="accordion-section-content">
-										<div id="quest_262">로딩중...</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-								<div class="accordion-section">
-									<a id="quest_index_271" class="accordion-section-title" href="#quest_accordion-53" questId = "271">Accordion Section #8</a>
-									<div id="quest_accordion-53" class="accordion-section-content">
-										<div id="quest_271">로딩중...</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-								<div class="accordion-section">
-									<a id="quest_index_272" class="accordion-section-title" href="#quest_accordion-54" questId = "272">Accordion Section #9</a>
-									<div id="quest_accordion-54" class="accordion-section-content">
-										<div id="quest_272">로딩중...</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-								<div class="accordion-section">
-									<a id="quest_index_282" class="accordion-section-title" href="#quest_accordion-55" questId = "282">Accordion Section #10</a>
-									<div id="quest_accordion-55" class="accordion-section-content">
-										<div id="quest_282">로딩중...</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-							</div><!--end .accordion-->
-						</div>
-					</div>
-					<div class="slide">
-						<div class="main">
-							<div class="accordion">
-								<div class="accordion-section">
-									<a id="quest_index_291" class="accordion-section-title" href="#quest_accordion-56" questId = "291">Accordion Section #6</a>
-									<div id="quest_accordion-56" class="accordion-section-content">
-										<div id="quest_291">로딩중...</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-								<div class="accordion-section">
-									<a id="quest_index_292" class="accordion-section-title" href="#quest_accordion-57" questId = "292" ><del style="opacity:0.5;">Accordion Section #7</del></a>
-									<div id="quest_accordion-57" class="accordion-section-content">
-										<div id="quest_292">로딩중...</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-								<div class="accordion-section">
-									<a id="quest_index_301" class="accordion-section-title" href="#quest_accordion-58" questId = "301">Accordion Section #8</a>
-									<div id="quest_accordion-58" class="accordion-section-content">
-										<div id="quest_302">로딩중...</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-								<div class="accordion-section">
-									<a id="quest_index_302" class="accordion-section-title" href="#quest_accordion-59" questId = "302">Accordion Section #9</a>
-									<div id="quest_accordion-59" class="accordion-section-content">
-										<div id="quest_302">로딩중...</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-								<div class="accordion-section">
-									<a id="quest_index_311" class="accordion-section-title" href="#quest_accordion-60" questId = "311">Accordion Section #10</a>
-									<div id="quest_accordion-60" class="accordion-section-content">
-										<div id="quest_311">로딩중...</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-							</div><!--end .accordion-->
-						</div>
-					</div>
-					<div class="slide">
-						<div class="main">
-							<div class="accordion">
-								<div class="accordion-section">
-									<a id="quest_index_312" class="accordion-section-title" href="#quest_accordion-61" questId = "312">Accordion Section #6</a>
-									<div id="quest_accordion-61" class="accordion-section-content">
-										<div id="quest_312">로딩중...</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-								<div class="accordion-section">
-									<a id="quest_index_321" class="accordion-section-title" href="#quest_accordion-62" questId = "321" ><del style="opacity:0.5;">Accordion Section #7</del></a>
-									<div id="quest_accordion-62" class="accordion-section-content">
-										<div id="quest_321">로딩중...</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-								<div class="accordion-section">
-									<a id="quest_index_322" class="accordion-section-title" href="#quest_accordion-63" questId = "322">Accordion Section #8</a>
-									<div id="quest_accordion-63" class="accordion-section-content">
-										<div id="quest_322">로딩중...</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-								<div class="accordion-section">
-									<a id="quest_index_331" class="accordion-section-title" href="#quest_accordion-64" questId = "331">Accordion Section #9</a>
-									<div id="quest_accordion-64" class="accordion-section-content">
-										<div id="quest_331">로딩중...</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-								<div class="accordion-section">
-									<a id="quest_index_332" class="accordion-section-title" href="#quest_accordion-65" questId = "332">Accordion Section #10</a>
-									<div id="quest_accordion-65" class="accordion-section-content">
-										<div id="quest_332">로딩중...</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-							</div><!--end .accordion-->
-						</div>
-					</div>
-					<div class="slide">
-						<div class="main">
-							<div class="accordion">
-								<div class="accordion-section">
-									<a id="quest_index_341" class="accordion-section-title" href="#quest_accordion-66" questId = "341">Accordion Section #6</a>
-									<div id="quest_accordion-66" class="accordion-section-content">
-										<div id="quest_341">로딩중...</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-								<div class="accordion-section">
-									<a id="quest_index_342" class="accordion-section-title" href="#quest_accordion-67" questId = "342" ><del style="opacity:0.5;">Accordion Section #7</del></a>
-									<div id="quest_accordion-67" class="accordion-section-content">
-										<div id="quest_342">로딩중...</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-								<div class="accordion-section">
-									<a id="quest_index_351" class="accordion-section-title" href="#quest_accordion-68" questId = "351">Accordion Section #8</a>
-									<div id="quest_accordion-68" class="accordion-section-content">
-										<div id="quest_351">로딩중...</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-								<div class="accordion-section">
-									<a id="quest_index_352" class="accordion-section-title" href="#quest_accordion-69" questId = "352">Accordion Section #9</a>
-									<div id="quest_accordion-69" class="accordion-section-content">
-										<div id="352">로딩중...</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-							</div><!--end .accordion-->
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-	  <section id="section2" class="section" style="background-color:deepskyblue">
-	    <div class="container">
-				<div class="container">
-					<div class="slide active">
-						<div class="main col-md-12">
-							<div class="accordion">
-								<div class="accordion-section">
-									<a class="accordion-section-title" href="#accordion-1">#1_권혁진</a>
-									<div id="accordion-1" class="accordion-section-content">
-										<div class="col-md-12">
-											<div class="col-md-12" style="border-bottom: 1px solid black; padding-bottom:10px;">
-												<div class="col-md-5"><img src="sample.jpg" alt="sample"></div>
-												<div class="col-md-7"><h1 class="text-left">권혁진</h1><h2 class="text-left">뽀식</h2><h2 class="text-left">특징 : 뱃살지방</h2></div>
-											</div>
-											<div id="hideOrShow" class="col-md-12"><h3 class="text-left">가끔 이상한 행동을 보인다</h3><h3 class="text-left">하지만 이해해줘라</h3><h3 class="text-left">바보라 그렇다</h3></div>
-										</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-								<div class="accordion-section">
-									<a class="accordion-section-title" href="#accordion-2">Accordion Section #2</a>
-									<div id="accordion-2" class="accordion-section-content">
-										<div class="col-md-12">
-											<div class="col-md-12" style="border-bottom: 1px solid black; padding-bottom:10px;">
-												<div class="col-md-5"><img src="sample.jpg" alt="sample"></div>
-												<div class="col-md-7"><h1 class="text-left">권혁진</h1><h2 class="text-left">뽀식</h2><h2 class="text-left">특징 : 뱃살지방</h2></div>
-											</div>
-											<div id="hideOrShow" class="col-md-12"><h3 class="text-left">가끔 이상한 행동을 보인다</h3><h3 class="text-left">하지만 이해해줘라</h3><h3 class="text-left">바보라 그렇다</h3></div>
-										</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-								<div class="accordion-section">
-									<a class="accordion-section-title" href="#accordion-3">Accordion Section #3</a>
-									<div id="accordion-3" class="accordion-section-content">
-										<div class="col-md-12">
-											<div class="col-md-12" style="border-bottom: 1px solid black; padding-bottom:10px;">
-												<div class="col-md-5"><img src="sample.jpg" alt="sample"></div>
-												<div class="col-md-7"><h1 class="text-left">권혁진</h1><h2 class="text-left">뽀식</h2><h2 class="text-left">특징 : 뱃살지방</h2></div>
-											</div>
-											<div id="hideOrShow" class="col-md-12"><h3 class="text-left">가끔 이상한 행동을 보인다</h3><h3 class="text-left">하지만 이해해줘라</h3><h3 class="text-left">바보라 그렇다</h3></div>
-										</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-								<div class="accordion-section">
-									<a class="accordion-section-title" href="#accordion-4">Accordion Section #4</a>
-									<div id="accordion-4" class="accordion-section-content">
-										<div class="col-md-12">
-											<div class="col-md-12" style="border-bottom: 1px solid black; padding-bottom:10px;">
-												<div class="col-md-5"><img src="sample.jpg" alt="sample"></div>
-												<div class="col-md-7"><h1 class="text-left">권혁진</h1><h2 class="text-left">뽀식</h2><h2 class="text-left">특징 : 뱃살지방</h2></div>
-											</div>
-											<div id="hideOrShow" class="col-md-12"><h3 class="text-left">가끔 이상한 행동을 보인다</h3><h3 class="text-left">하지만 이해해줘라</h3><h3 class="text-left">바보라 그렇다</h3></div>
-										</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-								<div class="accordion-section">
-									<a class="accordion-section-title" href="#accordion-5">Accordion Section #5</a>
-									<div id="accordion-5" class="accordion-section-content">
-										<div class="col-md-12">
-											<div class="col-md-12" style="border-bottom: 1px solid black; padding-bottom:10px;">
-												<div class="col-md-5"><img src="sample.jpg" alt="sample"></div>
-												<div class="col-md-7"><h1 class="text-left">권혁진</h1><h2 class="text-left">뽀식</h2><h2 class="text-left">특징 : 뱃살지방</h2></div>
-											</div>
-											<div id="hideOrShow" class="col-md-12"><h3 class="text-left">가끔 이상한 행동을 보인다</h3><h3 class="text-left">하지만 이해해줘라</h3><h3 class="text-left">바보라 그렇다</h3></div>
-										</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-							</div><!--end .accordion-->
-						</div>
-					</div>
-
-					<div class="slide">
-						<div class="main">
-							<div class="accordion">
-								<div class="accordion-section">
-									<a class="accordion-section-title" href="#accordion-6">Accordion Section #6</a>
-									<div id="accordion-6" class="accordion-section-content">
-
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-								<div class="accordion-section">
-									<a class="accordion-section-title" href="#accordion-7">Accordion Section #7</a>
-									<div id="accordion-7" class="accordion-section-content">
-
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-								<div class="accordion-section">
-									<a class="accordion-section-title" href="#accordion-8">Accordion Section #8</a>
-									<div id="accordion-8" class="accordion-section-content">
-
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-								<div class="accordion-section">
-									<a class="accordion-section-title" href="#accordion-9">Accordion Section #9</a>
-									<div id="accordion-9" class="accordion-section-content">
-
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-								<div class="accordion-section">
-									<a class="accordion-section-title" href="#accordion-10">Accordion Section #10</a>
-									<div id="accordion-10" class="accordion-section-content">
-
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-							</div><!--end .accordion-->
-						</div>
-					</div>
-					<div class="slide">
-						<div class="main">
-							<div class="accordion">
-								<div class="accordion-section">
-									<a class="accordion-section-title" href="#accordion-11">Accordion Section #11</a>
-									<div id="accordion-11" class="accordion-section-content">
-
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-								<div class="accordion-section">
-									<a class="accordion-section-title" href="#accordion-12">Accordion Section #12</a>
-									<div id="accordion-12" class="accordion-section-content">
-
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-								<div class="accordion-section">
-									<a class="accordion-section-title" href="#accordion-13">Accordion Section #13</a>
-									<div id="accordion-13" class="accordion-section-content">
-
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-								<div class="accordion-section">
-									<a class="accordion-section-title" href="#accordion-14">Accordion Section #14</a>
-									<div id="accordion-14" class="accordion-section-content">
-
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-								<div class="accordion-section">
-									<a class="accordion-section-title" href="#accordion-15">Accordion Section #15</a>
-									<div id="accordion-15" class="accordion-section-content">
-
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-							</div><!--end .accordion-->
-						</div>
-					</div>
-					<div class="slide">
-						<div class="main">
-							<div class="accordion">
-								<div class="accordion-section">
-									<a class="accordion-section-title" href="#accordion-16">Accordion Section #16</a>
-									<div id="accordion-16" class="accordion-section-content">
-
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-								<div class="accordion-section">
-									<a class="accordion-section-title" href="#accordion-17">Accordion Section #17</a>
-									<div id="accordion-17" class="accordion-section-content">
-
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-								<div class="accordion-section">
-									<a class="accordion-section-title" href="#accordion-18">Accordion Section #18</a>
-									<div id="accordion-18" class="accordion-section-content">
-
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-								<div class="accordion-section">
-									<a class="accordion-section-title" href="#accordion-19">Accordion Section #19</a>
-									<div id="accordion-19" class="accordion-section-content">
-
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-								<div class="accordion-section">
-									<a class="accordion-section-title" href="#accordion-20">Accordion Section #20</a>
-									<div id="accordion-20" class="accordion-section-content">
-
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-							</div><!--end .accordion-->
-						</div>
-					</div>
-					<div class="slide">
-						<div class="main">
-							<div class="accordion">
-								<div class="accordion-section">
-									<a class="accordion-section-title" href="#accordion-21">Accordion Section #21</a>
-									<div id="accordion-21" class="accordion-section-content">
-
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-								<div class="accordion-section">
-									<a class="accordion-section-title" href="#accordion-22">Accordion Section #22</a>
-									<div id="accordion-22" class="accordion-section-content">
-
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-								<div class="accordion-section">
-									<a class="accordion-section-title" href="#accordion-23">Accordion Section #23</a>
-									<div id="accordion-23" class="accordion-section-content">
-
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-								<div class="accordion-section">
-									<a class="accordion-section-title" href="#accordion-24">Accordion Section #24</a>
-									<div id="accordion-24" class="accordion-section-content">
-
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-								<div class="accordion-section">
-									<a class="accordion-section-title" href="#accordion-25">Accordion Section #25</a>
-									<div id="accordion-25" class="accordion-section-content">
-
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-							</div><!--end .accordion-->
-						</div>
-					</div>
-					<div class="slide">
-						<div class="main">
-							<div class="accordion">
-								<div class="accordion-section">
-									<a class="accordion-section-title" href="#accordion-26">Accordion Section #26</a>
-									<div id="accordion-26" class="accordion-section-content">
-
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-								<div class="accordion-section">
-									<a class="accordion-section-title" href="#accordion-27">Accordion Section #27</a>
-									<div id="accordion-27" class="accordion-section-content">
-
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-								<div class="accordion-section">
-									<a class="accordion-section-title" href="#accordion-28">Accordion Section #28</a>
-									<div id="accordion-28" class="accordion-section-content">
-
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-								<div class="accordion-section">
-									<a class="accordion-section-title" href="#accordion-29">Accordion Section #29</a>
-									<div id="accordion-29" class="accordion-section-content">
-
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-								<div class="accordion-section">
-									<a class="accordion-section-title" href="#accordion-30">Accordion Section #30</a>
-									<div id="accordion-30" class="accordion-section-content">
-
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-
-							</div><!--end .accordion-->
-						</div>
-					</div>
-					<div class="slide">
-								<div class="main">
-									<div class="accordion">
-										<div class="accordion-section">
-											<a class="accordion-section-title" href="#accordion-31">Accordion Section #31</a>
-											<div id="accordion-31" class="accordion-section-content">
-
-											</div><!--end .accordion-section-content-->
-										</div><!--end .accordion-section-->
-
-										<div class="accordion-section">
-											<a class="accordion-section-title" href="#accordion-32">Accordion Section #32</a>
-											<div id="accordion-32" class="accordion-section-content">
-
-											</div><!--end .accordion-section-content-->
-										</div><!--end .accordion-section-->
-
-										<div class="accordion-section">
-											<a class="accordion-section-title" href="#accordion-33">Accordion Section #33</a>
-											<div id="accordion-33" class="accordion-section-content">
-
-											</div><!--end .accordion-section-content-->
-										</div><!--end .accordion-section-->
-
-										<div class="accordion-section">
-											<a class="accordion-section-title" href="#accordion-34">Accordion Section #34</a>
-											<div id="accordion-34" class="accordion-section-content">
-
-											</div><!--end .accordion-section-content-->
-										</div><!--end .accordion-section-->
-
-										<div class="accordion-section">
-											<a class="accordion-section-title" href="#accordion-35">Accordion Section #35</a>
-											<div id="accordion-35" class="accordion-section-content">
-
-											</div><!--end .accordion-section-content-->
-										</div><!--end .accordion-section-->
-
-									</div><!--end .accordion-->
-								</div>
-							</div>
-
-				</div>
-	    </div>
-	  </section>
-
-		<section id="section3" class="section text-center">
-			<div class="container">
-	      <div class="col-md-12">
-					<div class="col-md-10" id="firstMan"><h1 style="display:inline; border-right: 1px solid gray">1등</h1></div>
-				</div>
-				<div class="col-md-12">
-					<div class="col-md-10" id="secondMan"><h1 style="display:inline; border-right: 1px solid gray">2등</h1></div>
-				</div>
-				<div class="col-md-12">
-					<div class="col-md-10" id="thirdMan"><h1 style="display:inline; border-right: 1px solid">3등</h1></div>
-				</div>
-				<div class="col-md-12" style="padding-top:40px;">
-					<div class="col-md-10" id="myScore"><h1 style="display:inline; border-right: 1px solid">본인</h1></div>
-				</div>
-			</div>
-		</section>
-		<section id="section4" class="section">
-			<div class='container'>
-				<div class='crew'>개발진</div>
-				<div class='job'>기획자</div>
-				<div class='name'>권혁진</div>
-				<div class='job'>백엔드</div>
-				<div class='name'>장원준</div>
-				<div class='job'>프론트엔드</div>
-				<div class='name'>최준식</div>
-				<div class='name'>박해영</div>
-				<div class="job">디자이너</div>
-				<div class="name">손용락</div>
-				<img src="ssu_logo.jpg" alt="ssu_logo" style="width:100px">
-				<img src="ssu_logo.jpg" alt="ssu_logo" style="width:100px">
-				<img src="ssu_logo.jpg" alt="ssu_logo" style="width:100px">
-			</div>
-		</section>
-	</div>
-	<script>
+<ul id="menu">
+    <li data-menuanchor="firstPage"><a href="#firstPage">의뢰</a></li>
+    <li data-menuanchor="secondPage"><a href="#secondPage">도감</a></li>
+    <li data-menuanchor="3rdPage"><a href="#3rdPage">랭킹</a></li>
+    <li data-menuanchor="lastPage"><a href="#lastPage" onClick="window.location.reload()">크레딧</a></li>
+</ul>
+
+<div id="fullpage" class="background">
+    <section id="section1" class="section">
+        <div class="container">
+            <button id="test_login" type="button"> 로그인 테스트 </button>
+            <div class="container">
+                <div class="slide">
+                    <div class="main">
+                        <div class="accordion">
+                            <div class="accordion-section">
+                                <a id="quest_index_11" class="accordion-section-title" href="#quest_accordion-1" questId = "11" >Accordion Section #1</a>
+                                <div id="quest_accordion-1" class="accordion-section-content">
+                                    <div id="quest_11">로딩중...</div>
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                            <div class="accordion-section">
+                                <a  id="quest_index_12"class="accordion-section-title" href="#quest_accordion-2"  questId = "12"><del style="opacity:0.5;">Accordion Section #2</del></a>
+                                <div id="quest_accordion-2" class="accordion-section-content">
+                                    <div id="quest_12">로딩중...</div>
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                            <div class="accordion-section">
+                                <a id="quest_index_21" class="accordion-section-title" href="#quest_accordion-3" questId = "21">Accordion Section #3</a>
+                                <div id="quest_accordion-3" class="accordion-section-content">
+                                    <div id="quest_21">로딩중...</div>
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                            <div class="accordion-section">
+                                <a id="quest_index_22" class="accordion-section-title" href="#quest_accordion-4" questId = "22">Accordion Section #4</a>
+                                <div id="quest_accordion-4" class="accordion-section-content">
+                                    <div id="quest_22">로딩중...</div>
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                            <div class="accordion-section">
+                                <a id="quest_index_31" class="accordion-section-title" href="#quest_accordion-5" questId = "31">Accordion Section #5</a>
+                                <div id="quest_accordion-5" class="accordion-section-content">
+                                    <div id="quest_31">로딩중...</div>
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                        </div><!--end .accordion-->
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <div class="main">
+                        <div class="accordion">
+                            <div class="accordion-section">
+                                <a id="quest_index_32" class="accordion-section-title" href="#quest_accordion-6" questId = "32">Accordion Section #5</a>
+                                <div id="quest_accordion-6" class="accordion-section-content">
+                                    <div id="quest_32">로딩중...</div>
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                            <div class="accordion-section">
+                                <a id="quest_index_41" class="accordion-section-title" href="#quest_accordion-7" questId = "41" ><del style="opacity:0.5;">Accordion Section #7</del></a>
+                                <div id="quest_accordion-7" class="accordion-section-content">
+                                    <div id="quest_41">로딩중...</div>
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                            <div class="accordion-section">
+                                <a id="quest_index_42" class="accordion-section-title" href="#quest_accordion-8" questId = "42">Accordion Section #8</a>
+                                <div id="quest_accordion-8" class="accordion-section-content">
+                                    <div id="quest_42">로딩중...</div>
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                            <div class="accordion-section">
+                                <a id="quest_index_51" class="accordion-section-title" href="#quest_accordion-9" questId = "51">Accordion Section #9</a>
+                                <div id="quest_accordion-9" class="accordion-section-content">
+                                    <div id="quest_51">로딩중...</div>
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                            <div class="accordion-section">
+                                <a id="quest_index_52" class="accordion-section-title" href="#quest_accordion-10" questId = "52">Accordion Section #10</a>
+                                <div id="quest_accordion-10" class="accordion-section-content">
+                                    <div id="quest_52">로딩중...</div>
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                        </div><!--end .accordion-->
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="main">
+                        <div class="accordion">
+                            <div class="accordion-section">
+                                <a id="quest_index_61" class="accordion-section-title" href="#quest_accordion-11" questId = "61">Accordion Section #6</a>
+                                <div id="quest_accordion-11" class="accordion-section-content">
+                                    <div id="quest_61">로딩중...</div>
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                            <div class="accordion-section">
+                                <a id="quest_index_62" class="accordion-section-title" href="#quest_accordion-12" questId = "62" ><del style="opacity:0.5;">Accordion Section #7</del></a>
+                                <div id="quest_accordion-12" class="accordion-section-content">
+                                    <div id="quest_62">로딩중...</div>
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                            <div class="accordion-section">
+                                <a id="quest_index_71" class="accordion-section-title" href="#quest_accordion-13" questId = "71">Accordion Section #8</a>
+                                <div id="quest_accordion-13" class="accordion-section-content">
+                                    <div id="quest_71">로딩중...</div>
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                            <div class="accordion-section">
+                                <a id="quest_index_72" class="accordion-section-title" href="#quest_accordion-14" questId = "72">Accordion Section #9</a>
+                                <div id="quest_accordion-14" class="accordion-section-content">
+                                    <div id="quest_72">로딩중...</div>
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                            <div class="accordion-section">
+                                <a id="quest_index_81" class="accordion-section-title" href="#quest_accordion-15" questId = "81">Accordion Section #10</a>
+                                <div id="quest_accordion-15" class="accordion-section-content">
+                                    <div id="quest_81">로딩중...</div>
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+                        </div><!--end .accordion-->
+                    </div>
+                </div>
+
+
+                <div class="slide">
+                    <div class="main">
+                        <div class="accordion">
+                            <div class="accordion-section">
+                                <a id="quest_index_82" class="accordion-section-title" href="#quest_accordion-16" questId = "82">Accordion Section #6</a>
+                                <div id="quest_accordion-16" class="accordion-section-content">
+                                    <div id="quest_82">로딩중...</div>
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                            <div class="accordion-section">
+                                <a id="quest_index_91" class="accordion-section-title" href="#quest_accordion-17" questId = "91" ><del style="opacity:0.5;">Accordion Section #7</del></a>
+                                <div id="quest_accordion-17" class="accordion-section-content">
+                                    <div id="quest_91">로딩중...</div>
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                            <div class="accordion-section">
+                                <a id="quest_index_92" class="accordion-section-title" href="#quest_accordion-18" questId = "92">Accordion Section #8</a>
+                                <div id="quest_accordion-18" class="accordion-section-content">
+                                    <div id="quest_92">로딩중...</div>
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                            <div class="accordion-section">
+                                <a id="quest_index_101" class="accordion-section-title" href="#quest_accordion-19" questId = "101">Accordion Section #9</a>
+                                <div id="quest_accordion-19" class="accordion-section-content">
+                                    <div id="quest_101">로딩중...</div>
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                            <div class="accordion-section">
+                                <a id="quest_index_102" class="accordion-section-title" href="#quest_accordion-20" questId = "102">Accordion Section #10</a>
+                                <div id="quest_accordion-20" class="accordion-section-content">
+                                    <div id="quest_102">로딩중...</div>
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+                        </div><!--end .accordion-->
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="main">
+                        <div class="accordion">
+                            <div class="accordion-section">
+                                <a id="quest_index_111" class="accordion-section-title" href="#quest_accordion-21" questId = "111">Accordion Section #6</a>
+                                <div id="quest_accordion-21" class="accordion-section-content">
+                                    <div id="quest_111">로딩중...</div>
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                            <div class="accordion-section">
+                                <a id="quest_index_112" class="accordion-section-title" href="#quest_accordion-22" questId = "112" ><del style="opacity:0.5;">Accordion Section #7</del></a>
+                                <div id="quest_accordion-22" class="accordion-section-content">
+                                    <div id="quest_112">로딩중...</div>
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                            <div class="accordion-section">
+                                <a id="quest_index_121" class="accordion-section-title" href="#quest_accordion-23" questId = "121">Accordion Section #8</a>
+                                <div id="quest_accordion-23" class="accordion-section-content">
+                                    <div id="quest_121">로딩중...</div>
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                            <div class="accordion-section">
+                                <a id="quest_index_122" class="accordion-section-title" href="#quest_accordion-24" questId = "122">Accordion Section #9</a>
+                                <div id="quest_accordion-24" class="accordion-section-content">
+                                    <div id="quest_122">로딩중...</div>
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                            <div class="accordion-section">
+                                <a id="quest_index_131" class="accordion-section-title" href="#quest_accordion-25" questId = "131">Accordion Section #10</a>
+                                <div id="quest_accordion-25" class="accordion-section-content">
+                                    <div id="quest_131">로딩중...</div>
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+                        </div><!--end .accordion-->
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="main">
+                        <div class="accordion">
+                            <div class="accordion-section">
+                                <a id="quest_index_132" class="accordion-section-title" href="#quest_accordion-26" questId = "132">Accordion Section #6</a>
+                                <div id="quest_accordion-26" class="accordion-section-content">
+                                    <div id="quest_132">로딩중...</div>
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                            <div class="accordion-section">
+                                <a id="quest_index_141" class="accordion-section-title" href="#quest_accordion-27" questId = "141" ><del style="opacity:0.5;">Accordion Section #7</del></a>
+                                <div id="quest_accordion-27" class="accordion-section-content">
+                                    <div id="quest_141">로딩중...</div>
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                            <div class="accordion-section">
+                                <a id="quest_index_142" class="accordion-section-title" href="#quest_accordion-28" questId = "142">Accordion Section #8</a>
+                                <div id="quest_accordion-28" class="accordion-section-content">
+                                    <div id="quest_142">로딩중...</div>
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                            <div class="accordion-section">
+                                <a id="quest_index_151" class="accordion-section-title" href="#quest_accordion-29" questId = "151">Accordion Section #9</a>
+                                <div id="quest_accordion-29" class="accordion-section-content">
+                                    <div id="quest_151">로딩중...</div>
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                            <div class="accordion-section">
+                                <a id="quest_index_152" class="accordion-section-title" href="#quest_accordion-30" questId = "152">Accordion Section #10</a>
+                                <div id="quest_accordion-30" class="accordion-section-content">
+                                    <div id="quest_152">로딩중...</div>
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+                        </div><!--end .accordion-->
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="main">
+                        <div class="accordion">
+                            <div class="accordion-section">
+                                <a id="quest_index_161" class="accordion-section-title" href="#quest_accordion-31" questId = "161">Accordion Section #6</a>
+                                <div id="quest_accordion-31" class="accordion-section-content">
+                                    <div id="quest_161">로딩중...</div>
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                            <div class="accordion-section">
+                                <a id="quest_index_162" class="accordion-section-title" href="#quest_accordion-32" questId = "162" ><del style="opacity:0.5;">Accordion Section #7</del></a>
+                                <div id="quest_accordion-32" class="accordion-section-content">
+                                    <div id="quest_162">로딩중...</div>
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                            <div class="accordion-section">
+                                <a id="quest_index_171" class="accordion-section-title" href="#quest_accordion-33" questId = "171">Accordion Section #8</a>
+                                <div id="quest_accordion-33" class="accordion-section-content">
+                                    <div id="quest_171">로딩중...</div>
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                            <div class="accordion-section">
+                                <a id="quest_index_172" class="accordion-section-title" href="#quest_accordion-34" questId = "172">Accordion Section #9</a>
+                                <div id="quest_accordion-34" class="accordion-section-content">
+                                    <div id="quest_172">로딩중...</div>
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                            <div class="accordion-section">
+                                <a id="quest_index_181" class="accordion-section-title" href="#quest_accordion-35" questId = "181">Accordion Section #10</a>
+                                <div id="quest_accordion-35" class="accordion-section-content">
+                                    <div id="quest_181">로딩중...</div>
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+                        </div><!--end .accordion-->
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <div class="main">
+                        <div class="accordion">
+                            <div class="accordion-section">
+                                <a id="quest_index_182" class="accordion-section-title" href="#quest_accordion-36" questId = "182">Accordion Section #6</a>
+                                <div id="quest_accordion-36" class="accordion-section-content">
+                                    <div id="quest_182">로딩중...</div>
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                            <div class="accordion-section">
+                                <a id="quest_index_191" class="accordion-section-title" href="#quest_accordion-37" questId = "191" ><del style="opacity:0.5;">Accordion Section #7</del></a>
+                                <div id="quest_accordion-37" class="accordion-section-content">
+                                    <div id="quest_191">로딩중...</div>
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                            <div class="accordion-section">
+                                <a id="quest_index_192" class="accordion-section-title" href="#quest_accordion-38" questId = "192">Accordion Section #8</a>
+                                <div id="quest_accordion-38" class="accordion-section-content">
+                                    <div id="quest_192">로딩중...</div>
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                            <div class="accordion-section">
+                                <a id="quest_index_201" class="accordion-section-title" href="#quest_accordion-39" questId = "201">Accordion Section #9</a>
+                                <div id="quest_accordion-39" class="accordion-section-content">
+                                    <div id="quest_201">로딩중...</div>
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                            <div class="accordion-section">
+                                <a id="quest_index_202" class="accordion-section-title" href="#quest_accordion-40" questId = "202">Accordion Section #10</a>
+                                <div id="quest_accordion-40" class="accordion-section-content">
+                                    <div id="quest_202">로딩중...</div>
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+                        </div><!--end .accordion-->
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="main">
+                        <div class="accordion">
+                            <div class="accordion-section">
+                                <a id="quest_index_211" class="accordion-section-title" href="#quest_accordion-41" questId = "211">Accordion Section #6</a>
+                                <div id="quest_accordion-41" class="accordion-section-content">
+                                    <div id="quest_211">로딩중...</div>
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                            <div class="accordion-section">
+                                <a id="quest_index_212" class="accordion-section-title" href="#quest_accordion-42" questId = "212" ><del style="opacity:0.5;">Accordion Section #7</del></a>
+                                <div id="quest_accordion-42" class="accordion-section-content">
+                                    <div id="quest_212">로딩중...</div>
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                            <div class="accordion-section">
+                                <a id="quest_index_221" class="accordion-section-title" href="#quest_accordion-43" questId = "221">Accordion Section #8</a>
+                                <div id="quest_accordion-43" class="accordion-section-content">
+                                    <div id="quest_221">로딩중...</div>
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                            <div class="accordion-section">
+                                <a id="quest_index_222" class="accordion-section-title" href="#quest_accordion-44" questId = "222">Accordion Section #9</a>
+                                <div id="quest_accordion-44" class="accordion-section-content">
+                                    <div id="quest_222">로딩중...</div>
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                            <div class="accordion-section">
+                                <a id="quest_index_231" class="accordion-section-title" href="#quest_accordion-45" questId = "231">Accordion Section #10</a>
+                                <div id="quest_accordion-45" class="accordion-section-content">
+                                    <div id="quest_231">로딩중...</div>
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+                        </div><!--end .accordion-->
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="main">
+                        <div class="accordion">
+                            <div class="accordion-section">
+                                <a id="quest_index_232" class="accordion-section-title" href="#quest_accordion-46" questId = "232">Accordion Section #6</a>
+                                <div id="quest_accordion-46" class="accordion-section-content">
+                                    <div id="quest_232">로딩중...</div>
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                            <div class="accordion-section">
+                                <a id="quest_index_241" class="accordion-section-title" href="#quest_accordion-47" questId = "241" ><del style="opacity:0.5;">Accordion Section #7</del></a>
+                                <div id="quest_accordion-47" class="accordion-section-content">
+                                    <div id="quest_241">로딩중...</div>
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                            <div class="accordion-section">
+                                <a id="quest_index_242" class="accordion-section-title" href="#quest_accordion-48" questId = "242">Accordion Section #8</a>
+                                <div id="quest_accordion-48" class="accordion-section-content">
+                                    <div id="quest_242">로딩중...</div>
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                            <div class="accordion-section">
+                                <a id="quest_index_251" class="accordion-section-title" href="#quest_accordion-49" questId = "251">Accordion Section #9</a>
+                                <div id="quest_accordion-49" class="accordion-section-content">
+                                    <div id="quest_251">로딩중...</div>
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                            <div class="accordion-section">
+                                <a id="quest_index_252" class="accordion-section-title" href="#quest_accordion-50" questId = "252">Accordion Section #10</a>
+                                <div id="quest_accordion-50" class="accordion-section-content">
+                                    <div id="quest_252">로딩중...</div>
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+                        </div><!--end .accordion-->
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="main">
+                        <div class="accordion">
+                            <div class="accordion-section">
+                                <a id="quest_index_261" class="accordion-section-title" href="#quest_accordion-51" questId = "261">Accordion Section #6</a>
+                                <div id="quest_accordion-51" class="accordion-section-content">
+                                    <div id="quest_261">로딩중...</div>
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                            <div class="accordion-section">
+                                <a id="quest_index_262" class="accordion-section-title" href="#quest_accordion-52" questId = "262" ><del style="opacity:0.5;">Accordion Section #7</del></a>
+                                <div id="quest_accordion-52" class="accordion-section-content">
+                                    <div id="quest_262">로딩중...</div>
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                            <div class="accordion-section">
+                                <a id="quest_index_271" class="accordion-section-title" href="#quest_accordion-53" questId = "271">Accordion Section #8</a>
+                                <div id="quest_accordion-53" class="accordion-section-content">
+                                    <div id="quest_271">로딩중...</div>
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                            <div class="accordion-section">
+                                <a id="quest_index_272" class="accordion-section-title" href="#quest_accordion-54" questId = "272">Accordion Section #9</a>
+                                <div id="quest_accordion-54" class="accordion-section-content">
+                                    <div id="quest_272">로딩중...</div>
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                            <div class="accordion-section">
+                                <a id="quest_index_282" class="accordion-section-title" href="#quest_accordion-55" questId = "282">Accordion Section #10</a>
+                                <div id="quest_accordion-55" class="accordion-section-content">
+                                    <div id="quest_282">로딩중...</div>
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+                        </div><!--end .accordion-->
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="main">
+                        <div class="accordion">
+                            <div class="accordion-section">
+                                <a id="quest_index_291" class="accordion-section-title" href="#quest_accordion-56" questId = "291">Accordion Section #6</a>
+                                <div id="quest_accordion-56" class="accordion-section-content">
+                                    <div id="quest_291">로딩중...</div>
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                            <div class="accordion-section">
+                                <a id="quest_index_292" class="accordion-section-title" href="#quest_accordion-57" questId = "292" ><del style="opacity:0.5;">Accordion Section #7</del></a>
+                                <div id="quest_accordion-57" class="accordion-section-content">
+                                    <div id="quest_292">로딩중...</div>
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                            <div class="accordion-section">
+                                <a id="quest_index_301" class="accordion-section-title" href="#quest_accordion-58" questId = "301">Accordion Section #8</a>
+                                <div id="quest_accordion-58" class="accordion-section-content">
+                                    <div id="quest_302">로딩중...</div>
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                            <div class="accordion-section">
+                                <a id="quest_index_302" class="accordion-section-title" href="#quest_accordion-59" questId = "302">Accordion Section #9</a>
+                                <div id="quest_accordion-59" class="accordion-section-content">
+                                    <div id="quest_302">로딩중...</div>
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                            <div class="accordion-section">
+                                <a id="quest_index_311" class="accordion-section-title" href="#quest_accordion-60" questId = "311">Accordion Section #10</a>
+                                <div id="quest_accordion-60" class="accordion-section-content">
+                                    <div id="quest_311">로딩중...</div>
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+                        </div><!--end .accordion-->
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="main">
+                        <div class="accordion">
+                            <div class="accordion-section">
+                                <a id="quest_index_312" class="accordion-section-title" href="#quest_accordion-61" questId = "312">Accordion Section #6</a>
+                                <div id="quest_accordion-61" class="accordion-section-content">
+                                    <div id="quest_312">로딩중...</div>
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                            <div class="accordion-section">
+                                <a id="quest_index_321" class="accordion-section-title" href="#quest_accordion-62" questId = "321" ><del style="opacity:0.5;">Accordion Section #7</del></a>
+                                <div id="quest_accordion-62" class="accordion-section-content">
+                                    <div id="quest_321">로딩중...</div>
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                            <div class="accordion-section">
+                                <a id="quest_index_322" class="accordion-section-title" href="#quest_accordion-63" questId = "322">Accordion Section #8</a>
+                                <div id="quest_accordion-63" class="accordion-section-content">
+                                    <div id="quest_322">로딩중...</div>
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                            <div class="accordion-section">
+                                <a id="quest_index_331" class="accordion-section-title" href="#quest_accordion-64" questId = "331">Accordion Section #9</a>
+                                <div id="quest_accordion-64" class="accordion-section-content">
+                                    <div id="quest_331">로딩중...</div>
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                            <div class="accordion-section">
+                                <a id="quest_index_332" class="accordion-section-title" href="#quest_accordion-65" questId = "332">Accordion Section #10</a>
+                                <div id="quest_accordion-65" class="accordion-section-content">
+                                    <div id="quest_332">로딩중...</div>
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+                        </div><!--end .accordion-->
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="main">
+                        <div class="accordion">
+                            <div class="accordion-section">
+                                <a id="quest_index_341" class="accordion-section-title" href="#quest_accordion-66" questId = "341">Accordion Section #6</a>
+                                <div id="quest_accordion-66" class="accordion-section-content">
+                                    <div id="quest_341">로딩중...</div>
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                            <div class="accordion-section">
+                                <a id="quest_index_342" class="accordion-section-title" href="#quest_accordion-67" questId = "342" ><del style="opacity:0.5;">Accordion Section #7</del></a>
+                                <div id="quest_accordion-67" class="accordion-section-content">
+                                    <div id="quest_342">로딩중...</div>
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                            <div class="accordion-section">
+                                <a id="quest_index_351" class="accordion-section-title" href="#quest_accordion-68" questId = "351">Accordion Section #8</a>
+                                <div id="quest_accordion-68" class="accordion-section-content">
+                                    <div id="quest_351">로딩중...</div>
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                            <div class="accordion-section">
+                                <a id="quest_index_352" class="accordion-section-title" href="#quest_accordion-69" questId = "352">Accordion Section #9</a>
+                                <div id="quest_accordion-69" class="accordion-section-content">
+                                    <div id="352">로딩중...</div>
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                        </div><!--end .accordion-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="section2" class="section" style="background-color:deepskyblue">
+        <div class="container">
+            <div class="container">
+                <div class="slide active">
+                    <div class="main col-md-12">
+                        <div class="accordion">
+                            <div class="accordion-section">
+                                <a class="accordion-section-title" href="#accordion-1">#1_권혁진</a>
+                                <div id="accordion-1" class="accordion-section-content">
+                                    <div class="col-md-12">
+                                        <div class="col-md-12" style="border-bottom: 1px solid black; padding-bottom:10px;">
+                                            <div class="col-md-5"><img src="sample.jpg" alt="sample"></div>
+                                            <div class="col-md-7"><h1 class="text-left">권혁진</h1><h2 class="text-left">뽀식</h2><h2 class="text-left">특징 : 뱃살지방</h2></div>
+                                        </div>
+                                        <div id="hideOrShow" class="col-md-12"><h3 class="text-left">가끔 이상한 행동을 보인다</h3><h3 class="text-left">하지만 이해해줘라</h3><h3 class="text-left">바보라 그렇다</h3></div>
+                                    </div>
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                            <div class="accordion-section">
+                                <a class="accordion-section-title" href="#accordion-2">Accordion Section #2</a>
+                                <div id="accordion-2" class="accordion-section-content">
+                                    <div class="col-md-12">
+                                        <div class="col-md-12" style="border-bottom: 1px solid black; padding-bottom:10px;">
+                                            <div class="col-md-5"><img src="sample.jpg" alt="sample"></div>
+                                            <div class="col-md-7"><h1 class="text-left">권혁진</h1><h2 class="text-left">뽀식</h2><h2 class="text-left">특징 : 뱃살지방</h2></div>
+                                        </div>
+                                        <div id="hideOrShow" class="col-md-12"><h3 class="text-left">가끔 이상한 행동을 보인다</h3><h3 class="text-left">하지만 이해해줘라</h3><h3 class="text-left">바보라 그렇다</h3></div>
+                                    </div>
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                            <div class="accordion-section">
+                                <a class="accordion-section-title" href="#accordion-3">Accordion Section #3</a>
+                                <div id="accordion-3" class="accordion-section-content">
+                                    <div class="col-md-12">
+                                        <div class="col-md-12" style="border-bottom: 1px solid black; padding-bottom:10px;">
+                                            <div class="col-md-5"><img src="sample.jpg" alt="sample"></div>
+                                            <div class="col-md-7"><h1 class="text-left">권혁진</h1><h2 class="text-left">뽀식</h2><h2 class="text-left">특징 : 뱃살지방</h2></div>
+                                        </div>
+                                        <div id="hideOrShow" class="col-md-12"><h3 class="text-left">가끔 이상한 행동을 보인다</h3><h3 class="text-left">하지만 이해해줘라</h3><h3 class="text-left">바보라 그렇다</h3></div>
+                                    </div>
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                            <div class="accordion-section">
+                                <a class="accordion-section-title" href="#accordion-4">Accordion Section #4</a>
+                                <div id="accordion-4" class="accordion-section-content">
+                                    <div class="col-md-12">
+                                        <div class="col-md-12" style="border-bottom: 1px solid black; padding-bottom:10px;">
+                                            <div class="col-md-5"><img src="sample.jpg" alt="sample"></div>
+                                            <div class="col-md-7"><h1 class="text-left">권혁진</h1><h2 class="text-left">뽀식</h2><h2 class="text-left">특징 : 뱃살지방</h2></div>
+                                        </div>
+                                        <div id="hideOrShow" class="col-md-12"><h3 class="text-left">가끔 이상한 행동을 보인다</h3><h3 class="text-left">하지만 이해해줘라</h3><h3 class="text-left">바보라 그렇다</h3></div>
+                                    </div>
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                            <div class="accordion-section">
+                                <a class="accordion-section-title" href="#accordion-5">Accordion Section #5</a>
+                                <div id="accordion-5" class="accordion-section-content">
+                                    <div class="col-md-12">
+                                        <div class="col-md-12" style="border-bottom: 1px solid black; padding-bottom:10px;">
+                                            <div class="col-md-5"><img src="sample.jpg" alt="sample"></div>
+                                            <div class="col-md-7"><h1 class="text-left">권혁진</h1><h2 class="text-left">뽀식</h2><h2 class="text-left">특징 : 뱃살지방</h2></div>
+                                        </div>
+                                        <div id="hideOrShow" class="col-md-12"><h3 class="text-left">가끔 이상한 행동을 보인다</h3><h3 class="text-left">하지만 이해해줘라</h3><h3 class="text-left">바보라 그렇다</h3></div>
+                                    </div>
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                        </div><!--end .accordion-->
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <div class="main">
+                        <div class="accordion">
+                            <div class="accordion-section">
+                                <a class="accordion-section-title" href="#accordion-6">Accordion Section #6</a>
+                                <div id="accordion-6" class="accordion-section-content">
+
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                            <div class="accordion-section">
+                                <a class="accordion-section-title" href="#accordion-7">Accordion Section #7</a>
+                                <div id="accordion-7" class="accordion-section-content">
+
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                            <div class="accordion-section">
+                                <a class="accordion-section-title" href="#accordion-8">Accordion Section #8</a>
+                                <div id="accordion-8" class="accordion-section-content">
+
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                            <div class="accordion-section">
+                                <a class="accordion-section-title" href="#accordion-9">Accordion Section #9</a>
+                                <div id="accordion-9" class="accordion-section-content">
+
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                            <div class="accordion-section">
+                                <a class="accordion-section-title" href="#accordion-10">Accordion Section #10</a>
+                                <div id="accordion-10" class="accordion-section-content">
+
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                        </div><!--end .accordion-->
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="main">
+                        <div class="accordion">
+                            <div class="accordion-section">
+                                <a class="accordion-section-title" href="#accordion-11">Accordion Section #11</a>
+                                <div id="accordion-11" class="accordion-section-content">
+
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                            <div class="accordion-section">
+                                <a class="accordion-section-title" href="#accordion-12">Accordion Section #12</a>
+                                <div id="accordion-12" class="accordion-section-content">
+
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                            <div class="accordion-section">
+                                <a class="accordion-section-title" href="#accordion-13">Accordion Section #13</a>
+                                <div id="accordion-13" class="accordion-section-content">
+
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                            <div class="accordion-section">
+                                <a class="accordion-section-title" href="#accordion-14">Accordion Section #14</a>
+                                <div id="accordion-14" class="accordion-section-content">
+
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                            <div class="accordion-section">
+                                <a class="accordion-section-title" href="#accordion-15">Accordion Section #15</a>
+                                <div id="accordion-15" class="accordion-section-content">
+
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                        </div><!--end .accordion-->
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="main">
+                        <div class="accordion">
+                            <div class="accordion-section">
+                                <a class="accordion-section-title" href="#accordion-16">Accordion Section #16</a>
+                                <div id="accordion-16" class="accordion-section-content">
+
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                            <div class="accordion-section">
+                                <a class="accordion-section-title" href="#accordion-17">Accordion Section #17</a>
+                                <div id="accordion-17" class="accordion-section-content">
+
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                            <div class="accordion-section">
+                                <a class="accordion-section-title" href="#accordion-18">Accordion Section #18</a>
+                                <div id="accordion-18" class="accordion-section-content">
+
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                            <div class="accordion-section">
+                                <a class="accordion-section-title" href="#accordion-19">Accordion Section #19</a>
+                                <div id="accordion-19" class="accordion-section-content">
+
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                            <div class="accordion-section">
+                                <a class="accordion-section-title" href="#accordion-20">Accordion Section #20</a>
+                                <div id="accordion-20" class="accordion-section-content">
+
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                        </div><!--end .accordion-->
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="main">
+                        <div class="accordion">
+                            <div class="accordion-section">
+                                <a class="accordion-section-title" href="#accordion-21">Accordion Section #21</a>
+                                <div id="accordion-21" class="accordion-section-content">
+
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                            <div class="accordion-section">
+                                <a class="accordion-section-title" href="#accordion-22">Accordion Section #22</a>
+                                <div id="accordion-22" class="accordion-section-content">
+
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                            <div class="accordion-section">
+                                <a class="accordion-section-title" href="#accordion-23">Accordion Section #23</a>
+                                <div id="accordion-23" class="accordion-section-content">
+
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                            <div class="accordion-section">
+                                <a class="accordion-section-title" href="#accordion-24">Accordion Section #24</a>
+                                <div id="accordion-24" class="accordion-section-content">
+
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                            <div class="accordion-section">
+                                <a class="accordion-section-title" href="#accordion-25">Accordion Section #25</a>
+                                <div id="accordion-25" class="accordion-section-content">
+
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                        </div><!--end .accordion-->
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="main">
+                        <div class="accordion">
+                            <div class="accordion-section">
+                                <a class="accordion-section-title" href="#accordion-26">Accordion Section #26</a>
+                                <div id="accordion-26" class="accordion-section-content">
+
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                            <div class="accordion-section">
+                                <a class="accordion-section-title" href="#accordion-27">Accordion Section #27</a>
+                                <div id="accordion-27" class="accordion-section-content">
+
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                            <div class="accordion-section">
+                                <a class="accordion-section-title" href="#accordion-28">Accordion Section #28</a>
+                                <div id="accordion-28" class="accordion-section-content">
+
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                            <div class="accordion-section">
+                                <a class="accordion-section-title" href="#accordion-29">Accordion Section #29</a>
+                                <div id="accordion-29" class="accordion-section-content">
+
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                            <div class="accordion-section">
+                                <a class="accordion-section-title" href="#accordion-30">Accordion Section #30</a>
+                                <div id="accordion-30" class="accordion-section-content">
+
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                        </div><!--end .accordion-->
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="main">
+                        <div class="accordion">
+                            <div class="accordion-section">
+                                <a class="accordion-section-title" href="#accordion-31">Accordion Section #31</a>
+                                <div id="accordion-31" class="accordion-section-content">
+
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                            <div class="accordion-section">
+                                <a class="accordion-section-title" href="#accordion-32">Accordion Section #32</a>
+                                <div id="accordion-32" class="accordion-section-content">
+
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                            <div class="accordion-section">
+                                <a class="accordion-section-title" href="#accordion-33">Accordion Section #33</a>
+                                <div id="accordion-33" class="accordion-section-content">
+
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                            <div class="accordion-section">
+                                <a class="accordion-section-title" href="#accordion-34">Accordion Section #34</a>
+                                <div id="accordion-34" class="accordion-section-content">
+
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                            <div class="accordion-section">
+                                <a class="accordion-section-title" href="#accordion-35">Accordion Section #35</a>
+                                <div id="accordion-35" class="accordion-section-content">
+
+                                </div><!--end .accordion-section-content-->
+                            </div><!--end .accordion-section-->
+
+                        </div><!--end .accordion-->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="section3" class="section text-center">
+        <div class="container">
+            <div class="col-md-12">
+                <div class="col-md-10" id="firstMan"><h1 style="display:inline; border-right: 1px solid gray">1등</h1></div>
+            </div>
+            <div class="col-md-12">
+                <div class="col-md-10" id="secondMan"><h1 style="display:inline; border-right: 1px solid gray">2등</h1></div>
+            </div>
+            <div class="col-md-12">
+                <div class="col-md-10" id="thirdMan"><h1 style="display:inline; border-right: 1px solid">3등</h1></div>
+            </div>
+            <div class="col-md-12" style="padding-top:40px;">
+                <div class="col-md-10" id="myScore"><h1 style="display:inline; border-right: 1px solid">본인</h1></div>
+            </div>
+        </div>
+    </section>
+    <section id="section4" class="section">
+        <div class="container">
+            <div class="w3-container w3-half w3-white" style="padding:10px 10px 10px 10px;">
+                <img src="ohyeeee.jpg" style="width:100%; max-width:500px">
+            </div>
+            <div class="w3-container w3-half">
+                <p><br>제공/배급&nbsp;&nbsp;&nbsp;하리보</p>
+                <p><br>기획/제작&nbsp;&nbsp;&nbsp;하리보</p>
+                <p><br>Project manager&nbsp;&nbsp;&nbsp;권혁진</p>
+                <p><br>Designer&nbsp;&nbsp;&nbsp;손용락</p>
+                <p><br>FrontEnd developer&nbsp;&nbsp;&nbsp;박해영 최준식</p>
+                <p><br>BackEnd developer&nbsp;&nbsp;&nbsp;장원준</p>
+                <p><br>Sponsor&nbsp;&nbsp;&nbsp;제3대 소프트웨어학부 학생회 Sofrano</p>
+            </div>
+        </div>
+    </section>
+</div>
+<script>
     // 쿠키 생성
     function setCookie(cName, cValue, cDay){
-      var expire = new Date();
-      expire.setDate(expire.getDate() + cDay);
-      var cookies = cName + '=' + escape(cValue) + '; path=/ '; // 한글 깨짐을 막기위해 escape(cValue)를 합니다.
-      if(typeof cDay != 'undefined') cookies += ';expires=' + expire.toGMTString() + ';';
-      document.cookie = cookies;
+        var expire = new Date();
+        expire.setDate(expire.getDate() + cDay);
+        var cookies = cName + '=' + escape(cValue) + '; path=/ '; // 한글 깨짐을 막기위해 escape(cValue)를 합니다.
+        if(typeof cDay != 'undefined') cookies += ';expires=' + expire.toGMTString() + ';';
+        document.cookie = cookies;
     }
     // 쿠키 가져오기
     function getCookie(cName) {
-      cName = cName + '=';
-      var cookieData = document.cookie;
-      var start = cookieData.indexOf(cName);
-      var cValue = '';
-      if(start != -1){
-        start += cName.length;
-        var end = cookieData.indexOf(';', start);
-        if(end == -1)end = cookieData.length;
-        cValue = cookieData.substring(start, end);
-      }
-      return unescape(cValue);
+        cName = cName + '=';
+        var cookieData = document.cookie;
+        var start = cookieData.indexOf(cName);
+        var cValue = '';
+        if(start != -1){
+            start += cName.length;
+            var end = cookieData.indexOf(';', start);
+            if(end == -1)end = cookieData.length;
+            cValue = cookieData.substring(start, end);
+        }
+        return unescape(cValue);
     }
 
     function getQuestBool(){
@@ -1190,18 +1190,26 @@
                     '<td></td>\n' +
                     '<td>\n' +
                     '<div style="padding-left:25%;width:100%;height:70%;back">\n';
+                var img_html = '';
+                if(quest_id % 2 === 1){
+                    img_html = img_html + '<img src="DEF.png" width="10%" height="10%">';
+                }else{
+                    img_html = img_html + '<img src="ABC.png" width="10%" height="10%">';
+                }
 
                 if(data.quest_status === -1){
                     inner_html = inner_html + '<h4>수락하시겠습니까?</h4><br>\n' + '<button id="yes_1" questId = ' + quest_id + '>Yes</button>\n';
-                    $('#quest_index_' + quest_id).text(data.quest_info.title);
+                    img_html = img_html + data.quest_info.title;
+                    img_html = img_html + '<img src="point.png" width="10%" height="10%" align="right">';
                 }else if(data.quest_status === 0){
                     inner_html = inner_html + '<h4>진행중입니다.</h4><br>\n';
-                    $('#quest_index_' + quest_id).text('>> '+data.quest_info.title);
+                    img_html = img_html + data.quest_info.title;
                 }else if(data.quest_status === 1){
                     inner_html = inner_html + '<h4>퀘스트 완료!</h4><br>\n';
-                    $('#quest_index_' + quest_id).text(data.quest_info.title);
-                    $('#quest_index_' + quest_id).attr('style', 'text-decoration:line-through');
+                    img_html = img_html + '<del style="opacity:0.5;">';
+                    img_html = img_html + data.quest_info.title;
                 }
+                $('#quest_index_' + quest_id).html(img_html);
                 inner_html = inner_html + '</div>\n' +
                     '</td>\n' +
                     '</tr>\n' +
@@ -1308,25 +1316,25 @@
 
     });
     $('body').on('click', '#test_login', function(){
-      $.ajax({
-        url : "http://52.79.41.31:3000/api/v1g1/user/authenticate",
-        type : "post",
-        accept: "application/json",
-        contentType: "application/json; charset=utf-8",
-        data : JSON.stringify({id : "20189999", password : "20189999gnqo"}),
-        dataType: "json",
-          success: function(data) {
-            console.log("login data : " + JSON.stringify(data));
-            setCookie('x-access-token', data.token, 1);
-            setCookie('id', data.id, 1);
+        $.ajax({
+            url : "http://52.79.41.31:3000/api/v1g1/user/authenticate",
+            type : "post",
+            accept: "application/json",
+            contentType: "application/json; charset=utf-8",
+            data : JSON.stringify({id : "20189999", password : "20189999gnqo"}),
+            dataType: "json",
+            success: function(data) {
+                console.log("login data : " + JSON.stringify(data));
+                setCookie('x-access-token', data.token, 1);
+                setCookie('id', data.id, 1);
 
-          },
-          error: function(jqXHR,textStatus,errorThrown) {
-              console.log(jqXHR);
-              console.log(textStatus);
-              console.log(errorThrown);
-          }
-      });
+            },
+            error: function(jqXHR,textStatus,errorThrown) {
+                console.log(jqXHR);
+                console.log(textStatus);
+                console.log(errorThrown);
+            }
+        });
     })
 
     $('body').on('click', '#yes_1', function(){
@@ -1354,6 +1362,6 @@
             }
         })
     });
-  </script>
+</script>
 </body>
 </html>
