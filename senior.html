@@ -3,18 +3,14 @@
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>fullPage.js One Page Scroll Sites</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>너로 정했다!</title>  
 	<link rel="stylesheet" type="text/css" href="jquery.fullPage.css" />
-	<link rel="stylesheet" type="text/css" href="examples.css" />
-	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
-	<link rel="stylesheet" type="text/css" href="demo.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-	<script type="text/javascript" src="accordion.js"></script>
-	<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
-	<!-- Bootstrap -->
-	<link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="examples.css" />
+    <link rel="stylesheet" type="text/css" href="demo.css">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<style>
 		#menu li{
 		}
@@ -113,12 +109,11 @@
 			width: 80%;
 		}
 	</style>
-	<script src="jquery.min.js"></script>
-	<script src="jquery-ui.min.js"></script>
-	<script type="text/javascript" src="accordion.js"></script>
-	<script type="text/javascript" src="jquery.fullPage.js"></script>
-	<!-- <script src="js/bootstrap.min.js"></script> -->
-
+    <script src="jquery.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script type="text/javascript" src="accordion.js"></script>
+    <script type="text/javascript" src="jquery.fullPage.js"></script>
+    <script src="js/bootstrap.min.js"></script>
 
 </head>
 <body>
@@ -833,7 +828,16 @@
     }
 
     $(document).ready(function(){
-        $.ajax({
+		$(document).keydown(function(e){   
+        if(e.target.nodeName != "INPUT" && e.target.nodeName != "TEXTAREA"){       
+            if(e.keyCode === 8){   
+            return false;
+            }
+        	}
+    	});
+ 	    window.history.forward(0);
+	
+		 $.ajax({
             url : "http://52.79.41.31:3000/api/v1g1/user/authenticate",
             type : "post",
             accept: "application/json",
@@ -984,7 +988,7 @@
             }
         });
 
-    })
+    });
 
     $('body').on('click', '#test_login', function(){
         $.ajax({
@@ -1007,7 +1011,7 @@
                 console.log(errorThrown);
             }
         });
-    })
+	});
 </script>
 </body>
 </html>
