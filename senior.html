@@ -523,15 +523,13 @@
       var data_url_bool = false;
       var before_id = undefined;
       var before_quest_id = undefined;
-      var data_url;
+      var data_url = '';
       //<![CDATA[
       // // 사용할 앱의 JavaScript 키를 설정해 주세요.
       Kakao.init('5d654cdd07d375ebcb6f95df92741523');
       // // 카카오링크 버튼을 생성합니다. 처음 한번만 호출하면 됩니다.
 
       function sendLink() {
-          console.log(data_url);
-          data_url = "https://www.naver.com/";
           console.log(data_url);
           Kakao.Link.sendDefault({
               objectType: 'feed',
@@ -540,8 +538,8 @@
                   description: '#너로 정했다! #선배님 밥사주세요',
                   imageUrl: 'http://mud-kage.kakao.co.kr/dn/Q2iNx/btqgeRgV54P/VLdBs9cvyn8BJXB3o7N8UK/kakaolink40_original.png',
                   link: {
-                      mobileWebUrl: "https://www.naver.com/",
-                      webUrl: "https://www.naver.com/"
+                      mobileWebUrl: data_url,
+                      webUrl: data_url
                   }
               },
               social: {
@@ -553,8 +551,8 @@
                   {
                       title: '완료하기!',
                       link: {
-                          mobileWebUrl: "https://www.naver.com/",
-                          webUrl: "https://www.naver.com/"
+                          mobileWebUrl: data_url,
+                          webUrl: data_url
                       }
                   }
               ]
@@ -711,8 +709,8 @@
                 data_url = data.link;
                 console.log($('#success_' + quest_id).html(inner_html));
                 if(data_url_bool === false){
-                    before_id = data.result.accept_user_list[i].id;
-                    before_quest_id = data.result.accept_user_list[i].quest_id;
+                    before_id = junior_id;
+                    before_quest_id = quest_id;
                     data_url_bool = true;
 				}else{
 
@@ -720,8 +718,8 @@
 
                     console.log($('#success_' + before_quest_id).html(before_inner_html));
 
-                    before_id = data.result.accept_user_list[i].id;
-                    before_quest_id = data.result.accept_user_list[i].quest_id;
+                    before_id = junior_id;
+                    before_quest_id = quest_id;
                     data_url_bool = true;
 				}
             },

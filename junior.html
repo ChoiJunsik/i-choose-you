@@ -12,6 +12,9 @@
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 	<style>
+		.background{
+			background-image: url("background.jpeg");
+		}
 		#menu li{
 		}
 		/* Sections
@@ -146,7 +149,7 @@
 		<li data-menuanchor="lastPage"><a href="#lastPage" onClick="window.location.reload()">크레딧</a></li>
 	</ul>
 
-	<div id="fullpage">
+	<div id="fullpage" class="background">
 		<section id="section1" class="section">
 			<div class="container">
         <button id="test_login" type="button"> 로그인 테스트 </button>
@@ -197,7 +200,7 @@
 						<div class="main">
 							<div class="accordion">
 								<div class="accordion-section">
-									<a id="quest_index_32" class="accordion-section-title" href="#quest_accordion-6" questId = "32">Accordion Section #6</a>
+									<a id="quest_index_32" class="accordion-section-title" href="#quest_accordion-6" questId = "32">Accordion Section #5</a>
 									<div id="quest_accordion-6" class="accordion-section-content">
 										<div id="quest_32">로딩중...</div>
 									</div><!--end .accordion-section-content-->
@@ -1128,12 +1131,20 @@
                     }else{
                         $('#quest_index_' + questId).text('성공');
                     }
+
+                    if((data.result.quest_bool[q_index] === -1 || data.result.quest_bool[q_index] === 0) && questId%2 === 1){
+                        console.log('hohoho으아앙아ㅏ', questId);
+                        console.log($('#quest_index_' + questId+1).attr('class'));
+                        $('#quest_index_' + questId+1).hide();
+                    }
+
                     console.log('questId : ' + questId);
                     var id = getCookie('id');
                     var headers = {};
                     headers['x-access-token'] = getCookie('x-access-token');
                     var url = "http://52.79.41.31:3000/api/v1g1/quest/" + id + "/" + questId;
                     getOneQuestInfo(id, headers, url, questId, 0);
+
                 }
 
             },
@@ -1182,13 +1193,14 @@
 
                 if(data.quest_status === -1){
                     inner_html = inner_html + '<h4>수락하시겠습니까?</h4><br>\n' + '<button id="yes_1" questId = ' + quest_id + '>Yes</button>\n';
-                    $('#quest_index_' + quest_id).text(data.quest_info.title + '  [미진행]');
+                    $('#quest_index_' + quest_id).text(data.quest_info.title);
                 }else if(data.quest_status === 0){
                     inner_html = inner_html + '<h4>진행중입니다.</h4><br>\n';
-                    $('#quest_index_' + quest_id).text(data.quest_info.title + '  [진행중]');
+                    $('#quest_index_' + quest_id).text('>> '+data.quest_info.title);
                 }else if(data.quest_status === 1){
                     inner_html = inner_html + '<h4>퀘스트 완료!</h4><br>\n';
-                    $('#quest_index_' + quest_id).text(data.quest_info.title + '  [성공]');
+                    $('#quest_index_' + quest_id).text(data.quest_info.title);
+                    $('#quest_index_' + quest_id).attr('style', 'text-decoration:line-through');
                 }
                 inner_html = inner_html + '</div>\n' +
                     '</td>\n' +
