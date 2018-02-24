@@ -12,6 +12,18 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<style>
+        @media screen and (max-height: 700px) { 
+            
+            #section2 .col-md-12, #section2 .col-md-7, #section2 .main{
+                padding-left:0px;
+                padding-right:0px;
+            } 
+            #section2 .accordion-section-content{
+                padding-left:10px;
+                padding-right:10px;
+            }
+        
+        }
 		#menu li{
 		}
 		/* Sections
@@ -26,9 +38,22 @@
 			background-color: #D9E5FF;
 			background-repeat: no-repeat;
 		}
+		#section2 img{
+            margin-left: 30px;
+        }
+        #section2 .accordion-section-content,#section2 .accordion-section-content{
+            color:white;
+            background-color:black;
+            border:15px solid #6994e3;
+            border-radius: 5px 5px 5px 5px;
+        }
+        #section2 .col-md-12 .col-md-12:first-child{
+            padding-bottom: 20px;
+            border-bottom: 5px solid gray;
+        }
 		#section2 .text-left{
 			padding-bottom:15px;
-			font-size: 2rem;
+			font-size: 1.3rem;
     	}
     	#hideOrShow{
     		padding-top:30px;
@@ -134,613 +159,611 @@
 		</div>
 	</section>
 	<section id="section2" class="section">
-	    <div class="container">
-				<div class="container">
-					<div class="slide active">
-						<div class="main">
-							<div class="accordion">
-								<div class="accordion-section">
-									<a class="accordion-section-title" id="a1" href="#accordion-1">#1_강결희</a>
-									<div id="accordion-1" class="accordion-section-content">
-										<div class="col-md-12">
-											<div class="col-md-12" style="border-bottom: 1px solid black; padding-bottom:10px;">
-												<div class="col-md-5"><img class="img-responsive" src="sample.jpg" alt="sample"></div>
-												<div class="col-md-7"><div class="text-left">강결희</div><div class="text-left">특징 : 잠이 많음</div><div class="text-left">취미 : 먹을거 쇼핑</div></div>
-											</div>
-											<div id="hideOrShow" class="col-md-12">
-												<div class="text-left">잔다</div><div class="text-left">또 잔다</div><div class="text-left">계속 잔다</div>
-												<button type="button"> 돌아가기 </button>
-											</div>
-										</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-	
-								<div class="accordion-section">
-									<a class="accordion-section-title" id="a2" href="#accordion-2">#2_권혁진</a>
-									<div id="accordion-2" class="accordion-section-content">
-										<div class="col-md-12">
-											<div class="col-md-12" style="border-bottom: 1px solid black; padding-bottom:10px;">
+			<div class="container">
+					<div class="container">
+						<div class="slide active">
+							<div class="main">
+								<div class="accordion">
+									<div class="accordion-section">
+										<a class="accordion-section-title" id="a1" href="#accordion-1">#1_강결희</a>
+										<div id="accordion-1" class="accordion-section-content">
+											<div class="col-md-12">
+												<div class="col-md-12">
 													<div class="col-md-5"><img class="img-responsive" src="sample.jpg" alt="sample"></div>
-													<div class="col-md-7"><div class="text-left">권혁진</div><div class="text-left">특징 : 뽀식</div><div class="text-left">취미 : 바보</div></div>
+													<div class="col-md-7"><div class="text-left">강결희</div><div class="text-left">특징 : 잠이 많음</div><div class="text-left">취미 : 먹을거 쇼핑</div></div>
 												</div>
 												<div id="hideOrShow" class="col-md-12">
-													<div class="text-left">나는 바보인가?</div><div class="text-left">난 바보다</div><div class="text-left">그래 난 바보다</div>
-													<button type="button"> 돌아가기 </button>
-												</div>
-										</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-	
-								<div class="accordion-section">
-									<a class="accordion-section-title" id="a3" href="#accordion-3">#3_김도균</a>
-									<div id="accordion-3" class="accordion-section-content">
-										<div class="col-md-12">
-											<div class="col-md-12" style="border-bottom: 1px solid black; padding-bottom:10px;">
-													<div class="col-md-5"><img class="img-responsive" src="sample.jpg" alt="sample"></div>
-													<div class="col-md-7"><div class="text-left">김도균</div><div class="text-left">특징 : </div><div class="text-left">취미 : </div></div>
-												</div>
-												<div id="hideOrShow" class="col-md-12">
-													<div class="text-left">ㅁㄴㅇㄹ</div><div class="text-left">ㅁㄴㅇㄹ</div><div class="text-left">ㅁㄴㅇㄹ</div>
+													<div class="text-left">잔다</div><div class="text-left">또 잔다</div><div class="text-left">계속 잔다</div>
 													<button type="button"> 돌아가기 </button>
 												</div>
 											</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-	
-								<div class="accordion-section">
-									<a class="accordion-section-title" id="a4" href="#accordion-4">#4_김산</a>
-									<div id="accordion-4" class="accordion-section-content">
-										<div class="col-md-12">
-											<div class="col-md-12" style="border-bottom: 1px solid black; padding-bottom:10px;">
-													<div class="col-md-5"><img class="img-responsive" src="sample.jpg" alt="sample"></div>
-													<div class="col-md-7"><div class="text-left">김산</div><div class="text-left">특징 : </div><div class="text-left">취미 : 게임, 당구</div></div>
-												</div>
-												<div id="hideOrShow" class="col-md-12">
-													<div class="text-left">ㅁㄴㅇㄹ</div><div class="text-left">ㅁㄴㅇㄹ</div><div class="text-left">ㅁㄴㅇㄹ</div>
-													<button type="button"> 돌아가기 </button>
-												</div>
+										</div><!--end .accordion-section-content-->
+									</div><!--end .accordion-section-->
+		
+									<div class="accordion-section">
+										<a class="accordion-section-title" id="a2" href="#accordion-2">#2_권혁진</a>
+										<div id="accordion-2" class="accordion-section-content">
+											<div class="col-md-12">
+												<div class="col-md-12">
+														<div class="col-md-5"><img class="img-responsive" src="sample.jpg" alt="sample"></div>
+														<div class="col-md-7"><div class="text-left">권혁진</div><div class="text-left">특징 : 뽀식</div><div class="text-left">취미 : 바보</div></div>
+													</div>
+													<div id="hideOrShow" class="col-md-12">
+														<div class="text-left">나는 바보인가?</div><div class="text-left">난 바보다</div><div class="text-left">그래 난 바보다</div>
+														<button type="button"> 돌아가기 </button>
+													</div>
 											</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-	
-								<div class="accordion-section">
-									<a class="accordion-section-title" id="a5" href="#accordion-5">#5_김은진</a>
-									<div id="accordion-5" class="accordion-section-content">
-										<div class="col-md-12">
-											<div class="col-md-12" style="border-bottom: 1px solid black; padding-bottom:10px;">
-													<div class="col-md-5"><img class="img-responsive" src="sample.jpg" alt="sample"></div>
-													<div class="col-md-7"><div class="text-left">김은진</div><div class="text-left">특징 : ?</div><div class="text-left">취미 : ?</div></div>
+										</div><!--end .accordion-section-content-->
+									</div><!--end .accordion-section-->
+		
+									<div class="accordion-section">
+										<a class="accordion-section-title" id="a3" href="#accordion-3">#3_김도균</a>
+										<div id="accordion-3" class="accordion-section-content">
+											<div class="col-md-12">
+												<div class="col-md-12">
+														<div class="col-md-5"><img class="img-responsive" src="sample.jpg" alt="sample"></div>
+														<div class="col-md-7"><div class="text-left">김도균</div><div class="text-left">특징 : </div><div class="text-left">취미 : </div></div>
+													</div>
+													<div id="hideOrShow" class="col-md-12">
+														<div class="text-left">ㅁㄴㅇㄹ</div><div class="text-left">ㅁㄴㅇㄹ</div><div class="text-left">ㅁㄴㅇㄹ</div>
+														<button type="button"> 돌아가기 </button>
+													</div>
 												</div>
-												<div id="hideOrShow" class="col-md-12">
-													<div class="text-left">아무 생각없이 산다</div>
-													<button type="button"> 돌아가기 </button>
+										</div><!--end .accordion-section-content-->
+									</div><!--end .accordion-section-->
+		
+									<div class="accordion-section">
+										<a class="accordion-section-title" id="a4" href="#accordion-4">#4_김산</a>
+										<div id="accordion-4" class="accordion-section-content">
+											<div class="col-md-12">
+												<div class="col-md-12">
+														<div class="col-md-5"><img class="img-responsive" src="sample.jpg" alt="sample"></div>
+														<div class="col-md-7"><div class="text-left">김산</div><div class="text-left">특징 : </div><div class="text-left">취미 : 게임, 당구</div></div>
+													</div>
+													<div id="hideOrShow" class="col-md-12">
+														<div class="text-left">ㅁㄴㅇㄹ</div><div class="text-left">ㅁㄴㅇㄹ</div><div class="text-left">ㅁㄴㅇㄹ</div>
+														<button type="button"> 돌아가기 </button>
+													</div>
 												</div>
-											</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-								<div class="accordion-section">
-									<a class="accordion-section-title" id="a6" href="#accordion-6">#6_김지혜</a>
-									<div id="accordion-6" class="accordion-section-content">
-										<div class="col-md-12">
-											<div class="col-md-12" style="border-bottom: 1px solid black; padding-bottom:10px;">
-													<div class="col-md-5"><img class="img-responsive" src="sample.jpg" alt="sample"></div>
-													<div class="col-md-7"><div class="text-left">김지혜</div><div class="text-left">특징 : ?</div><div class="text-left">취미 : </div></div>
+										</div><!--end .accordion-section-content-->
+									</div><!--end .accordion-section-->
+		
+									<div class="accordion-section">
+										<a class="accordion-section-title" id="a5" href="#accordion-5">#5_김은진</a>
+										<div id="accordion-5" class="accordion-section-content">
+											<div class="col-md-12">
+												<div class="col-md-12">
+														<div class="col-md-5"><img class="img-responsive" src="sample.jpg" alt="sample"></div>
+														<div class="col-md-7"><div class="text-left">김은진</div><div class="text-left">특징 : ?</div><div class="text-left">취미 : ?</div></div>
+													</div>
+													<div id="hideOrShow" class="col-md-12">
+														<div class="text-left">아무 생각없이 산다</div>
+														<button type="button"> 돌아가기 </button>
+													</div>
 												</div>
-												<div id="hideOrShow" class="col-md-12">
-													<div class="text-left">알쓰 but 술마시는걸 좋아함</div>
-													<button type="button"> 돌아가기 </button>
+										</div><!--end .accordion-section-content-->
+									</div><!--end .accordion-section-->
+									<div class="accordion-section">
+										<a class="accordion-section-title" id="a6" href="#accordion-6">#6_김지혜</a>
+										<div id="accordion-6" class="accordion-section-content">
+											<div class="col-md-12">
+												<div class="col-md-12">
+														<div class="col-md-5"><img class="img-responsive" src="sample.jpg" alt="sample"></div>
+														<div class="col-md-7"><div class="text-left">김지혜</div><div class="text-left">특징 : ?</div><div class="text-left">취미 : </div></div>
+													</div>
+													<div id="hideOrShow" class="col-md-12">
+														<div class="text-left">알쓰 but 술마시는걸 좋아함</div>
+														<button type="button"> 돌아가기 </button>
+													</div>
 												</div>
-											</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-	
-							</div><!--end .accordion-->
+										</div><!--end .accordion-section-content-->
+									</div><!--end .accordion-section-->
+		
+								</div><!--end .accordion-->
+							</div>
+						</div>	
+						<div class="slide">
+							<div class="main">
+								<div class="accordion">
+									<div class="accordion-section">
+										<a class="accordion-section-title" id="a7" href="#accordion-7">#7_김치훈</a>
+										<div id="accordion-7" class="accordion-section-content">
+											<div class="col-md-12">
+												<div class="col-md-12">
+														<div class="col-md-5"><img class="img-responsive" src="sample.jpg" alt="sample"></div>
+														<div class="col-md-7"><div class="text-left">김치훈</div><div class="text-left">특징 : </div><div class="text-left">취미 : </div></div>
+													</div>
+													<div id="hideOrShow" class="col-md-12">
+														<div class="text-left">엥?</div>
+														<button type="button"> 돌아가기 </button>
+													</div>	
+												</div>
+										</div><!--end .accordion-section-content-->
+									</div><!--end .accordion-section-->
+		
+									<div class="accordion-section">
+										<a class="accordion-section-title" id="a8" href="#accordion-8">#8_박대얼</a>
+										<div id="accordion-8" class="accordion-section-content">
+											<div class="col-md-12">
+												<div class="col-md-12">
+														<div class="col-md-5"><img class="img-responsive" src="sample.jpg" alt="sample"></div>
+														<div class="col-md-7"><div class="text-left">박대얼(겜마루 회장)</div><div class="text-left">특징 : 프사보다 못생김</div><div class="text-left">취미 : 인형뽑기</div></div>
+													</div>
+													<div id="hideOrShow" class="col-md-12">
+														<div class="text-left">스팀 게임이 엄청 많다</div><div class="text-left">그래도 순수한 게임 덕후일 뿐이다</div><div class="text-left">게임도 간간히 만들고 있다구요</div>
+														<button type="button"> 돌아가기 </button>
+													</div>
+												</div>
+										</div><!--end .accordion-section-content-->
+									</div><!--end .accordion-section-->
+		
+									<div class="accordion-section">
+										<a class="accordion-section-title" id="a9" href="#accordion-9">#9_박동진</a>
+										<div id="accordion-9" class="accordion-section-content">
+											<div class="col-md-12">
+												<div class="col-md-12">
+														<div class="col-md-5"><img class="img-responsive" src="sample.jpg" alt="sample"></div>
+														<div class="col-md-7"><div class="text-left">박동진</div><div class="text-left">특징 : </div><div class="text-left">취미 : </div></div>
+													</div>
+													<div id="hideOrShow" class="col-md-12">
+														<div class="text-left"></div>
+														<button type="button"> 돌아가기 </button>
+													</div>
+												</div>
+										</div><!--end .accordion-section-content-->
+									</div><!--end .accordion-section-->
+		
+									<div class="accordion-section">
+										<a class="accordion-section-title" id="a10" href="#accordion-10">#10_박상연</a>
+										<div id="accordion-10" class="accordion-section-content">
+											<div class="col-md-12">
+												<div class="col-md-12">
+														<div class="col-md-5"><img class="img-responsive" src="sample.jpg" alt="sample"></div>
+														<div class="col-md-7"><div class="text-left">박상연</div><div class="text-left">특징 : 아싸</div><div class="text-left">취미 : 인싸인척 하기</div></div>
+													</div>
+													<div id="hideOrShow" class="col-md-12">
+														<div class="text-left"></div>
+														<button type="button"> 돌아가기 </button>
+													</div>
+												</div>
+										</div><!--end .accordion-section-content-->
+									</div><!--end .accordion-section-->
+		
+									<div class="accordion-section">
+										<a class="accordion-section-title" id="a11" href="#accordion-11">#11_박영준</a>
+										<div id="accordion-11" class="accordion-section-content">
+											<div class="col-md-12">
+												<div class="col-md-12">
+														<div class="col-md-5"><img class="img-responsive" src="sample.jpg" alt="sample"></div>
+														<div class="col-md-7"><div class="text-left">박영준</div><div class="text-left">특징 : 회장</div><div class="text-left">취미 : 일시키기</div></div>
+													</div>
+													<div id="hideOrShow" class="col-md-12">
+														<div class="text-left">눈에 띄면 일을 시킨다</div><div class="text-left">마주치지 않도록 조심하자</div>
+														<button type="button"> 돌아가기 </button>
+													</div>
+												</div>
+										</div><!--end .accordion-section-content-->
+									</div><!--end .accordion-section-->
+									<div class="accordion-section">
+										<a class="accordion-section-title" id="a12" href="#accordion-12">#12_박예빈</a>
+										<div id="accordion-12" class="accordion-section-content">
+											<div class="col-md-12">
+												<div class="col-md-12" >
+														<div class="col-md-5"><img class="img-responsive" src="sample.jpg" alt="sample"></div>
+														<div class="col-md-7"><div class="text-left">박예빈</div><div class="text-left">특징 : 곱슬머리</div><div class="text-left">취미 : 코노가기</div></div>
+													</div>
+													<div id="hideOrShow" class="col-md-12">
+														<button type="button"> 돌아가기 </button>
+													</div>
+												</div>
+										</div><!--end .accordion-section-content-->
+									</div><!--end .accordion-section-->
+								</div><!--end .accordion-->
+							</div>
 						</div>
-					</div>	
-					<div class="slide">
-						<div class="main">
-							<div class="accordion">
-								<div class="accordion-section">
-									<a class="accordion-section-title" id="a7" href="#accordion-7">#7_김치훈</a>
-									<div id="accordion-7" class="accordion-section-content">
-										<div class="col-md-12">
-											<div class="col-md-12" style="border-bottom: 1px solid black; padding-bottom:10px;">
-													<div class="col-md-5"><img class="img-responsive" src="sample.jpg" alt="sample"></div>
-													<div class="col-md-7"><div class="text-left">김치훈</div><div class="text-left">특징 : </div><div class="text-left">취미 : </div></div>
+						<div class="slide">
+							<div class="main">
+								<div class="accordion">
+									<div class="accordion-section">
+										<a class="accordion-section-title" id="a13" href="#accordion-13">#13_박정아</a>
+										<div id="accordion-13" class="accordion-section-content">
+											<div class="col-md-12">
+												<div class="col-md-12">
+														<div class="col-md-5"><img class="img-responsive" src="sample.jpg" alt="sample"></div>
+														<div class="col-md-7"><div class="text-left">박정아</div><div class="text-left">특징 : 잠이 많다</div><div class="text-left">취미 : 먹기</div></div>
+													</div>
+													<div id="hideOrShow" class="col-md-12">
+														<div class="text-left">놀아주면 좋아한다</div><div class="text-left">연락을 기다리고 있다</div>
+														<button type="button"> 돌아가기 </button>
+													</div>
 												</div>
-												<div id="hideOrShow" class="col-md-12">
-													<div class="text-left">엥?</div>
+										</div><!--end .accordion-section-content-->
+									</div><!--end .accordion-section-->
+		
+									<div class="accordion-section">
+										<a class="accordion-section-title" id="a14" href="#accordion-14">#14_박해영</a>
+										<div id="accordion-14" class="accordion-section-content">
+											<div class="col-md-12">
+												<div class="col-md-12" >
+														<div class="col-md-5"><img class="img-responsive" src="sample.jpg" alt="sample"></div>
+														<div class="col-md-7"><div class="text-left">박해영</div><div class="text-left">특징 : 특징이 없는게 특징</div><div class="text-left">취미 : 취미가 없는게 취미</div></div>
+													</div>
+													<div id="hideOrShow" class="col-md-12">
+														<button type="button"> 돌아가기 </button>
+													</div>
+												</div>
+										</div><!--end .accordion-section-content-->
+									</div><!--end .accordion-section-->
+		
+									<div class="accordion-section">
+										<a class="accordion-section-title" id="a15" href="#accordion-15">#15_배채은</a>
+										<div id="accordion-15" class="accordion-section-content">
+											<div class="col-md-12">
+												<div class="col-md-12" >
+														<div class="col-md-5"><img class="img-responsive" src="sample.jpg" alt="sample"></div>
+														<div class="col-md-7"><div class="text-left">배채은</div><div class="text-left">특징 : </div><div class="text-left">취미 : </div></div>
+													</div>
+													<div id="hideOrShow" class="col-md-12">
+														<div class="text-left">크아와 노래 듣는것과 술을 좋아한다 ㅎㅎㅎ</div>
+														<button type="button"> 돌아가기 </button>
+													</div>
+												</div>
+										</div><!--end .accordion-section-content-->
+									</div><!--end .accordion-section-->
+		
+									<div class="accordion-section">
+										<a class="accordion-section-title" id="a16" href="#accordion-16">#16_손용락</a>
+										<div id="accordion-16" class="accordion-section-content">
+											<div class="col-md-12">
+												<div class="col-md-12" >
+														<div class="col-md-5"><img class="img-responsive" src="sample.jpg" alt="sample"></div>
+														<div class="col-md-7"><div class="text-left">손용락</div><div class="text-left">특징 : 먼길 떠난 개발자다</div><div class="text-left">취미 : M4조준사격</div></div>
+													</div>
+													<div id="hideOrShow" class="col-md-12">
+														<div class="text-left">나 찾지마라</div>
+														<button type="button"> 돌아가기 </button>
+													</div>
+												</div>
+										</div><!--end .accordion-section-content-->
+									</div><!--end .accordion-section-->
+		
+									<div class="accordion-section">
+										<a class="accordion-section-title" id="a17" href="#accordion-17">#17_신동우</a>
+										<div id="accordion-17" class="accordion-section-content">
+											<div class="col-md-12">
+												<div class="col-md-12" >
+														<div class="col-md-5"><img class="img-responsive" src="sample.jpg" alt="sample"></div>
+														<div class="col-md-7"><div class="text-left">신동우</div><div class="text-left">특징 : </div><div class="text-left">취미 : </div></div>
+													</div>
+													<div id="hideOrShow" class="col-md-12">
+														<div class="text-left">개 쫄보다</div>
+														<button type="button"> 돌아가기 </button>
+													</div>
+												</div>
+										</div><!--end .accordion-section-content-->
+									</div><!--end .accordion-section-->
+									<div class="accordion-section">
+										<a class="accordion-section-title" id="a18" href="#accordion-18">#18_안종훈</a>
+										<div id="accordion-18" class="accordion-section-content">
+											<div class="col-md-12">
+												<div class="col-md-12" >
+														<div class="col-md-5"><img class="img-responsive" src="sample.jpg" alt="sample"></div>
+														<div class="col-md-7"><div class="text-left">안종훈</div><div class="text-left">특징 : </div><div class="text-left">취미 : </div></div>
+													</div>
+													<div id="hideOrShow" class="col-md-12">
 													<button type="button"> 돌아가기 </button>
-												</div>	
-											</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-	
-								<div class="accordion-section">
-									<a class="accordion-section-title" id="a8" href="#accordion-8">#8_박대얼</a>
-									<div id="accordion-8" class="accordion-section-content">
-										<div class="col-md-12">
-											<div class="col-md-12" style="border-bottom: 1px solid black; padding-bottom:10px;">
-													<div class="col-md-5"><img class="img-responsive" src="sample.jpg" alt="sample"></div>
-													<div class="col-md-7"><div class="text-left">박대얼(겜마루 회장)</div><div class="text-left">특징 : 프사보다 못생김</div><div class="text-left">취미 : 인형뽑기</div></div>
+													</div>
 												</div>
-												<div id="hideOrShow" class="col-md-12">
-													<div class="text-left">스팀 게임이 엄청 많다</div><div class="text-left">그래도 순수한 게임 덕후일 뿐이다</div><div class="text-left">게임도 간간히 만들고 있다구요</div>
-													<button type="button"> 돌아가기 </button>
-												</div>
-											</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-	
-								<div class="accordion-section">
-									<a class="accordion-section-title" id="a9" href="#accordion-9">#9_박동진</a>
-									<div id="accordion-9" class="accordion-section-content">
-										<div class="col-md-12">
-											<div class="col-md-12" style="border-bottom: 1px solid black; padding-bottom:10px;">
-													<div class="col-md-5"><img class="img-responsive" src="sample.jpg" alt="sample"></div>
-													<div class="col-md-7"><div class="text-left">박동진</div><div class="text-left">특징 : </div><div class="text-left">취미 : </div></div>
-												</div>
-												<div id="hideOrShow" class="col-md-12">
-													<div class="text-left"></div>
-													<button type="button"> 돌아가기 </button>
-												</div>
-											</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-	
-								<div class="accordion-section">
-									<a class="accordion-section-title" id="a10" href="#accordion-10">#10_박상연</a>
-									<div id="accordion-10" class="accordion-section-content">
-										<div class="col-md-12">
-											<div class="col-md-12" style="border-bottom: 1px solid black; padding-bottom:10px;">
-													<div class="col-md-5"><img class="img-responsive" src="sample.jpg" alt="sample"></div>
-													<div class="col-md-7"><div class="text-left">박상연</div><div class="text-left">특징 : 아싸</div><div class="text-left">취미 : 인싸인척 하기</div></div>
-												</div>
-												<div id="hideOrShow" class="col-md-12">
-													<div class="text-left"></div>
-													<button type="button"> 돌아가기 </button>
-												</div>
-											</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-	
-								<div class="accordion-section">
-									<a class="accordion-section-title" id="a11" href="#accordion-11">#11_박영준</a>
-									<div id="accordion-11" class="accordion-section-content">
-										<div class="col-md-12">
-											<div class="col-md-12" style="border-bottom: 1px solid black; padding-bottom:10px;">
-													<div class="col-md-5"><img class="img-responsive" src="sample.jpg" alt="sample"></div>
-													<div class="col-md-7"><div class="text-left">박영준</div><div class="text-left">특징 : 회장</div><div class="text-left">취미 : 일시키기</div></div>
-												</div>
-												<div id="hideOrShow" class="col-md-12">
-													<div class="text-left">눈에 띄면 일을 시킨다</div><div class="text-left">마주치지 않도록 조심하자</div>
-													<button type="button"> 돌아가기 </button>
-												</div>
-											</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-								<div class="accordion-section">
-									<a class="accordion-section-title" id="a12" href="#accordion-12">#12_박예빈</a>
-									<div id="accordion-12" class="accordion-section-content">
-										<div class="col-md-12">
-											<div class="col-md-12" style="border-bottom: 1px solid black; padding-bottom:10px;">
-													<div class="col-md-5"><img class="img-responsive" src="sample.jpg" alt="sample"></div>
-													<div class="col-md-7"><div class="text-left">박예빈</div><div class="text-left">특징 : 곱슬머리</div><div class="text-left">취미 : 코노가기</div></div>
-												</div>
-												<div id="hideOrShow" class="col-md-12">
-													<button type="button"> 돌아가기 </button>
-												</div>
-											</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-							</div><!--end .accordion-->
+										</div><!--end .accordion-section-content-->
+									</div><!--end .accordion-section-->
+								</div><!--end .accordion-->
+							</div>
 						</div>
+						<div class="slide">
+							<div class="main">
+								<div class="accordion">
+									<div class="accordion-section">
+										<a class="accordion-section-title" id="a19" href="#accordion-19">#19_우민식</a>
+										<div id="accordion-19" class="accordion-section-content">
+											<div class="col-md-12">
+												<div class="col-md-12" >
+														<div class="col-md-5"><img class="img-responsive" src="sample.jpg" alt="sample"></div>
+														<div class="col-md-7"><div class="text-left">우민식</div><div class="text-left">특징 : </div><div class="text-left">취미 : </div></div>
+													</div>
+													<div id="hideOrShow" class="col-md-12">
+														<div class="text-left">자기 물건을 잘 잃어버린다</div>
+														<button type="button"> 돌아가기 </button>
+													</div>
+												</div>
+										</div><!--end .accordion-section-content-->
+									</div><!--end .accordion-section-->
+		
+									<div class="accordion-section">
+										<a class="accordion-section-title" id="a20" href="#accordion-20">#20_윤동우</a>
+										<div id="accordion-20" class="accordion-section-content">
+											<div class="col-md-12">
+												<div class="col-md-12" >
+														<div class="col-md-5"><img class="img-responsive" src="sample.jpg" alt="sample"></div>
+														<div class="col-md-7"><div class="text-left">윤동우</div><div class="text-left">특징 : 쌍수</div><div class="text-left">취미 : </div></div>
+													</div>
+													<div id="hideOrShow" class="col-md-12">
+														<button type="button"> 돌아가기 </button>
+													</div>
+												</div>
+										</div><!--end .accordion-section-content-->
+									</div><!--end .accordion-section-->
+		
+									<div class="accordion-section">
+										<a class="accordion-section-title" id="a21" href="#accordion-21">#21_이민주</a>
+										<div id="accordion-21" class="accordion-section-content">
+											<div class="col-md-12">
+												<div class="col-md-12" >
+														<div class="col-md-5"><img class="img-responsive" src="sample.jpg" alt="sample"></div>
+														<div class="col-md-7"><div class="text-left">이민주</div><div class="text-left">특징 : 약간 바보같음?</div><div class="text-left">취미 : 먹기 자기 놀기</div></div>
+													</div>
+													<div id="hideOrShow" class="col-md-12">
+														<div class="text-left">16이라고 무서워하지말아요~</div>
+														<button type="button"> 돌아가기 </button>
+													</div>
+												</div>
+										</div><!--end .accordion-section-content-->
+									</div><!--end .accordion-section-->
+		
+									<div class="accordion-section">
+										<a class="accordion-section-title" id="a22" href="#accordion-22">#22_이서영</a>
+										<div id="accordion-22" class="accordion-section-content">
+											<div class="col-md-12">
+												<div class="col-md-12" >
+														<div class="col-md-5"><img class="img-responsive" src="sample.jpg" alt="sample"></div>
+														<div class="col-md-7"><div class="text-left">이서영</div><div class="text-left">특징 : 남친있음</div><div class="text-left">취미 : 과자먹기</div></div>
+													</div>
+													<div id="hideOrShow" class="col-md-12">
+														<div class="text-left">잠자는 서울숲 공주</div>
+														<button type="button"> 돌아가기 </button>
+													</div>
+												</div>
+										</div><!--end .accordion-section-content-->
+									</div><!--end .accordion-section-->
+		
+									<div class="accordion-section">
+										<a class="accordion-section-title" id="a23" href="#accordion-23">#23_이우진</a>
+										<div id="accordion-23" class="accordion-section-content">
+											<div class="col-md-12">
+												<div class="col-md-12" >
+														<div class="col-md-5"><img class="img-responsive" src="sample.jpg" alt="sample"></div>
+														<div class="col-md-7"><div class="text-left">이우진</div><div class="text-left">특징 : </div><div class="text-left">취미 : </div></div>
+													</div>
+													<div id="hideOrShow" class="col-md-12">
+														<div class="text-left">ㅁㄴㅇㄹ</div>
+														<button type="button"> 돌아가기 </button>
+													</div>
+												</div>
+										</div><!--end .accordion-section-content-->
+									</div><!--end .accordion-section-->
+									<div class="accordion-section">
+										<a class="accordion-section-title" id="a24" href="#accordion-24">#24_이재현</a>
+										<div id="accordion-24" class="accordion-section-content">
+											<div class="col-md-12">
+												<div class="col-md-12" >
+														<div class="col-md-5"><img class="img-responsive" src="sample.jpg" alt="sample"></div>
+														<div class="col-md-7"><div class="text-left">이재현</div><div class="text-left">특징 : 생머리</div><div class="text-left">취미 : 당구</div></div>
+													</div>
+													<div id="hideOrShow" class="col-md-12">
+														<div class="text-left">무표정일 때가 많다</div><div class="text-left">무서워하지 마라</div><div class="text-left">그냥 생각이 없어서 그렇다</div>
+														<button type="button"> 돌아가기 </button>
+													</div>
+												</div>
+										</div><!--end .accordion-section-content-->
+									</div><!--end .accordion-section-->
+								</div><!--end .accordion-->
+							</div>
+						</div>
+						<div class="slide">
+							<div class="main">
+								<div class="accordion">
+									<div class="accordion-section">
+										<a class="accordion-section-title" id="a25" href="#accordion-25">#25_이종근</a>
+										<div id="accordion-25" class="accordion-section-content">
+											<div class="col-md-12">
+												<div class="col-md-12" >
+														<div class="col-md-5"><img class="img-responsive" src="sample.jpg" alt="sample"></div>
+														<div class="col-md-7"><div class="text-left">이종근</div><div class="text-left">특징 : 녹차성애자</div><div class="text-left">취미 : 커피 호로록</div></div>
+													</div>
+													<div id="hideOrShow" class="col-md-12">
+														<div class="text-left">가끔 되도 않는 드립을 친다</div><div class="text-left">하지만 이해해줘라</div><div class="text-left">바보라 그렇다</div>
+														<button type="button"> 돌아가기 </button>
+													</div>
+												</div>
+										</div><!--end .accordion-section-content-->
+									</div><!--end .accordion-section-->
+		
+									<div class="accordion-section">
+										<a class="accordion-section-title" id="a26" href="#accordion-26">#26_임수원</a>
+										<div id="accordion-26" class="accordion-section-content">
+											<div class="col-md-12">
+												<div class="col-md-12" >
+														<div class="col-md-5"><img class="img-responsive" src="sample.jpg" alt="sample"></div>
+														<div class="col-md-7"><div class="text-left">임수원</div><div class="text-left">특징 : </div><div class="text-left">취미 : </div></div>
+													</div>
+													<div id="hideOrShow" class="col-md-12">
+														<div class="text-left">일년동안 미치도록 놀았음</div><div class="text-left">가끔 이상한 행동을 보이나 원래 그런거라 그러니 이해 바람</div>
+														<button type="button"> 돌아가기 </button>
+													</div>
+												</div>
+										</div><!--end .accordion-section-content-->
+									</div><!--end .accordion-section-->
+		
+									<div class="accordion-section">
+										<a class="accordion-section-title" id="a27" href="#accordion-27">#27_임인호</a>
+										<div id="accordion-27" class="accordion-section-content">
+											<div class="col-md-12">
+												<div class="col-md-12" >
+														<div class="col-md-5"><img class="img-responsive" src="sample.jpg" alt="sample"></div>
+														<div class="col-md-7"><div class="text-left">임인호</div><div class="text-left">특징 : </div><div class="text-left">취미 : </div></div>
+													</div>
+													<div id="hideOrShow" class="col-md-12">
+														<div class="text-left">낄낄</div>
+														<button type="button"> 돌아가기 </button>
+													</div>
+												</div>
+										</div><!--end .accordion-section-content-->
+									</div><!--end .accordion-section-->
+		
+									<div class="accordion-section">
+										<a class="accordion-section-title" id="a28" href="#accordion-28">#28_장원준</a>
+										<div id="accordion-28" class="accordion-section-content">
+											<div class="col-md-12">
+												<div class="col-md-12" >
+														<div class="col-md-5"><img class="img-responsive" src="sample.jpg" alt="sample"></div>
+														<div class="col-md-7"><div class="text-left">장원준</div><div class="text-left">특징 : 치 킨 좋 아 </div><div class="text-left">취미 : 프로젝트 서버 노예</div></div>
+													</div>
+													<div id="hideOrShow" class="col-md-12">
+														<div class="text-left">치킨을 주면 좋아합니다.</div><div class="text-left">맟춤뻪 매우 어려와요.</div><div class="text-left">한국어 어려워요.</div>
+														<button type="button"> 돌아가기 </button>
+													</div>
+												</div>
+										</div><!--end .accordion-section-content-->
+									</div><!--end .accordion-section-->
+		
+									<div class="accordion-section">
+										<a class="accordion-section-title" id="a29" href="#accordion-29">#29_조세현</a>
+										<div id="accordion-29" class="accordion-section-content">
+											<div class="col-md-12">
+												<div class="col-md-12" >
+														<div class="col-md-5"><img class="img-responsive" src="sample.jpg" alt="sample"></div>
+														<div class="col-md-7"><div class="text-left">조세현</div><div class="text-left">특징 : 개</div><div class="text-left">취미 : 아이돌</div></div>
+													</div>
+													<div id="hideOrShow" class="col-md-12">
+														<div class="text-left">짖지 않음</div><div class="text-left">물지 않음</div><div class="text-left">근데 돈을 준다면?</div>
+														<button type="button"> 돌아가기 </button>
+													</div>
+												</div>
+										</div><!--end .accordion-section-content-->
+									</div><!--end .accordion-section-->
+									<div class="accordion-section">
+										<a class="accordion-section-title" id="a30" href="#accordion-30">#30_조희승</a>
+										<div id="accordion-30" class="accordion-section-content">
+											<div class="col-md-12">
+												<div class="col-md-12" >
+														<div class="col-md-5"><img class="img-responsive" src="sample.jpg" alt="sample"></div>
+														<div class="col-md-7"><div class="text-left">조희승</div><div class="text-left">특징 : </div><div class="text-left">취미 : </div></div>
+													</div>
+													<div id="hideOrShow" class="col-md-12">
+														<div class="text-left">말 수가 적지만 친해지면 또라이로 변할 수 있으니 조심하자</div><div class="text-left">하지만 친해지고 싶으니까 다가와달라...</div>
+														<button type="button"> 돌아가기 </button>
+													</div>
+												</div>
+										</div><!--end .accordion-section-content-->
+									</div><!--end .accordion-section-->
+								</div><!--end .accordion-->
+							</div>
+						</div>
+						<div class="slide">
+							<div class="main">
+								<div class="accordion">
+									<div class="accordion-section">
+										<a class="accordion-section-title" id="a31" href="#accordion-31">#31_차윤성</a>
+										<div id="accordion-31" class="accordion-section-content">
+											<div class="col-md-12">
+												<div class="col-md-12" >
+														<div class="col-md-5"><img class="img-responsive" src="sample.jpg" alt="sample"></div>
+														<div class="col-md-7"><div class="text-left">차윤성</div><div class="text-left">특징 : 상식이 풍부함</div><div class="text-left">취미 : 책 읽기 신문 읽기 지식 검색하기</div></div>
+													</div>
+													<div id="hideOrShow" class="col-md-12">
+														<div class="text-left">착하다</div><div class="text-left">항상 모두에게 친절하다</div><div class="text-left">항상 남을 배려해준다</div>
+														<button type="button"> 돌아가기 </button>
+													</div>
+												</div>
+										</div><!--end .accordion-section-content-->
+									</div><!--end .accordion-section-->
+		
+									<div class="accordion-section">
+										<a class="accordion-section-title" id="a32" href="#accordion-32">#32_최다인</a>
+										<div id="accordion-32" class="accordion-section-content">
+											<div class="col-md-12">
+												<div class="col-md-12" >
+														<div class="col-md-5"><img class="img-responsive" src="sample.jpg" alt="sample"></div>
+														<div class="col-md-7"><div class="text-left">최다인</div><div class="text-left">특징 : </div><div class="text-left">취미 : </div></div>
+													</div>
+													<div id="hideOrShow" class="col-md-12">
+														<div class="text-left">나두 소프트웨어학부가 낯설다</div><div class="text-left">이해해주자</div><div class="text-left">학교생활만 물어보자</div>
+														<button type="button"> 돌아가기 </button>
+													</div>
+												</div>
+										</div><!--end .accordion-section-content-->
+									</div><!--end .accordion-section-->
+		
+									<div class="accordion-section">
+										<a class="accordion-section-title" id="a33" href="#accordion-33">#33_최민성</a>
+										<div id="accordion-33" class="accordion-section-content">
+											<div class="col-md-12">
+												<div class="col-md-12" >
+														<div class="col-md-5"><img class="img-responsive" src="sample.jpg" alt="sample"></div>
+														<div class="col-md-7"><div class="text-left">최민성</div><div class="text-left">특징 : 실습실과 회실 지박령</div><div class="text-left">취미 : 바쁜척</div></div>
+													</div>
+													<div id="hideOrShow" class="col-md-12">
+														<div class="text-left">노잼이어도 이해해주길 바란다 나쁜 사람은 아니다</div>
+														<button type="button"> 돌아가기 </button>
+													</div>
+												</div>
+										</div><!--end .accordion-section-content-->
+									</div><!--end .accordion-section-->
+		
+									<div class="accordion-section">
+										<a class="accordion-section-title" id="a34" href="#accordion-34">#34_최준식</a>
+										<div id="accordion-34" class="accordion-section-content">
+											<div class="col-md-12">
+												<div class="col-md-12" >
+														<div class="col-md-5"><img class="img-responsive" src="sample.jpg" alt="sample"></div>
+														<div class="col-md-7"><div class="text-left">최준식</div><div class="text-left">특징 : 여친있음</div><div class="text-left">취미 : 테라스 점령</div></div>
+													</div>
+													<div id="hideOrShow" class="col-md-12">
+														<div class="text-left">이거 개발하느라 방학 다 지나갔다.</div><div class="text-left">놀고싶다.</div><div class="text-left">밥 사달라면 사준다.</div>
+														<button type="button"> 돌아가기 </button>
+													</div>
+												</div>
+										</div><!--end .accordion-section-content-->
+									</div><!--end .accordion-section-->
+		
+									<div class="accordion-section">
+										<a class="accordion-section-title" id="a35" href="#accordion-35">#35_하성원</a>
+										<div id="accordion-35" class="accordion-section-content">
+											<div class="col-md-12">
+												<div class="col-md-12" >
+														<div class="col-md-5"><img class="img-responsive" src="sample.jpg" alt="sample"></div>
+														<div class="col-md-7"><div class="text-left">하성원</div><div class="text-left">특징 : </div><div class="text-left">취미 : </div></div>
+													</div>
+													<div id="hideOrShow" class="col-md-12">
+														<div class="text-left">간혹 사투리를 쓸 수도 있다.</div>
+														<button type="button"> 돌아가기 </button>
+													</div>
+												</div>
+										</div><!--end .accordion-section-content-->
+									</div><!--end .accordion-section-->
+									<div class="accordion-section">
+										<a class="accordion-section-title" id="a36" href="#accordion-36">#36_남희주</a>
+										<div id="accordion-36" class="accordion-section-content">
+											<div class="col-md-12">
+												<div class="col-md-12" >
+														<div class="col-md-5"><img class="img-responsive" src="sample.jpg" alt="sample"></div>
+														<div class="col-md-7"><div class="text-left">남희주</div><div class="text-left">특징 : </div><div class="text-left">취미 : </div></div>
+													</div>
+													<div id="hideOrShow" class="col-md-12">
+														<button type="button"> 돌아가기 </button>
+													</div>
+												</div>
+										</div><!--end .accordion-section-content-->
+									</div><!--end .accordion-section-->
+								</div><!--end .accordion-->
+							</div>
+						</div>
+						
 					</div>
-					<div class="slide">
-						<div class="main">
-							<div class="accordion">
-								<div class="accordion-section">
-									<a class="accordion-section-title" id="a13" href="#accordion-13">#13_박정아</a>
-									<div id="accordion-13" class="accordion-section-content">
-										<div class="col-md-12">
-											<div class="col-md-12" style="border-bottom: 1px solid black; padding-bottom:10px;">
-													<div class="col-md-5"><img class="img-responsive" src="sample.jpg" alt="sample"></div>
-													<div class="col-md-7"><div class="text-left">박정아</div><div class="text-left">특징 : 잠이 많다</div><div class="text-left">취미 : 먹기</div></div>
-												</div>
-												<div id="hideOrShow" class="col-md-12">
-													<div class="text-left">놀아주면 좋아한다</div><div class="text-left">연락을 기다리고 있다</div>
-													<button type="button"> 돌아가기 </button>
-												</div>
-											</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-	
-								<div class="accordion-section">
-									<a class="accordion-section-title" id="a14" href="#accordion-14">#14_박해영</a>
-									<div id="accordion-14" class="accordion-section-content">
-										<div class="col-md-12">
-											<div class="col-md-12" style="border-bottom: 1px solid black; padding-bottom:10px;">
-													<div class="col-md-5"><img class="img-responsive" src="sample.jpg" alt="sample"></div>
-													<div class="col-md-7"><div class="text-left">박해영</div><div class="text-left">특징 : 특징이 없는게 특징</div><div class="text-left">취미 : 취미가 없는게 취미</div></div>
-												</div>
-												<div id="hideOrShow" class="col-md-12">
-													<button type="button"> 돌아가기 </button>
-												</div>
-											</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-	
-								<div class="accordion-section">
-									<a class="accordion-section-title" id="a15" href="#accordion-15">#15_배채은</a>
-									<div id="accordion-15" class="accordion-section-content">
-										<div class="col-md-12">
-											<div class="col-md-12" style="border-bottom: 1px solid black; padding-bottom:10px;">
-													<div class="col-md-5"><img class="img-responsive" src="sample.jpg" alt="sample"></div>
-													<div class="col-md-7"><div class="text-left">배채은</div><div class="text-left">특징 : </div><div class="text-left">취미 : </div></div>
-												</div>
-												<div id="hideOrShow" class="col-md-12">
-													<div class="text-left">크아와 노래 듣는것과 술을 좋아한다 ㅎㅎㅎ</div>
-													<button type="button"> 돌아가기 </button>
-												</div>
-											</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-	
-								<div class="accordion-section">
-									<a class="accordion-section-title" id="a16" href="#accordion-16">#16_손용락</a>
-									<div id="accordion-16" class="accordion-section-content">
-										<div class="col-md-12">
-											<div class="col-md-12" style="border-bottom: 1px solid black; padding-bottom:10px;">
-													<div class="col-md-5"><img class="img-responsive" src="sample.jpg" alt="sample"></div>
-													<div class="col-md-7"><div class="text-left">손용락</div><div class="text-left">특징 : 먼길 떠난 개발자다</div><div class="text-left">취미 : M4조준사격</div></div>
-												</div>
-												<div id="hideOrShow" class="col-md-12">
-													<div class="text-left">나 찾지마라</div>
-													<button type="button"> 돌아가기 </button>
-												</div>
-											</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-	
-								<div class="accordion-section">
-									<a class="accordion-section-title" id="a17" href="#accordion-17">#17_신동우</a>
-									<div id="accordion-17" class="accordion-section-content">
-										<div class="col-md-12">
-											<div class="col-md-12" style="border-bottom: 1px solid black; padding-bottom:10px;">
-													<div class="col-md-5"><img class="img-responsive" src="sample.jpg" alt="sample"></div>
-													<div class="col-md-7"><div class="text-left">신동우</div><div class="text-left">특징 : </div><div class="text-left">취미 : </div></div>
-												</div>
-												<div id="hideOrShow" class="col-md-12">
-													<div class="text-left">개 쫄보다</div>
-													<button type="button"> 돌아가기 </button>
-												</div>
-											</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-								<div class="accordion-section">
-									<a class="accordion-section-title" id="a18" href="#accordion-18">#18_안종훈</a>
-									<div id="accordion-18" class="accordion-section-content">
-										<div class="col-md-12">
-											<div class="col-md-12" style="border-bottom: 1px solid black; padding-bottom:10px;">
-													<div class="col-md-5"><img class="img-responsive" src="sample.jpg" alt="sample"></div>
-													<div class="col-md-7"><div class="text-left">안종훈</div><div class="text-left">특징 : </div><div class="text-left">취미 : </div></div>
-												</div>
-												<div id="hideOrShow" class="col-md-12">
-												<button type="button"> 돌아가기 </button>
-												</div>
-											</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-							</div><!--end .accordion-->
-						</div>
-					</div>
-					<div class="slide">
-						<div class="main">
-							<div class="accordion">
-								<div class="accordion-section">
-									<a class="accordion-section-title" id="a19" href="#accordion-19">#19_우민식</a>
-									<div id="accordion-19" class="accordion-section-content">
-										<div class="col-md-12">
-											<div class="col-md-12" style="border-bottom: 1px solid black; padding-bottom:10px;">
-													<div class="col-md-5"><img class="img-responsive" src="sample.jpg" alt="sample"></div>
-													<div class="col-md-7"><div class="text-left">우민식</div><div class="text-left">특징 : </div><div class="text-left">취미 : </div></div>
-												</div>
-												<div id="hideOrShow" class="col-md-12">
-													<div class="text-left">자기 물건을 잘 잃어버린다</div>
-													<button type="button"> 돌아가기 </button>
-												</div>
-											</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-	
-								<div class="accordion-section">
-									<a class="accordion-section-title" id="a20" href="#accordion-20">#20_윤동우</a>
-									<div id="accordion-20" class="accordion-section-content">
-										<div class="col-md-12">
-											<div class="col-md-12" style="border-bottom: 1px solid black; padding-bottom:10px;">
-													<div class="col-md-5"><img class="img-responsive" src="sample.jpg" alt="sample"></div>
-													<div class="col-md-7"><div class="text-left">윤동우</div><div class="text-left">특징 : 쌍수</div><div class="text-left">취미 : </div></div>
-												</div>
-												<div id="hideOrShow" class="col-md-12">
-													<button type="button"> 돌아가기 </button>
-												</div>
-											</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-	
-								<div class="accordion-section">
-									<a class="accordion-section-title" id="a21" href="#accordion-21">#21_이민주</a>
-									<div id="accordion-21" class="accordion-section-content">
-										<div class="col-md-12">
-											<div class="col-md-12" style="border-bottom: 1px solid black; padding-bottom:10px;">
-													<div class="col-md-5"><img class="img-responsive" src="sample.jpg" alt="sample"></div>
-													<div class="col-md-7"><div class="text-left">이민주</div><div class="text-left">특징 : 약간 바보같음?</div><div class="text-left">취미 : 먹기 자기 놀기</div></div>
-												</div>
-												<div id="hideOrShow" class="col-md-12">
-													<div class="text-left">16이라고 무서워하지말아요~</div>
-													<button type="button"> 돌아가기 </button>
-												</div>
-											</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-	
-								<div class="accordion-section">
-									<a class="accordion-section-title" id="a22" href="#accordion-22">#22_이서영</a>
-									<div id="accordion-22" class="accordion-section-content">
-										<div class="col-md-12">
-											<div class="col-md-12" style="border-bottom: 1px solid black; padding-bottom:10px;">
-													<div class="col-md-5"><img class="img-responsive" src="sample.jpg" alt="sample"></div>
-													<div class="col-md-7"><div class="text-left">이서영</div><div class="text-left">특징 : 남친있음</div><div class="text-left">취미 : 과자먹기</div></div>
-												</div>
-												<div id="hideOrShow" class="col-md-12">
-													<div class="text-left">잠자는 서울숲 공주</div>
-													<button type="button"> 돌아가기 </button>
-												</div>
-											</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-	
-								<div class="accordion-section">
-									<a class="accordion-section-title" id="a23" href="#accordion-23">#23_이우진</a>
-									<div id="accordion-23" class="accordion-section-content">
-										<div class="col-md-12">
-											<div class="col-md-12" style="border-bottom: 1px solid black; padding-bottom:10px;">
-													<div class="col-md-5"><img class="img-responsive" src="sample.jpg" alt="sample"></div>
-													<div class="col-md-7"><div class="text-left">이우진</div><div class="text-left">특징 : </div><div class="text-left">취미 : </div></div>
-												</div>
-												<div id="hideOrShow" class="col-md-12">
-													<div class="text-left">ㅁㄴㅇㄹ</div>
-													<button type="button"> 돌아가기 </button>
-												</div>
-											</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-								<div class="accordion-section">
-									<a class="accordion-section-title" id="a24" href="#accordion-24">#24_이재현</a>
-									<div id="accordion-24" class="accordion-section-content">
-										<div class="col-md-12">
-											<div class="col-md-12" style="border-bottom: 1px solid black; padding-bottom:10px;">
-													<div class="col-md-5"><img class="img-responsive" src="sample.jpg" alt="sample"></div>
-													<div class="col-md-7"><div class="text-left">이재현</div><div class="text-left">특징 : 생머리</div><div class="text-left">취미 : 당구</div></div>
-												</div>
-												<div id="hideOrShow" class="col-md-12">
-													<div class="text-left">무표정일 때가 많다</div><div class="text-left">무서워하지 마라</div><div class="text-left">그냥 생각이 없어서 그렇다</div>
-													<button type="button"> 돌아가기 </button>
-												</div>
-											</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-							</div><!--end .accordion-->
-						</div>
-					</div>
-					<div class="slide">
-						<div class="main">
-							<div class="accordion">
-								<div class="accordion-section">
-									<a class="accordion-section-title" id="a25" href="#accordion-25">#25_이종근</a>
-									<div id="accordion-25" class="accordion-section-content">
-										<div class="col-md-12">
-											<div class="col-md-12" style="border-bottom: 1px solid black; padding-bottom:10px;">
-													<div class="col-md-5"><img class="img-responsive" src="sample.jpg" alt="sample"></div>
-													<div class="col-md-7"><div class="text-left">이종근</div><div class="text-left">특징 : 녹차성애자</div><div class="text-left">취미 : 커피 호로록</div></div>
-												</div>
-												<div id="hideOrShow" class="col-md-12">
-													<div class="text-left">가끔 되도 않는 드립을 친다</div><div class="text-left">하지만 이해해줘라</div><div class="text-left">바보라 그렇다</div>
-													<button type="button"> 돌아가기 </button>
-												</div>
-											</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-	
-								<div class="accordion-section">
-									<a class="accordion-section-title" id="a26" href="#accordion-26">#26_임수원</a>
-									<div id="accordion-26" class="accordion-section-content">
-										<div class="col-md-12">
-											<div class="col-md-12" style="border-bottom: 1px solid black; padding-bottom:10px;">
-													<div class="col-md-5"><img class="img-responsive" src="sample.jpg" alt="sample"></div>
-													<div class="col-md-7"><div class="text-left">임수원</div><div class="text-left">특징 : </div><div class="text-left">취미 : </div></div>
-												</div>
-												<div id="hideOrShow" class="col-md-12">
-													<div class="text-left">일년동안 미치도록 놀았음</div><div class="text-left">가끔 이상한 행동을 보이나 원래 그런거라 그러니 이해 바람</div>
-													<button type="button"> 돌아가기 </button>
-												</div>
-											</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-	
-								<div class="accordion-section">
-									<a class="accordion-section-title" id="a27" href="#accordion-27">#27_임인호</a>
-									<div id="accordion-27" class="accordion-section-content">
-										<div class="col-md-12">
-											<div class="col-md-12" style="border-bottom: 1px solid black; padding-bottom:10px;">
-													<div class="col-md-5"><img class="img-responsive" src="sample.jpg" alt="sample"></div>
-													<div class="col-md-7"><div class="text-left">임인호</div><div class="text-left">특징 : </div><div class="text-left">취미 : </div></div>
-												</div>
-												<div id="hideOrShow" class="col-md-12">
-													<div class="text-left">낄낄</div>
-													<button type="button"> 돌아가기 </button>
-												</div>
-											</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-	
-								<div class="accordion-section">
-									<a class="accordion-section-title" id="a28" href="#accordion-28">#28_장원준</a>
-									<div id="accordion-28" class="accordion-section-content">
-										<div class="col-md-12">
-											<div class="col-md-12" style="border-bottom: 1px solid black; padding-bottom:10px;">
-													<div class="col-md-5"><img class="img-responsive" src="sample.jpg" alt="sample"></div>
-													<div class="col-md-7"><div class="text-left">장원준</div><div class="text-left">특징 : 치 킨 좋 아 </div><div class="text-left">취미 : 프로젝트 서버 노예</div></div>
-												</div>
-												<div id="hideOrShow" class="col-md-12">
-													<div class="text-left">치킨을 주면 좋아합니다.</div><div class="text-left">맟춤뻪 매우 어려와요.</div><div class="text-left">한국어 어려워요.</div>
-													<button type="button"> 돌아가기 </button>
-												</div>
-											</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-	
-								<div class="accordion-section">
-									<a class="accordion-section-title" id="a29" href="#accordion-29">#29_조세현</a>
-									<div id="accordion-29" class="accordion-section-content">
-										<div class="col-md-12">
-											<div class="col-md-12" style="border-bottom: 1px solid black; padding-bottom:10px;">
-													<div class="col-md-5"><img class="img-responsive" src="sample.jpg" alt="sample"></div>
-													<div class="col-md-7"><div class="text-left">조세현</div><div class="text-left">특징 : 개</div><div class="text-left">취미 : 아이돌</div></div>
-												</div>
-												<div id="hideOrShow" class="col-md-12">
-													<div class="text-left">짖지 않음</div><div class="text-left">물지 않음</div><div class="text-left">근데 돈을 준다면?</div>
-													<button type="button"> 돌아가기 </button>
-												</div>
-											</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-								<div class="accordion-section">
-									<a class="accordion-section-title" id="a30" href="#accordion-30">#30_조희승</a>
-									<div id="accordion-30" class="accordion-section-content">
-										<div class="col-md-12">
-											<div class="col-md-12" style="border-bottom: 1px solid black; padding-bottom:10px;">
-													<div class="col-md-5"><img class="img-responsive" src="sample.jpg" alt="sample"></div>
-													<div class="col-md-7"><div class="text-left">조희승</div><div class="text-left">특징 : </div><div class="text-left">취미 : </div></div>
-												</div>
-												<div id="hideOrShow" class="col-md-12">
-													<div class="text-left">말 수가 적지만 친해지면 또라이로 변할 수 있으니 조심하자</div><div class="text-left">하지만 친해지고 싶으니까 다가와달라...</div>
-													<button type="button"> 돌아가기 </button>
-												</div>
-											</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-							</div><!--end .accordion-->
-						</div>
-					</div>
-					<div class="slide">
-						<div class="main">
-							<div class="accordion">
-								<div class="accordion-section">
-									<a class="accordion-section-title" id="a31" href="#accordion-31">#31_차윤성</a>
-									<div id="accordion-31" class="accordion-section-content">
-										<div class="col-md-12">
-											<div class="col-md-12" style="border-bottom: 1px solid black; padding-bottom:10px;">
-													<div class="col-md-5"><img class="img-responsive" src="sample.jpg" alt="sample"></div>
-													<div class="col-md-7"><div class="text-left">차윤성</div><div class="text-left">특징 : 상식이 풍부함</div><div class="text-left">취미 : 책 읽기 신문 읽기 지식 검색하기</div></div>
-												</div>
-												<div id="hideOrShow" class="col-md-12">
-													<div class="text-left">착하다</div><div class="text-left">항상 모두에게 친절하다</div><div class="text-left">항상 남을 배려해준다</div>
-													<button type="button"> 돌아가기 </button>
-												</div>
-											</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-	
-								<div class="accordion-section">
-									<a class="accordion-section-title" id="a32" href="#accordion-32">#32_최다인</a>
-									<div id="accordion-32" class="accordion-section-content">
-										<div class="col-md-12">
-											<div class="col-md-12" style="border-bottom: 1px solid black; padding-bottom:10px;">
-													<div class="col-md-5"><img class="img-responsive" src="sample.jpg" alt="sample"></div>
-													<div class="col-md-7"><div class="text-left">최다인</div><div class="text-left">특징 : </div><div class="text-left">취미 : </div></div>
-												</div>
-												<div id="hideOrShow" class="col-md-12">
-													<div class="text-left">나두 소프트웨어학부가 낯설다</div><div class="text-left">이해해주자</div><div class="text-left">학교생활만 물어보자</div>
-													<button type="button"> 돌아가기 </button>
-												</div>
-											</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-	
-								<div class="accordion-section">
-									<a class="accordion-section-title" id="a33" href="#accordion-33">#33_최민성</a>
-									<div id="accordion-33" class="accordion-section-content">
-										<div class="col-md-12">
-											<div class="col-md-12" style="border-bottom: 1px solid black; padding-bottom:10px;">
-													<div class="col-md-5"><img class="img-responsive" src="sample.jpg" alt="sample"></div>
-													<div class="col-md-7"><div class="text-left">최민성</div><div class="text-left">특징 : 실습실과 회실 지박령</div><div class="text-left">취미 : 바쁜척</div></div>
-												</div>
-												<div id="hideOrShow" class="col-md-12">
-													<div class="text-left">노잼이어도 이해해주길 바란다 나쁜 사람은 아니다</div>
-													<button type="button"> 돌아가기 </button>
-												</div>
-											</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-	
-								<div class="accordion-section">
-									<a class="accordion-section-title" id="a34" href="#accordion-34">#34_최준식</a>
-									<div id="accordion-34" class="accordion-section-content">
-										<div class="col-md-12">
-											<div class="col-md-12" style="border-bottom: 1px solid black; padding-bottom:10px;">
-													<div class="col-md-5"><img class="img-responsive" src="sample.jpg" alt="sample"></div>
-													<div class="col-md-7"><div class="text-left">최준식</div><div class="text-left">특징 : 여친있음</div><div class="text-left">취미 : 테라스 점령</div></div>
-												</div>
-												<div id="hideOrShow" class="col-md-12">
-													<div class="text-left">이거 개발하느라 방학 다 지나갔다.</div><div class="text-left">놀고싶다.</div><div class="text-left">밥 사달라면 사준다.</div>
-													<button type="button"> 돌아가기 </button>
-												</div>
-											</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-	
-								<div class="accordion-section">
-									<a class="accordion-section-title" id="a35" href="#accordion-35">#35_하성원</a>
-									<div id="accordion-35" class="accordion-section-content">
-										<div class="col-md-12">
-											<div class="col-md-12" style="border-bottom: 1px solid black; padding-bottom:10px;">
-													<div class="col-md-5"><img class="img-responsive" src="sample.jpg" alt="sample"></div>
-													<div class="col-md-7"><div class="text-left">하성원</div><div class="text-left">특징 : </div><div class="text-left">취미 : </div></div>
-												</div>
-												<div id="hideOrShow" class="col-md-12">
-													<div class="text-left">간혹 사투리를 쓸 수도 있다.</div>
-													<button type="button"> 돌아가기 </button>
-												</div>
-											</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-								<div class="accordion-section">
-									<a class="accordion-section-title" id="a36" href="#accordion-36">#36_남희주</a>
-									<div id="accordion-36" class="accordion-section-content">
-										<div class="col-md-12">
-											<div class="col-md-12" style="border-bottom: 1px solid black; padding-bottom:10px;">
-													<div class="col-md-5"><img class="img-responsive" src="sample.jpg" alt="sample"></div>
-													<div class="col-md-7"><div class="text-left">남희주</div><div class="text-left">특징 : </div><div class="text-left">취미 : </div></div>
-												</div>
-												<div id="hideOrShow" class="col-md-12">
-													<button type="button"> 돌아가기 </button>
-												</div>
-											</div>
-									</div><!--end .accordion-section-content-->
-								</div><!--end .accordion-section-->
-							</div><!--end .accordion-->
-						</div>
-					</div>
-					
-				</div>
-		</div>
-	
-	  </section>
-
+			</div>
+		
+		  </section>	
 	<section id="section3" class="section text-center">
 	<div class="container">
-		<button id="test_login" type="button"> 로그인 테스트 </button>
 		<div class="col-md-10" id="firstMan"><div class="scoreName" style="display:inline; border: 3px solid gray; margin:0 20px 30px 30px">1등</div></div>
 		<div class="col-md-10" id="secondMan"><div class="scoreName" style="display:inline; border: 3px solid gray; margin:0 20px 30px 30px">2등</div></div>
 		<div class="col-md-10" id="thirdMan"><div class="scoreName" style="display:inline; border: 3px solid gray; margin:0 20px 30px 30px">3등</div></div>
