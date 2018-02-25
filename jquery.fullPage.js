@@ -2411,7 +2411,9 @@
             $body[0].className = $body[0].className.replace(classRe, '');
 
             //adding the current anchor
-            $body.addClass(VIEWING_PREFIX + '-' + text);
+            var targetIndex;
+            if(targetIndex === 0)
+                $body.addClass(VIEWING_PREFIX + '-' + text);
         }
 
         /**

@@ -75,9 +75,37 @@ p{
 #menu li {
 	display:inline-block;
 	margin: 10px;
-	color: #000;
+	color: white;
 	background:#fff;
 	background: rgba(255,255,255, 0.5);
+	-webkit-border-radius: 10px;
+            border-radius: 10px;
+}
+#menu #firstPage{
+	color: white;
+	background:#fff;
+	background:  #ec1556;
+	-webkit-border-radius: 10px;
+            border-radius: 10px;
+}
+#menu #secondPage{
+	color: white;
+	background:#fff;
+	background:  #2f97f8;
+	-webkit-border-radius: 10px;
+            border-radius: 10px;
+}
+#menu #thirdPage{
+	color: white;
+	background:#fff;
+	background:  #797ffc;
+	-webkit-border-radius: 10px;
+            border-radius: 10px;
+}
+#menu #lastPage{
+	color: white;
+	background:#fff;
+	background:  #fbd429;
 	-webkit-border-radius: 10px;
             border-radius: 10px;
 }
@@ -88,7 +116,7 @@ p{
 }
 #menu li a{
 	text-decoration:none;
-	color: #000;
+	color: white;
 }
 #menu li.active a:hover{
 	color: #000;
