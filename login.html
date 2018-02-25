@@ -67,11 +67,11 @@
                 <h1>Login</h1>
                 <input type="text" id="userName" class="form-control input-sm chat-input" placeholder="ID" />
                 </br>
-                <input type="text" id="userPassword" class="form-control input-sm chat-input" placeholder="PW" />
+                <input type="password" id="userPassword" class="form-control input-sm chat-input" placeholder="PW" />
                 </br>
                 <div class="wrapper">
                 <span class="group-btn">     
-                    <a href="#" class="btn btn-primary btn-md">LOGIN<i class="fa fa-sign-in"></i></a>
+                    <a href="#" id="login_button" class="btn btn-primary btn-md">LOGIN<i class="fa fa-sign-in"></i></a>
                 </span>
                 </div>
                 </div>
@@ -79,4 +79,87 @@
             </div>
     </div>
 </body>
+<script type="text/javascript">
+    $("#login_button").keyup(function(event) {
+        // Enter 처리
+        if (event.keyCode == '13') {
+            $("login_button").trigger("click");
+        };
+    });
+
+    // 쿠키 생성
+    function setCookie(cName, cValue, cDay){
+        var expire = new Date();
+        expire.setDate(expire.getDate() + cDay);
+        var cookies = cName + '=' + escape(cValue) + '; path=/ '; // 한글 깨짐을 막기위해 escape(cValue)를 합니다.
+        if(typeof cDay != 'undefined') cookies += ';expires=' + expire.toGMTString() + ';';
+        document.cookie = cookies;
+    }
+    // 쿠키 가져오기
+    function getCookie(cName) {
+        cName = cName + '=';
+        var cookieData = document.cookie;
+        var start = cookieData.indexOf(cName);
+        var cValue = '';
+        if(start != -1){
+            start += cName.length;
+            var end = cookieData.indexOf(';', start);
+            if(end == -1)end = cookieData.length;
+            cValue = cookieData.substring(start, end);
+        }
+        return unescape(cValue);
+    }
+
+    $('body').on('click', '#login_button', function(){
+        $.ajax({
+            url : "http://52.79.41.31:3000/api/v1g1/user/authenticate",
+            type : "post",
+            accept: "application/json",
+            contentType: "application/json; charset=utf-8",
+            data : JSON.stringify({id : $('#userName').val(), password : $('#userPassword').val()}),
+            dataType: "json",
+            success: function(data) {
+                setCookie('x-access-token', data.token, 1);
+                setCookie('id', data.id, 1);
+                var headers={};
+                headers['x-access-token']=getCookie('x-access-token');
+                $.ajax({
+                    url : "http://52.79.41.31:3000/api/v1g1/user/" + getCookie('id'),
+                    headers : headers,
+                    type : "get",
+                    accept: "application/json",
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function(data) {
+                        console.log(data);
+                        if(data.first_login === false){
+                            if(data.quest_id === -1){
+                                console.log('후배 첫 로그인');
+                                location.href='http://localhost:63342/i-choose-you-Nerd-JS%202/junior.html?_ijt=7uj5bpbuk61962lq34nuf4aotc';
+                            }else{
+                                console.log('선배 첫 로그인');
+                            }
+                        }else{
+                            if(data.quest_id === -1){
+                                console.log('후배 로그인');
+                            }else{
+                                console.log('선배 로그인');
+                            }
+                        }
+                    },
+                    error: function(jqXHR,textStatus,errorThrown) {
+                        console.log(jqXHR);
+                        console.log(textStatus);
+                        console.log(errorThrown);
+                    }
+                });
+            },
+            error: function(jqXHR,textStatus,errorThrown) {
+                console.log(jqXHR);
+                console.log(textStatus);
+                console.log(errorThrown);
+            }
+        });
+    });
+</script>
 </html>
