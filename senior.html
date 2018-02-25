@@ -66,17 +66,25 @@
     	#hideOrShow{
     		padding-top:30px;
     	}
-    	#section3 .col-md-10{
-    		margin-top:30px;
+    	#section3 .row{
+    		margin-bottom:30px;
     	}
-    	#section3 #myScore{
-	    	margin-top:70px;
-		}
-		.scoreName{
-            font-family: morris9;
-            font-size: 3rem;
+        #section3 .row:first-child{
+            margin-top:15px;
         }
-		/* Acordeon styles */
+        #section3 .col-md-10,#section3 .col-md-12{
+            color: white;
+            font-size: 1rem;
+            background-color: black;
+            opacity: 0.7;
+            border-radius: 15px;
+        }
+        .scoreName img{
+            background-color: rgb(172, 169, 169);
+            border-radius: 15px;
+            border:10px solid rgb(46, 46, 46);
+            width: 100px;
+        }		/* Acordeon styles */
 		.tab {
 			position: relative;
 			margin-bottom: 1px;
@@ -770,13 +778,36 @@
 			</div>
 		
 		  </section>	
-	<section id="section3" class="section text-center">
-	<div class="container">
-		<div class="col-md-10" id="firstMan"><div class="scoreName" style="display:inline; border: 3px solid gray; margin:0 20px 30px 30px">1등</div></div>
-		<div class="col-md-10" id="secondMan"><div class="scoreName" style="display:inline; border: 3px solid gray; margin:0 20px 30px 30px">2등</div></div>
-		<div class="col-md-10" id="thirdMan"><div class="scoreName" style="display:inline; border: 3px solid gray; margin:0 20px 30px 30px">3등</div></div>
-		<div class="col-md-10" id="myScore"><div class="scoreName" style="display:inline; border: 3px solid gray; margin:0 20px 30px 30px">본인</div></div>
-	</section>
+		  <section id="section3" class="section text-center">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-2 scoreName"><img class="img-responsive" src="gold.png" alt=""></div>
+						<div class="col-md-10 scoreInfo">
+							<div id="rankName1"></div>
+							<div id="rankScore1"></div>    
+						</div>
+					</div>        
+					<div class="row">
+							<div class="col-md-2" id="secondMan"><div class="scoreName"><img class="img-responsive" src="silver.png" alt=""></div></div>
+							<div class="col-md-10 scoreInfo">
+									<div id="rankName2"></div>
+									<div id="rankScore2"></div>   
+							</div>     
+					</div>      
+					<div class="row">  
+						   <div class="col-md-2" id="thirdMan"><div class="scoreName"><img class="img-responsive" src="bronze.png" alt=""></div></div>
+							<div class="col-md-10 scoreInfo">
+									<div id="rankName3"></div>
+									<div id="rankScore3"></div>   
+							</div>
+					</div>      
+					<div class="row">  
+							<div class="col-md-12 scoreInfo">
+									 <div id="meScore">나의 등수는 ? : </div>
+							 </div>
+					 </div>
+			
+				</section>
 	<section id="section4" class="section">
 	<div class="container">
 		<div class="w3-container w3-half w3-white" style="padding:10px 10px 10px 10px;">
@@ -901,14 +932,13 @@
             headers : headers,
             success : function(data){
                 console.log("data" , data);
-                var show1 = data.top_ranking[0].name+data.top_ranking[0].score;
-                var show2 = data.top_ranking[1].name+data.top_ranking[1].score;
-                var show3 = data.top_ranking[2].name+data.top_ranking[2].score;
-                var showMe = data.my_ranking;
-                $("#firstMan").append(show1);
-                $("#secondMan").append(show2);
-                $("#thirdMan").append(show3);
-                $("#myScore").append(showMe);
+                $("#rankName1").append(data.top_ranking[0].name);
+                $("#rankScore1").append(data.top_ranking[0].score+" 점");
+                $("#rankName2").append(data.top_ranking[1].name);
+                $("#rankScore2").append(data.top_ranking[1].score+" 점");
+                $("#rankName3").append(data.top_ranking[2].name);
+                $("#rankScore3").append(data.top_ranking[2].score+" 점");
+                $("#meScore").append(data.my_ranking);
             }
         });
         $.ajax({
