@@ -65,6 +65,7 @@
         <div class="col-md-offset-4 col-md-4">
                 <div class="form-login">
                 <h1>Login</h1>
+                <div id="fail_login">ID 또는 Password 가 잘못되었습니다.</div>
                 <input type="text" id="userName" class="form-control input-sm chat-input" placeholder="ID" />
                 </br>
                 <input type="password" id="userPassword" class="form-control input-sm chat-input" placeholder="PW" />
@@ -80,6 +81,10 @@
     </div>
 </body>
 <script type="text/javascript">
+    $(document).ready(function () {
+        $('#fail_login').hide();
+    })
+    
     $("#userPassword").keyup(function(event) {
         // Enter 처리
         if (event.keyCode == '13') {
@@ -154,16 +159,18 @@ $('body').on('click', '#login_button', function(){
                         }
                     },
                     error: function(jqXHR,textStatus,errorThrown) {
-                        console.log(jqXHR);
-                        console.log(textStatus);
-                        console.log(errorThrown);
+                        $('#fail_login').show();
+                        $('#fail_login').text('서버 에러 또는 점검중');
                     }
                 });
             },
             error: function(jqXHR,textStatus,errorThrown) {
-                console.log(jqXHR);
-                console.log(textStatus);
-                console.log(errorThrown);
+                if(jqXHR.status === 401){
+                    $('#fail_login').show();
+                }else{
+                    $('#fail_login').show();
+                    $('#fail_login').text('서버 에러 또는 점검중');
+                }
             }
         });
     });
