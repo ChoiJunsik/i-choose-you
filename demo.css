@@ -69,8 +69,8 @@
 .accordion-section-content {
 	padding:15px;
 	display:none;
-	color:white;
-	background-color:black;
+	color:#e2e2e2;
+	background-color:#1d1d1d;
 	border:15px solid #6994e3;
 	border-radius: 5px 5px 5px 5px;
 }
