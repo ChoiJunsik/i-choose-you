@@ -53,8 +53,9 @@
             margin-left: 30px;
         }
         #section2 .accordion-section-content,#section2 .accordion-section-content{
-            color:white;
-            background-color:black;
+            color:#e2e2e2;
+            background-color:#1d1d1d;
+            opacity: 1;
             border:15px solid #6994e3;
             border-radius: 5px 5px 5px 5px;
         }
@@ -67,12 +68,12 @@
 	    	font-size: 1.3rem;
         }
         #section1 button{
-            background-color: black;
+            background-color: #1d1d1d;
             border:none;
             margin:0;
         }
         #section2 button{
-            background-color: black;
+            background-color: #1d1d1d;
             border:none;
             margin:0;
         }
@@ -156,6 +157,14 @@
             -webkit-transition: all .35s;
             -o-transition: all .35s;
             transition: all .35s;
+        }
+        .credit{
+            color:#e2e2e2;
+            background-color:#1d1d1d;
+            opacity: 1;
+            padding: 5% 5% 5% 5%;
+            border:15px solid #6994e3;
+            border-radius: 5px 5px 5px 5px;
         }
 
     </style>
@@ -1376,20 +1385,53 @@
 
 	</section>
     <section id="section4" class="section">
-        <!-- <div class="container">
-            <div class="w3-container w3-half w3-white" style="padding:10px 10px 10px 10px;">
-                <img src="ohyeeee.jpg" style="width:100%; max-width:500px">
-            </div>
-            <div class="w3-container w3-half">
-                <p><br>제공/배급&nbsp;&nbsp;&nbsp;하리보</p>
-                <p><br>기획/제작&nbsp;&nbsp;&nbsp;하리보</p>
-                <p><br>Project manager&nbsp;&nbsp;&nbsp;권혁진</p>
-                <p><br>Designer&nbsp;&nbsp;&nbsp;손용락</p>
-                <p><br>FrontEnd developer&nbsp;&nbsp;&nbsp;박해영 최준식</p>
-                <p><br>BackEnd developer&nbsp;&nbsp;&nbsp;장원준</p>
-                <p><br>Sponsor&nbsp;&nbsp;&nbsp;제3대 소프트웨어학부 학생회 Sofrano</p>
-            </div>
-        </div> -->
+        <div class="container">
+            <h2>
+                <div class="credit">
+                    <table style="font-family: morris9; align:center;">
+                        <tbody>
+                        <tr>
+                            <td style="text-align: right">제공/배급</td>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;하리보</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: right">기획/제작</td>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;하리보</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: right">Project manager</td>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;권혁진</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: right">Designer</td>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;손용락</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: right">Main developer</td>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;장원준<br></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: right">FrontEnd developer</td>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;박해영</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;최준식</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: right">BackEnd developer</td>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;장원준</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: right">Sponsor</td>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;제3대 소프트웨어학부 학생회 Sofrano</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div><!--end .accordion-section-content-->
+
+            </h2>
+        </div>
     </section>
 </div>
 <script>
@@ -1483,23 +1525,27 @@
             dataType: "json",
             success: function(data) {
                 var inner_html = '<table class="table">' +
-                    '<thead>' +
-                    '<tr>\n' +
-                    '<th>'+data.quest_info.title+'</th>\n' +
-                    '</tr>\n' +
-                    '</thread>\n' +
+                    '<p style="text-align: left;">'+data.quest_info.context+'</p>\n' +
                     '<tbody>\n' +
                     '<tr>\n' +
-                    '<td>의뢰인 </td>\n' +
-                    '<td>'+data.request_person_info.name+'</td>\n' +
+                    '<td style="text-align: right;">의뢰인 </td>\n' +
+                    '<td style="text-align: left;">'+data.request_person_info.name+'</td>\n' +
                     '</tr>\n' +
                     '<tr>\n' +
-                    '<td>목적 </td>\n' +
-                    '<td>'+data.quest_info.purpose+'</td>\n' +
+                    '<td style="text-align: right;">목적 </td>\n' +
+                    '<td style="color:#82FA58; text-align: left;">'+data.quest_info.purpose+'</td>\n' +
                     '</tr>\n' +
                     '<tr>\n' +
-                    '<td>장소</td>\n' +
-                    '<td>'+data.quest_info.location+'</td>\n' +
+                    '<td style="text-align: right;">장소</td>\n' +
+                    '<td style="text-align: left;">'+data.quest_info.location+'</td>\n' +
+                    '</tr>\n' +
+                    '<tr>\n' +
+                    '<td style="text-align: right;">전화번호</td>\n' +
+                    '<td style="text-align: left;">0'+data.request_person_info.phone_number+'</td>\n' +
+                    '</tr>\n' +
+                    '<tr>\n' +
+                    '<td style="text-align: right;">보상</td>\n' +
+                    '<td style="color:#FE2E64; text-align: left;"">'+data.quest_info.reward+'</td>\n' +
                     '</tr>\n' +
                     '<tr>\n' +
                     '<td></td>\n' +
@@ -1507,22 +1553,22 @@
                     '<div style="padding-left:25%;width:100%;height:70%;back">\n';
                 var img_html = '';
                 if(quest_id % 2 === 1){
-                    img_html = img_html + '<img align="left" src="DEF.png" width="5%" height="5%">';
+                    img_html = img_html + '<img align="left" src="DEF.png" width="10%" height="10%">';
                 }else{
-                    img_html = img_html + '<img align="left" src="ABC.png" width="5%" height="5%">';
+                    img_html = img_html + '<img align="left" src="ABC.png" width="10%" height="10%">';
                 }
 
                 if(data.quest_status === -1){
                     inner_html = inner_html + '<h4>수락하시겠습니까?</h4><br>\n' + '<button id="yes_1" questId = ' + quest_id + '><img class="img-responsive" src="okbutton.png"  style="height:100px;"></button>\n<button id="backToList"><img class="img-responsive" src="return.png" alt="return" style="height:30px;"></button>\n';
-                    img_html = img_html + data.quest_info.title;
-                    img_html = img_html + '<img src="point.png" width="5%" height="5%" align="right">';
+                    img_html = img_html + '<div width="80%">' + data.quest_info.title + '</div>';
+                    img_html = img_html + '<img src="progress.png" width="10%" height="10%" align="right">';
                 }else if(data.quest_status === 0){
                     inner_html = inner_html + '<h4>진행중입니다.</h4><br>\n'+'<button id="backToList"><img class="img-responsive" src="return.png" alt="return" style="height:30px;"></button>\n';
-                    img_html = img_html + data.quest_info.title;
+                    img_html = img_html + '<div>' + data.quest_info.title + '</div>';
                 }else if(data.quest_status === 1){
                     inner_html = inner_html + '<h4>퀘스트 완료!</h4><br>\n'+'<button id="backToList"><img class="img-responsive" src="return.png" alt="return" style="height:30px;"></button>\n';
                     img_html = img_html + '<del style="opacity:0.5;">';
-                    img_html = img_html + data.quest_info.title;
+                    img_html = img_html + '<div>' + data.quest_info.title + '</div>';
                 }
                 $('#quest_index_' + quest_id).html(img_html);
                 inner_html = inner_html + '</div>\n' +
