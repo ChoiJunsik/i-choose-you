@@ -78,8 +78,11 @@
     </div>
 </body>
 <script type="text/javascript">
+
     $(document).ready(function () {
         $('#fail_login').hide();
+        setCookie('x-access-token', data.token, -1);
+        setCookie('id', data.id, -1);
     })
 
     $("#userPassword").keyup(function(event) {
@@ -121,6 +124,7 @@ $('body').on('click', '#login_button', function(){
             success: function(data) {
                 setCookie('x-access-token', data.token, 1);
                 setCookie('id', data.id, 1);
+
                 var headers={};
                 headers['x-access-token']=getCookie('x-access-token');
                 $.ajax({
@@ -133,22 +137,14 @@ $('body').on('click', '#login_button', function(){
                     success: function(data) {
                         console.log(data);
                         if(data.first_login === false){
-                            if(data.quest_id === -1){
-                                console.log('후배 첫 로그인');
-                                location.href='http://52.79.41.31/junior';
-                            }else{
-
-                                location.href='http://52.79.41.31/senior';
-                                console.log('선배 첫 로그인');
-                            }
+                            location.href='http://ssumon.com/ChangePassword';
                         }else{
                             if(data.quest_id === -1){
-
-                                location.href='http://52.79.41.31/junior';
+                                location.href='http://ssumon.com/junior';
                                 console.log('후배 로그인');
                             }else{
 
-                                location.href='http://52.79.41.31/senior';
+                                location.href='http://ssumon.com/senior';
                                 console.log('선배 로그인');
                             }
                         }

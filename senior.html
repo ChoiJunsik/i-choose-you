@@ -159,7 +159,33 @@
     <script type="text/javascript" src="accordion.js"></script>
     <script type="text/javascript" src="jquery.fullPage.js"></script>
     <script src="js/bootstrap.min.js"></script>
-
+	<script>
+        var id = getCookie('id');
+        var headers={};
+        headers['x-access-token']=getCookie('x-access-token');
+        if(id === undefined || id === null || headers === undefined || headers === null){
+            location.href='http://ssumon.com/';
+        }
+        $.ajax({
+            url : "http://52.79.41.31:3000/api/v1g1/user/" + getCookie('id'),
+            headers : headers,
+            type : "get",
+            accept: "application/json",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function(data) {
+                console.log(data);
+                if(data.quest_id === -1){
+                    location.href='http://ssumon.com/junior';
+                }else{
+                    location.href='http://ssumon.com/senior';
+                }
+            },
+            error: function(jqXHR,textStatus,errorThrown) {
+                $('#fail_change_password').text('서버 에러 또는 점검중');
+            }
+        });
+	</script>
 </head>
 <body>
 <ul id="menu">
@@ -535,10 +561,10 @@
 											<div class="col-md-12">
 												<div class="col-md-12" >
 														<div class="col-md-5"><img class="img-responsive" src="sample.jpg" alt="sample"></div>
-														<div class="col-md-7"><div class="text-left">이서영</div><div class="text-left">특징 : 남친있음</div><div class="text-left">취미 : 과자먹기</div></div>
+														<div class="col-md-7"><div class="text-left">이서영</div><div class="text-left">특징 : 비밀~</div><div class="text-left">취미 : 과자먹기</div></div>
 													</div>
 													<div id="hideOrShow" class="col-md-12">
-														<div class="text-left">잠자는 서울숲 공주</div>
+														<div class="text-left">비밀~</div>
 													<button type="button"><img class="img-responsive" src="return.png" alt="return" style="height:55px;"></button>
 													</div>
 												</div>
@@ -735,7 +761,7 @@
 											<div class="col-md-12">
 												<div class="col-md-12" >
 														<div class="col-md-5"><img class="img-responsive" src="sample.jpg" alt="sample"></div>
-														<div class="col-md-7"><div class="text-left">최준식</div><div class="text-left">특징 : 여친있음</div><div class="text-left">취미 : 테라스 점령</div></div>
+														<div class="col-md-7"><div class="text-left">최준식</div><div class="text-left">특징 : 외로움</div><div class="text-left">취미 : 테라스 점령</div></div>
 													</div>
 													<div id="hideOrShow" class="col-md-12">
 														<div class="text-left">이거 개발하느라 방학 다 지나갔다.</div><div class="text-left">놀고싶다.</div><div class="text-left">밥 사달라면 사준다.</div>
@@ -903,26 +929,26 @@
     	});
  	    window.history.forward(0);
 	
-		 $.ajax({
-            url : "http://52.79.41.31:3000/api/v1g1/user/authenticate",
-            type : "post",
-            accept: "application/json",
-            contentType: "application/json; charset=utf-8",
-            data : JSON.stringify({id : "20170294", password : "20170294qkrgodud"}),
-            dataType: "json",
-            success: function(data) {
-                console.log("login data : " + JSON.stringify(data));
-                setCookie('x-access-token', data.token, 1);
-                setCookie('id', data.id, 1);
-
-
-            },
-            error: function(jqXHR,textStatus,errorThrown) {
-                console.log(jqXHR);
-                console.log(textStatus);
-                console.log(errorThrown);
-            }
-        });
+		 // $.ajax({
+        //     url : "http://52.79.41.31:3000/api/v1g1/user/authenticate",
+        //     type : "post",
+        //     accept: "application/json",
+        //     contentType: "application/json; charset=utf-8",
+        //     data : JSON.stringify({id : "20170294", password : "20170294qkrgodud"}),
+        //     dataType: "json",
+        //     success: function(data) {
+        //         console.log("login data : " + JSON.stringify(data));
+        //         setCookie('x-access-token', data.token, 1);
+        //         setCookie('id', data.id, 1);
+        //
+        //
+        //     },
+        //     error: function(jqXHR,textStatus,errorThrown) {
+        //         console.log(jqXHR);
+        //         console.log(textStatus);
+        //         console.log(errorThrown);
+        //     }
+        // });
 
         var headers={};
         headers['x-access-token']=getCookie('x-access-token');
