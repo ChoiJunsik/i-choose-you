@@ -137,14 +137,14 @@ $('body').on('click', '#login_button', function(){
                     success: function(data) {
                         console.log(data);
                         if(data.first_login === false){
-                            location.href='http://52.79.41.31/ChangePassword';
+                            location.href='http://ssumon.com/ChangePassword';
                         }else{
                             if(data.quest_id === -1){
-                                location.href='http://52.79.41.31/junior';
+                                location.href='http://ssumon.com/junior';
                                 console.log('후배 로그인');
                             }else{
 
-                                location.href='http://52.79.41.31/senior';
+                                location.href='http://ssumon.com/senior';
                                 console.log('선배 로그인');
                             }
                         }

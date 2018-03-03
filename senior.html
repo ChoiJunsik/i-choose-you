@@ -164,7 +164,7 @@
         var headers={};
         headers['x-access-token']=getCookie('x-access-token');
         if(id === undefined || id === null || headers === undefined || headers === null){
-            location.href='http://52.79.41.31/';
+            location.href='http://ssumon.com/';
         }
         $.ajax({
             url : "http://52.79.41.31:3000/api/v1g1/user/" + getCookie('id'),
@@ -176,9 +176,9 @@
             success: function(data) {
                 console.log(data);
                 if(data.quest_id === -1){
-                    location.href='http://52.79.41.31/junior';
+                    location.href='http://ssumon.com/junior';
                 }else{
-                    location.href='http://52.79.41.31/senior';
+                    location.href='http://ssumon.com/senior';
                 }
             },
             error: function(jqXHR,textStatus,errorThrown) {
