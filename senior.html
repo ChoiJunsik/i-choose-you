@@ -159,7 +159,33 @@
     <script type="text/javascript" src="accordion.js"></script>
     <script type="text/javascript" src="jquery.fullPage.js"></script>
     <script src="js/bootstrap.min.js"></script>
-
+	<script>
+        var id = getCookie('id');
+        var headers={};
+        headers['x-access-token']=getCookie('x-access-token');
+        if(id === undefined || id === null || headers === undefined || headers === null){
+            location.href='http://52.79.41.31/';
+        }
+        $.ajax({
+            url : "http://52.79.41.31:3000/api/v1g1/user/" + getCookie('id'),
+            headers : headers,
+            type : "get",
+            accept: "application/json",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function(data) {
+                console.log(data);
+                if(data.quest_id === -1){
+                    location.href='http://52.79.41.31/junior';
+                }else{
+                    location.href='http://52.79.41.31/senior';
+                }
+            },
+            error: function(jqXHR,textStatus,errorThrown) {
+                $('#fail_change_password').text('서버 에러 또는 점검중');
+            }
+        });
+	</script>
 </head>
 <body>
 <ul id="menu">
@@ -903,26 +929,26 @@
     	});
  	    window.history.forward(0);
 	
-		 $.ajax({
-            url : "http://52.79.41.31:3000/api/v1g1/user/authenticate",
-            type : "post",
-            accept: "application/json",
-            contentType: "application/json; charset=utf-8",
-            data : JSON.stringify({id : "20170294", password : "20170294qkrgodud"}),
-            dataType: "json",
-            success: function(data) {
-                console.log("login data : " + JSON.stringify(data));
-                setCookie('x-access-token', data.token, 1);
-                setCookie('id', data.id, 1);
-
-
-            },
-            error: function(jqXHR,textStatus,errorThrown) {
-                console.log(jqXHR);
-                console.log(textStatus);
-                console.log(errorThrown);
-            }
-        });
+		 // $.ajax({
+        //     url : "http://52.79.41.31:3000/api/v1g1/user/authenticate",
+        //     type : "post",
+        //     accept: "application/json",
+        //     contentType: "application/json; charset=utf-8",
+        //     data : JSON.stringify({id : "20170294", password : "20170294qkrgodud"}),
+        //     dataType: "json",
+        //     success: function(data) {
+        //         console.log("login data : " + JSON.stringify(data));
+        //         setCookie('x-access-token', data.token, 1);
+        //         setCookie('id', data.id, 1);
+        //
+        //
+        //     },
+        //     error: function(jqXHR,textStatus,errorThrown) {
+        //         console.log(jqXHR);
+        //         console.log(textStatus);
+        //         console.log(errorThrown);
+        //     }
+        // });
 
         var headers={};
         headers['x-access-token']=getCookie('x-access-token');

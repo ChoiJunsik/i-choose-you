@@ -133,17 +133,9 @@ $('body').on('click', '#login_button', function(){
                     success: function(data) {
                         console.log(data);
                         if(data.first_login === false){
-                            if(data.quest_id === -1){
-                                console.log('후배 첫 로그인');
-                                location.href='http://52.79.41.31/junior';
-                            }else{
-
-                                location.href='http://52.79.41.31/senior';
-                                console.log('선배 첫 로그인');
-                            }
+                            location.href='http://52.79.41.31/ChangePassword';
                         }else{
                             if(data.quest_id === -1){
-
                                 location.href='http://52.79.41.31/junior';
                                 console.log('후배 로그인');
                             }else{
