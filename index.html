@@ -121,9 +121,6 @@ $('body').on('click', '#login_button', function(){
             success: function(data) {
                 setCookie('x-access-token', data.token, 1);
                 setCookie('id', data.id, 1);
-
-                console.log(getCookie('id'));
-                console.log(getCookie('x-access-token'));
                 var headers={};
                 headers['x-access-token']=getCookie('x-access-token');
                 $.ajax({
