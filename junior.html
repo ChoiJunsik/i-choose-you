@@ -174,18 +174,23 @@
 
 </head>
 <body>
-<ul id="menu">
-    <li id="firstPage" data-menuanchor="firstPage"><a href="#firstPage">의뢰</a></li>
-    <li id="secondPage" data-menuanchor="secondPage"><a href="#secondPage">도감</a></li>
-    <li id="thirdPage" data-menuanchor="3rdPage"><a href="#3rdPage">랭킹</a></li>
+<ul id="menu2">
     <li id="lastPage" data-menuanchor="lastPage"><a href="#lastPage">크레딧</a></li>
-    <li id="logOut"><button id="logout" style="border: 7px solid #A6A6A6; background:#A6A6A6; border-radius: 10px 10px 10px 10px;">로그아웃</button></li>
+    <li id="thirdPage" data-menuanchor="3rdPage"><a href="#3rdPage">랭킹</a></li>
+    <!--<li id="logOut"><button id="logout" style="border: 7px solid #A6A6A6; background:#A6A6A6; border-radius: 10px 10px 10px 10px;">로그아웃</button></li>-->
 </ul>
+<ul id="menu">
+    <li id="secondPage" data-menuanchor="secondPage"><a href="#secondPage">도감</a></li>
+    <li id="firstPage" data-menuanchor="firstPage"><a href="#firstPage">의뢰</a></li>
+    <!--<li id="logOut"><button id="logout" style="border: 7px solid #A6A6A6; background:#A6A6A6; border-radius: 10px 10px 10px 10px;">로그아웃</button></li>-->
+</ul>
+
+
 
 <div id="fullpage" class="background">
   <section id="section1" class="section">
         <div class="container">
-            <button id="test_login" type="button"> 로그인 테스트 </button>
+
             <div class="container">
                 <div class="slide">
                     <div class="main">
@@ -1641,25 +1646,7 @@
         var headers={};
         headers['x-access-token']=getCookie('x-access-token');
         if(id === undefined || id === null || headers === undefined || headers === null){
-            // location.href='http://ssumon.com/';
-            $.ajax({
-                url : "http://52.79.41.31:3000/api/v1g1/user/authenticate",
-                type : "post",
-                accept: "application/json",
-                contentType: "application/json; charset=utf-8",
-                data : JSON.stringify({id : "20189999", password : "20189999gnqo"}),
-                dataType: "json",
-                success: function(data) {
-                    console.log("login data : " + JSON.stringify(data));
-                    setCookie('x-access-token', data.token, 1);
-                    setCookie('id', data.id, 1);
-                },
-                error: function(jqXHR,textStatus,errorThrown) {
-                    console.log(jqXHR);
-                    console.log(textStatus);
-                    console.log(errorThrown);
-                }
-            });
+            location.href='http://ssumon.com/';
         }
         $.ajax({
             url : "http://52.79.41.31:3000/api/v1g1/user/" + getCookie('id'),
@@ -1796,3 +1783,4 @@
 </script>
 </body>
 </html>
+
