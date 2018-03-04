@@ -189,7 +189,6 @@
 <div id="fullpage" class="background">
   <section id="section1" class="section">
         <div class="container">
-            <button id="test_login" type="button"> 로그인 테스트 </button>
             <div class="container">
                 <div class="slide">
                     <div class="main">
@@ -739,16 +738,16 @@
                             </div><!--end .accordion-section-->
 
                             <div class="accordion-section">
-                                <a id="quest_index_352" class="accordion-section-title" href="#quest_accordion-352" questId = "352">Accordion Section #9</a>
+                                <a id="quest_index_352" class="accordion-section-title" href="#quest_accordion-352" questId = "352">Accordion Section #8</a>
                                 <div id="quest_accordion-352" class="accordion-section-content">
-                                    <div id="352">로딩중...</div>
+                                    <div id="quest_352">로딩중…</div>
                                 </div><!--end .accordion-section-content-->
                             </div><!--end .accordion-section-->
 
                             <div class="accordion-section">
-                                <a id="quest_index_363" class="accordion-section-title" href="#quest_accordion-363" questId = "363">Accordion Section #9</a>
-                                <div id="quest_accordion-363" class="accordion-section-content">
-                                    <div id="363">로딩중...</div>
+                                <a id="quest_index_362" class="accordion-section-title" href="#quest_accordion-362" questId = "362">Accordion Section #8</a>
+                                <div id="quest_accordion-362" class="accordion-section-content">
+                                    <div id="quest_362">로딩중…</div>
                                 </div><!--end .accordion-section-content-->
                             </div><!--end .accordion-section-->
 
@@ -1487,7 +1486,7 @@
             contentType: "application/json; charset=utf-8",
             dataType: "json",
             success: function(data) {
-                for(var q_index = 2; q_index < data.result.quest_bool.length; q_index++){
+                for(var q_index = 2; q_index < data.result.quest_bool.length-1; q_index++){
                     var questId = 0;
                     if(q_index % 2 === 1){
                         questId = (q_index-1)/2*10 + 2;
@@ -1517,6 +1516,25 @@
                     getOneQuestInfo(id, headers, url, questId, 0);
 
                 }
+                { // 용락이 의뢰
+                  questId = 362;
+                  console.log('q_index last : ' + q_index);
+                  console.log( q_index + ' : '+ questId + ' : '+ data.result.quest_bool[q_index]);
+                  if(data.result.quest_bool[q_index] === -1){
+                      $('#quest_index_' + questId).text('미진행');
+                  }else if(data.result.quest_bool[q_index] === 0){
+                      $('#quest_index_' + questId).text('진행중');
+                  }else{
+                      $('#quest_index_' + questId).text('성공');
+                  }
+
+                  console.log('questId : ' + questId);
+                  var id = getCookie('id');
+                  var headers = {};
+                  headers['x-access-token'] = getCookie('x-access-token');
+                  var url = "http://52.79.41.31:3000/api/v1g1/quest/" + id + "/" + questId;
+                  getOneQuestInfo(id, headers, url, questId, 0);
+              }
 
             },
             error: function(jqXHR,textStatus,errorThrown) {
@@ -1579,16 +1597,20 @@
                 if(data.quest_status === -1){
                     inner_html = inner_html + '<h4>수락하시겠습니까?</h4><br>\n' + '<button id="yes_1" questId = ' + quest_id + '><img class="img-responsive" src="okbutton.png"  style="height:100px;"></button>\n<button id="backToList"><img class="img-responsive" src="return.png" alt="return" style="height:30px;"></button>\n';
                     img_html = img_html + data.quest_info.title ;
-                    img_html = img_html + '    ( '+ data.quest_info.people_num + ' / 4)';
+                    img_html = img_html + '<br>( '+ data.quest_info.people_num + ' / 4)';
                 }else if(data.quest_status === 0){
                     inner_html = inner_html + '<h4>진행중입니다.</h4><br>\n'+'<button id="backToList"><img class="img-responsive" src="return.png" alt="return" style="height:30px;"></button>\n';
                     img_html = img_html + data.quest_info.title;
-                    img_html = img_html + '    ( '+ data.quest_info.people_num + ' / 4)';
+                    img_html = img_html + '<br>( '+ data.quest_info.people_num + ' / 4)';
                 }else if(data.quest_status === 1){
                     inner_html = inner_html + '<h4>퀘스트 완료!</h4><br>\n'+'<button id="backToList"><img class="img-responsive" src="return.png" alt="return" style="height:30px;"></button>\n';
                     img_html = img_html + '<del style="opacity:0.5;">';
                     img_html = img_html + data.quest_info.title;
-                    img_html = img_html + '    ( '+ data.quest_info.people_num + ' / 4)';
+                    img_html = img_html + '<br>( '+ data.quest_info.people_num + ' / 4)';
+                }
+                if(quest_id === 362){
+                  console.log(img_html);
+                  console.log(inner_html);
                 }
                 $('#quest_index_' + quest_id).html(img_html);
                 inner_html = inner_html + '</div>\n' +
@@ -1697,7 +1719,7 @@
                         anchors: ['firstPage', 'secondPage', '3rdPage','lastPage'],
                         menu: '#menu'
                     });
-                    var num;                  
+                    var num;
                     $("#section1 a").click(function(){
                         targetIndex=event.target.id;
                         num = targetIndex.replace(/[^0-9]/g,"");
@@ -1755,10 +1777,6 @@
             }
         });
     });
-    $('body').on('click', '#test_login', function(){
-
-    });
-
     $('body').on('click', '#yes_1', function(){
         var id = getCookie('id');
         var headers = {};
