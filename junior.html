@@ -1531,7 +1531,7 @@
             dataType: "json",
             success: function(data) {
                 var inner_html = '<table class="table">' +
-                    '<p style="text-align: left;">'+data.quest_info.context+'</p>\n' +
+                    '<p style="text-align: left; font-size: 16px">'+data.quest_info.context+'</p>\n' +
                     '<tbody>\n' +
                     '<tr>\n' +
                     '<td style="text-align: right;">의뢰인 </td>\n' +
@@ -1561,13 +1561,13 @@
                     // '<td></td>\n' +
                     '<td>\n';
                 if(data.quest_status === -1){
-                    inner_html = inner_html + '<h4 align="right">수락하시겠습니까?</h4><br>\n';
+                    inner_html = inner_html + '<h4 align="right" style="font-size: 16px">수락하시겠습니까?</h4><br>\n';
                 }else if(data.quest_status === 0){
-                    inner_html = inner_html + '<h4>진행중입니다.</h4><br>\n';
+                    inner_html = inner_html + '<h4 style="font-size: 16px">진행중입니다.</h4><br>\n';
                 }else if(data.quest_status === 1){
-                    inner_html = inner_html + '<h4>퀘스트 완료!</h4><br>\n';
+                    inner_html = inner_html + '<h4 style="font-size: 16px">퀘스트 완료!</h4><br>\n';
                 }else{
-                    inner_html = inner_html + '<h4>수락하시겠습니까?</h4><br>\n';
+                    inner_html = inner_html + '<h4 style="font-size: 16px">수락하시겠습니까?</h4><br>\n';
                 }
                 inner_html = inner_html + '</td>\n<td>\n';
                 var img_html = '';
