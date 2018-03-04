@@ -26,29 +26,39 @@
 
 .accordion {
 	overflow:hidden;
-	box-shadow:0px 1px 3px rgba(0,0,0,0.25);
+	/*box-shadow:0px 1px 3px rgba(0,0,0,0.25);*/
 	border-radius:3px;
-	background:#f7f7f7;
+	/*background:#f7f7f7;*/
 }
 
 /*----- Section Titles -----*/
 .accordion-section-title {
-	width:100%;
-	padding:15px;
+	/*width:100%;*/
+	/*padding:15px;*/
 	display:inline-block;
 	border-bottom:1px solid #1a1a1a;
-	background:#333;
+	/*background:#333;*/
 	transition:all linear 0.15s;
 	/* Type */
 	font-size:1.200em;
 	text-shadow:0px 1px 0px #1a1a1a;
 	color:#fff;
+
+	border-radius: 25px;
+	background: black;
+	opacity: 0.65;
+	padding: 20px;
+	margin: 10px;
+	/*margin-left: 10%;*/
+	width: 80%;
 }
 
 .accordion-section-title.active, .accordion-section-title:hover {
-	background:#4c4c4c;
+	/*background:#4c4c4c;*/
 	/* Type */
 	text-decoration:none;
+
+
 }
 
 .accordion-section:last-child .accordion-section-title {
@@ -59,4 +69,8 @@
 .accordion-section-content {
 	padding:15px;
 	display:none;
+	color:#e2e2e2;
+	background-color:#1d1d1d;
+	border:15px solid #6994e3;
+	border-radius: 5px 5px 5px 5px;
 }
