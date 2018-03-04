@@ -32,7 +32,6 @@
                 margin:0 auto;
             }
         }
-
         #menu li{
         }
         /* Sections
@@ -40,7 +39,6 @@
         @font-face {
             font-family: morris9;
             src: url(./fonts/morris9.ttf) format('truetype');
-
         }
         body{
             font-family: morris9;
@@ -165,7 +163,6 @@
             border:15px solid #6994e3;
             border-radius: 5px 5px 5px 5px;
         }
-
     </style>
     <script src="jquery.min.js"></script>
     <script src="jquery-ui.min.js"></script>
@@ -173,7 +170,6 @@
     <script type="text/javascript" src="jquery.fullPage.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script>
-
     </script>
 
 </head>
@@ -1471,14 +1467,11 @@
         }
         return unescape(cValue);
     }
-
     function getQuestBool(){
         var id = getCookie('id');
         var headers = {};
         headers['x-access-token'] = getCookie('x-access-token');
-
         //이거 밖으로 빼서 해봤는데 안되더라고.. 토큰 쓸떄마다 위 문장처럼 계속 해더 변수를 만들고 지우고 해야할듯.
-
         $.ajax({
             url : "http://52.79.41.31:3000/api/v1g1/user/questtable/" + id,
             headers : headers,
@@ -1502,32 +1495,26 @@
                     }else{
                         $('#quest_index_' + questId).text('성공');
                     }
-
                     if((data.result.quest_bool[q_index] === -1 || data.result.quest_bool[q_index] === 0) && questId%2 === 1){
                         console.log('hohoho으아앙아ㅏ', questId);
                         console.log($('#quest_index_' + questId+1).attr('class'));
                         $('#quest_index_' + questId+1).hide();
                     }
-
                     console.log('questId : ' + questId);
                     var id = getCookie('id');
                     var headers = {};
                     headers['x-access-token'] = getCookie('x-access-token');
                     var url = "http://52.79.41.31:3000/api/v1g1/quest/" + id + "/" + questId;
                     getOneQuestInfo(id, headers, url, questId, 0);
-
                 }
-
             },
             error: function(jqXHR,textStatus,errorThrown) {
                 console.log(jqXHR);
                 console.log(textStatus);
                 console.log(errorThrown);
             }
-
         });
     }
-
     function getOneQuestInfo(id, headers, url, quest_id, isPush){
         var return_data = undefined;
         $.ajax({
@@ -1575,7 +1562,6 @@
                 }else{
                     img_html = img_html + '<img id="img_quest_id_' + quest_id + '" align="left" src="ABC.png" width="5%" height="5%">';
                 }
-
                 if(data.quest_status === -1){
                     inner_html = inner_html + '<h4>수락하시겠습니까?</h4><br>\n' + '<button id="yes_1" questId = ' + quest_id + '><img class="img-responsive" src="okbutton.png"  style="height:100px;"></button>\n<button id="backToList"><img class="img-responsive" src="return.png" alt="return" style="height:30px;"></button>\n';
                     img_html = img_html + data.quest_info.title ;
@@ -1601,13 +1587,11 @@
                     '</tbody>\n' +
                     '</table>';
                 $('#quest_' + quest_id).html(inner_html);
-
                 console.log(data);
                 if(isPush === 1){
                     console.log("gogo!");
                     console.log(id + " : "+ data.request_person_info.auth_id + " : "+  data.quest_info.difficulty + 1);
                     push_user_info(id, data.request_person_info.auth_id, data.quest_info.quest_id);
-
                 }
                 return return_data;
             },
@@ -1618,7 +1602,6 @@
             }
         });
     }
-
     function push_user_info(id, olderId, quest_id){
         var headers = {};
         headers['x-access-token'] = getCookie('x-access-token');
@@ -1645,8 +1628,6 @@
             }
         });
     }
-
-
     $(document).ready(function(){
         $(document).keydown(function(e){
         if(e.target.nodeName != "INPUT" && e.target.nodeName != "TEXTAREA"){
@@ -1656,7 +1637,6 @@
         }
         });
         window.history.forward(0);
-
         var id = getCookie('id');
         var headers={};
         headers['x-access-token']=getCookie('x-access-token');
@@ -1673,8 +1653,6 @@
                     console.log("login data : " + JSON.stringify(data));
                     setCookie('x-access-token', data.token, 1);
                     setCookie('id', data.id, 1);
-
-
                 },
                 error: function(jqXHR,textStatus,errorThrown) {
                     console.log(jqXHR);
@@ -1698,7 +1676,6 @@
                     var id = getCookie('id');
                     console.log("id : " + id);
                     console.log("headers : " + JSON.stringify(headers));
-
                     $.ajax({
                         url : "http://52.79.41.31:3000/api/v1g1/user/ranking/" + id,
                         type:'get',
@@ -1721,7 +1698,7 @@
                         anchors: ['firstPage', 'secondPage', '3rdPage','lastPage'],
                         menu: '#menu'
                     });
-                    var num;                  
+                    var num;
                     $("#section1 a").click(function(){
                         console.log('here');
                         targetIndex=event.target.id;
@@ -1783,7 +1760,6 @@
                 console.log("login data : " + JSON.stringify(data));
                 setCookie('x-access-token', data.token, 1);
                 setCookie('id', data.id, 1);
-
             },
             error: function(jqXHR,textStatus,errorThrown) {
                 console.log(jqXHR);
@@ -1793,9 +1769,7 @@
         });
     });
     $('body').on('click', '#test_login', function(){
-
     });
-
     $('body').on('click', '#yes_1', function(){
         var id = getCookie('id');
         var headers = {};
