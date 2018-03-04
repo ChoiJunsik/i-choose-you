@@ -1558,35 +1558,45 @@
                     '<td style="text-align: left;"">( '+data.quest_info.people_num+' / 4 )</td>\n' +
                     '</tr>\n' +
                     '<tr>\n' +
-                    '<td></td>\n' +
-                    '<td>\n' +
-                    '<div style="padding-left:25%;width:100%;height:70%;back">\n';
+                    // '<td></td>\n' +
+                    '<td>\n';
+                if(data.quest_status === -1){
+                    inner_html = inner_html + '<h4 align="right">수락하시겠습니까?</h4><br>\n';
+                }else if(data.quest_status === 0){
+                    inner_html = inner_html + '<h4>진행중입니다.</h4><br>\n';
+                }else if(data.quest_status === 1){
+                    inner_html = inner_html + '<h4>퀘스트 완료!</h4><br>\n';
+                }else{
+                    inner_html = inner_html + '<h4>수락하시겠습니까?</h4><br>\n';
+                }
+                inner_html = inner_html + '</td>\n<td>\n';
                 var img_html = '';
                 if(quest_id % 2 === 1){
                     img_html = img_html + '<img id="img_quest_id_' + quest_id + '" align="left" src="DEF.png" width="5%" height="5%">';
                 }else{
                     img_html = img_html + '<img id="img_quest_id_' + quest_id + '" align="left" src="ABC.png" width="5%" height="5%">';
                 }
+
                 if(data.quest_status === -1){
-                    inner_html = inner_html + '<h4>수락하시겠습니까?</h4><br>\n' + '<button id="yes_1" questId = ' + quest_id + '><img class="img-responsive" src="okbutton.png"  style="height:100px;"></button>\n<button id="backToList"><img class="img-responsive" src="return.png" alt="return" style="height:30px;"></button>\n';
+                    inner_html = inner_html + '<button id="yes_1" questId = ' + quest_id + '><img src="okbutton.png"  width="25%" height="25%"></button>\n<button id="backToList"><img class="img-responsive" src="return.png" alt="return" style="height:30px;"></button>\n';
                     img_html = img_html + data.quest_info.title ;
                     img_html = img_html + '<div id="title_quest_id_' + quest_id + '" align="right"  >( ' + data.quest_info.people_num + ' / 4)</div>';
                 }else if(data.quest_status === 0){
-                    inner_html = inner_html + '<h4>진행중입니다.</h4><br>\n'+'<button id="backToList"><img class="img-responsive" src="return.png" alt="return" style="height:30px;"></button>\n';
+                    inner_html = inner_html + '<button id="backToList"><img class="img-responsive" src="return.png" alt="return" style="height:30px;"></button>\n';
                     img_html = img_html + data.quest_info.title;
                     img_html = img_html + '<img id="title_img_quest_id_' + quest_id + '" src="progress.png" width="8%" height="8%" align="right">';
                 }else if(data.quest_status === 1){
-                    inner_html = inner_html + '<h4>퀘스트 완료!</h4><br>\n'+'<button id="backToList"><img class="img-responsive" src="return.png" alt="return" style="height:30px;"></button>\n';
+                    inner_html = inner_html + '<button id="backToList"><img class="img-responsive" src="return.png" alt="return" style="height:30px;"></button>\n';
                     img_html = img_html + '<del style="opacity:0.5;">';
                     img_html = img_html + data.quest_info.title;
                     img_html = img_html + '<div id="title_quest_id_' + quest_id + '" align="right" >( ' + data.quest_info.people_num + ' / 4)</div>';
                 }else{
-                    inner_html = inner_html + '<h4>수락하시겠습니까?</h4><br>\n' + '<button id="yes_1" questId = ' + quest_id + '><img class="img-responsive" src="okbutton.png"  style="height:100px;"></button>\n<button id="backToList"><img class="img-responsive" src="return.png" alt="return" style="height:30px;"></button>\n';
+                    inner_html = inner_html + '<button id="yes_1" questId = ' + quest_id + '><img class="img-responsive" src="okbutton.png"  style="height:100px;"></button>\n<button id="backToList"><img class="img-responsive" src="return.png" alt="return" style="height:30px;"></button>\n';
                     img_html = img_html + data.quest_info.title ;
                     img_html = img_html + '<div id="title_quest_id_' + quest_id + '" align="right"  >( ' + data.quest_info.people_num + ' / 4)</div>';
                 }
                 $('#quest_index_' + quest_id).html(img_html);
-                inner_html = inner_html + '</div>\n' +
+                inner_html = inner_html +
                     '</td>\n' +
                     '</tr>\n' +
                     '</tbody>\n' +
