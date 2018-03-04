@@ -56,38 +56,7 @@
         <script type="text/javascript">
         </script>
     <script>
-        var id = getCookie('id');
-        var headers={};
-        headers['x-access-token']=getCookie('x-access-token');
-        if(id === undefined || id === null || headers === undefined || headers === null){
 
-        }else{
-            $.ajax({
-                url : "http://52.79.41.31:3000/api/v1g1/user/" + getCookie('id'),
-                headers : headers,
-                type : "get",
-                accept: "application/json",
-                contentType: "application/json; charset=utf-8",
-                dataType: "json",
-                success: function(data) {
-                    if(data.first_login === false){
-                        location.href='http://ssumon.com/ChangePassword';
-                    }else{
-                        if(data.quest_id === -1){
-                            location.href='http://ssumon.com/junior';
-                            console.log('후배 로그인');
-                        }else{
-
-                            location.href='http://ssumon.com/senior';
-                            console.log('선배 로그인');
-                        }
-                    }
-                },
-                error: function(jqXHR,textStatus,errorThrown) {
-                    $('#fail_change_password').text('서버 에러 또는 점검중');
-                }
-            });
-        }
 
     </script>
 </head>
@@ -113,19 +82,6 @@
     </div>
 </body>
 <script type="text/javascript">
-
-    $(document).ready(function () {
-        $('#fail_login').hide();
-        setCookie('x-access-token', data.token, -1);
-        setCookie('id', data.id, -1);
-    })
-
-    $("#userPassword").keyup(function(event) {
-        // Enter 처리
-        if (event.keyCode == '13') {
-            $("#login_button").trigger("click");
-        };
-    });
     // 쿠키 생성
     function setCookie(cName, cValue, cDay){
         var expire = new Date();
@@ -148,6 +104,52 @@
         }
         return unescape(cValue);
     }
+
+    $(document).ready(function () {
+        $('#fail_login').hide();
+        var id = getCookie('id');
+        var headers={};
+        headers['x-access-token']=getCookie('x-access-token');
+        console.log('check start');
+        if(id === undefined || id === null || headers === undefined || headers === null){
+            console.log('check undefined or null');
+        }else{
+            $.ajax({
+                url : "http://52.79.41.31:3000/api/v1g1/user/" + getCookie('id'),
+                headers : headers,
+                type : "get",
+                accept: "application/json",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function(data) {
+                    console.log('check ajax success');
+                    if(data.first_login === false){
+                        location.href='http://ssumon.com/ChangePassword';
+                    }else{
+                        if(data.quest_id === -1){
+                            location.href='http://ssumon.com/junior';
+                            console.log('후배 로그인');
+                        }else{
+
+                            location.href='http://ssumon.com/senior';
+                            console.log('선배 로그인');
+                        }
+                    }
+                },
+                error: function(jqXHR,textStatus,errorThrown) {
+                    $('#fail_change_password').text('서버 에러 또는 점검중');
+                }
+            });
+        }
+    })
+
+    $("#userPassword").keyup(function(event) {
+        // Enter 처리
+        if (event.keyCode == '13') {
+            $("#login_button").trigger("click");
+        };
+    });
+
 $('body').on('click', '#login_button', function(){
         $.ajax({
             url : "http://52.79.41.31:3000/api/v1g1/user/authenticate",

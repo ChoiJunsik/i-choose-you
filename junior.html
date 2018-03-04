@@ -42,7 +42,7 @@
         @font-face {
             font-family: morris9;
             src: url(./fonts/morris9.ttf) format('truetype');
-            
+
         }
         body{
             font-family: morris9;
@@ -175,31 +175,7 @@
     <script type="text/javascript" src="jquery.fullPage.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script>
-        var id = getCookie('id');
-        var headers={};
-        headers['x-access-token']=getCookie('x-access-token');
-        if(id === undefined || id === null || headers === undefined || headers === null){
-            location.href='http://ssumon.com/';
-        }
-        $.ajax({
-            url : "http://52.79.41.31:3000/api/v1g1/user/" + getCookie('id'),
-            headers : headers,
-            type : "get",
-            accept: "application/json",
-            contentType: "application/json; charset=utf-8",
-            dataType: "json",
-            success: function(data) {
-                console.log(data);
-                if(data.quest_id === -1){
 
-                }else{
-                    location.href='http://ssumon.com/senior';
-                }
-            },
-            error: function(jqXHR,textStatus,errorThrown) {
-                $('#fail_change_password').text('서버 에러 또는 점검중');
-            }
-        });
     </script>
 
 </head>
@@ -1672,84 +1648,89 @@
         }
         });
         window.history.forward(0);
-        // $.ajax({
-        //     url : "http://52.79.41.31:3000/api/v1g1/user/authenticate",
-        //     type : "post",
-        //     accept: "application/json",
-        //     contentType: "application/json; charset=utf-8",
-        //     data : JSON.stringify({id : "20189999", password : "20189999gnqo"}),
-        //     dataType: "json",
-        //     success: function(data) {
-        //         console.log("login data : " + JSON.stringify(data));
-        //         setCookie('x-access-token', data.token, 1);
-        //         setCookie('id', data.id, 1);
-        //
-        //     },
-        //     error: function(jqXHR,textStatus,errorThrown) {
-        //         console.log(jqXHR);
-        //         console.log(textStatus);
-        //         console.log(errorThrown);
-        //     }
-        // });
 
+        var id = getCookie('id');
         var headers={};
         headers['x-access-token']=getCookie('x-access-token');
-        var id = getCookie('id');
-        console.log("id : " + id);
-        console.log("headers : " + JSON.stringify(headers));
-
+        if(id === undefined || id === null || headers === undefined || headers === null){
+            location.href='http://ssumon.com/';
+        }
         $.ajax({
-            url : "http://52.79.41.31:3000/api/v1g1/user/ranking/" + id,
-            type:'get',
-            dataType : "json",
+            url : "http://52.79.41.31:3000/api/v1g1/user/" + getCookie('id'),
             headers : headers,
-            success : function(data){
-                console.log("data" , data);
-                $("#rankName1").append(data.top_ranking[0].name);
-                $("#rankScore1").append(data.top_ranking[0].score+" 점");
-                $("#rankName2").append(data.top_ranking[1].name);
-                $("#rankScore2").append(data.top_ranking[1].score+" 점");
-                $("#rankName3").append(data.top_ranking[2].name);
-                $("#rankScore3").append(data.top_ranking[2].score+" 점");
-                $("#meScore").append(data.my_ranking);
+            type : "get",
+            accept: "application/json",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function(data) {
+                console.log(data);
+                if(data.quest_id === -1){
+                    var headers={};
+                    headers['x-access-token']=getCookie('x-access-token');
+                    var id = getCookie('id');
+                    console.log("id : " + id);
+                    console.log("headers : " + JSON.stringify(headers));
+
+                    $.ajax({
+                        url : "http://52.79.41.31:3000/api/v1g1/user/ranking/" + id,
+                        type:'get',
+                        dataType : "json",
+                        headers : headers,
+                        success : function(data){
+                            console.log("data" , data);
+                            $("#rankName1").append(data.top_ranking[0].name);
+                            $("#rankScore1").append(data.top_ranking[0].score+" 점");
+                            $("#rankName2").append(data.top_ranking[1].name);
+                            $("#rankScore2").append(data.top_ranking[1].score+" 점");
+                            $("#rankName3").append(data.top_ranking[2].name);
+                            $("#rankScore3").append(data.top_ranking[2].score+" 점");
+                            $("#meScore").append(data.my_ranking);
+                        }
+                    });
+                    getQuestBool();
+                    $('#fullpage').fullpage({
+                        // sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff','deepskyblue','tomato'],
+                        anchors: ['firstPage', 'secondPage', '3rdPage','lastPage'],
+                        menu: '#menu'
+                    });
+                    var num;
+
+                    $("#section1 a").click(function(){
+                        targetIndex=event.target.id;
+                        num = targetIndex.replace(/[^0-9]/g,"");
+                        $("#section1 a").hide();
+                        $("#quest_accordion-"+num).css("display","block");
+                        $(".fp-controlArrow").hide();
+                        $("body").removeAttr("class");
+                    });
+                    $('body').on('click', '#backToList', function(){
+                        $("#section1 a").show();
+                        $("#quest_accordion-"+num).css("display","none");
+                        $(".fp-controlArrow").show();
+                        targetIndex = 0;
+                    });
+                    $("#section2 a").click(function(){
+                        targetIndex=event.target.id;
+                        num = targetIndex.replace(/[^0-9]/g,"");
+                        $("#section2 a").hide();
+                        $("#accordion-"+num).css("display","block");
+                        $(".fp-controlArrow").hide();
+                        $("body").removeAttr("class");
+                    });
+                    $("#section2 button").click(function(){
+                        $("#section2 a").show();
+                        $("#accordion-"+num).css("display","none");
+                        $(".fp-controlArrow").show();
+                        targetIndex = 0;
+                    });
+                }else{
+                    location.href='http://ssumon.com/senior';
+                }
+            },
+            error: function(jqXHR,textStatus,errorThrown) {
+                $('#fail_change_password').text('서버 에러 또는 점검중');
             }
         });
-        getQuestBool();
-        $('#fullpage').fullpage({
-            // sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff','deepskyblue','tomato'],
-            anchors: ['firstPage', 'secondPage', '3rdPage','lastPage'],
-            menu: '#menu'
-        });
-        var num;
-
-       $("#section1 a").click(function(){
-            targetIndex=event.target.id;
-            num = targetIndex.replace(/[^0-9]/g,"");
-            $("#section1 a").hide();
-            $("#quest_accordion-"+num).css("display","block");
-            $(".fp-controlArrow").hide();
-            $("body").removeAttr("class");
-    	});
-        $('body').on('click', '#backToList', function(){
-            $("#section1 a").show();
-            $("#quest_accordion-"+num).css("display","none");
-            $(".fp-controlArrow").show();
-            targetIndex = 0;
-        });
-        $("#section2 a").click(function(){
-            targetIndex=event.target.id;
-            num = targetIndex.replace(/[^0-9]/g,"");
-            $("#section2 a").hide();
-            $("#accordion-"+num).css("display","block");
-            $(".fp-controlArrow").hide();
-            $("body").removeAttr("class");
-    	});
-    	$("#section2 button").click(function(){
-            $("#section2 a").show();
-            $("#accordion-"+num).css("display","none");
-            $(".fp-controlArrow").show();
-            targetIndex = 0;
-	});
     });
     $('body').on('click', '#test_login', function(){
         $.ajax({

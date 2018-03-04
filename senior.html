@@ -160,31 +160,7 @@
     <script type="text/javascript" src="jquery.fullPage.js"></script>
     <script src="js/bootstrap.min.js"></script>
 	<script>
-        var id = getCookie('id');
-        var headers={};
-        headers['x-access-token']=getCookie('x-access-token');
-        if(id === undefined || id === null || headers === undefined || headers === null){
-            location.href='http://ssumon.com/';
-        }
-        $.ajax({
-            url : "http://52.79.41.31:3000/api/v1g1/user/" + getCookie('id'),
-            headers : headers,
-            type : "get",
-            accept: "application/json",
-            contentType: "application/json; charset=utf-8",
-            dataType: "json",
-            success: function(data) {
-                console.log(data);
-                if(data.quest_id === -1){
-                    location.href='http://ssumon.com/junior';
-                }else{
-                    location.href='http://ssumon.com/senior';
-                }
-            },
-            error: function(jqXHR,textStatus,errorThrown) {
-                $('#fail_change_password').text('서버 에러 또는 점검중');
-            }
-        });
+
 	</script>
 </head>
 <body>
@@ -933,105 +909,108 @@
         	}
     	});
  	    window.history.forward(0);
-
-		 // $.ajax({
-        //     url : "http://52.79.41.31:3000/api/v1g1/user/authenticate",
-        //     type : "post",
-        //     accept: "application/json",
-        //     contentType: "application/json; charset=utf-8",
-        //     data : JSON.stringify({id : "20170294", password : "20170294qkrgodud"}),
-        //     dataType: "json",
-        //     success: function(data) {
-        //         console.log("login data : " + JSON.stringify(data));
-        //         setCookie('x-access-token', data.token, 1);
-        //         setCookie('id', data.id, 1);
-        //
-        //
-        //     },
-        //     error: function(jqXHR,textStatus,errorThrown) {
-        //         console.log(jqXHR);
-        //         console.log(textStatus);
-        //         console.log(errorThrown);
-        //     }
-        // });
-
+        var id = getCookie('id');
         var headers={};
         headers['x-access-token']=getCookie('x-access-token');
-        var id = getCookie('id');
-        console.log("id : " + id);
-        console.log("headers : " + JSON.stringify(headers));
+        if(id === undefined || id === null || headers === undefined || headers === null){
+            location.href='http://ssumon.com/';
+        }
         $.ajax({
-            url : "http://52.79.41.31:3000/api/v1g1/user/ranking/" + id,
-            type:'get',
-            dataType : "json",
+            url : "http://52.79.41.31:3000/api/v1g1/user/" + getCookie('id'),
             headers : headers,
-            success : function(data){
-                console.log("data" , data);
-                $("#rankName1").append(data.top_ranking[0].name);
-                $("#rankScore1").append(data.top_ranking[0].score+" 점");
-                $("#rankName2").append(data.top_ranking[1].name);
-                $("#rankScore2").append(data.top_ranking[1].score+" 점");
-                $("#rankName3").append(data.top_ranking[2].name);
-                $("#rankScore3").append(data.top_ranking[2].score+" 점");
-                $("#meScore").append(data.my_ranking);
-            }
-        });
-        $.ajax({
-            url : "http://52.79.41.31:3000/api/v1g1/senior/" + id,
             type : "get",
             accept: "application/json",
             contentType: "application/json; charset=utf-8",
             dataType: "json",
-            headers: headers,
             success: function(data) {
                 console.log(data);
-                var cnt=0;
-                var inner_html = "";
-                var length=data.result.accept_user_list.length;
-                console.log(length);
-                for(var i=0; i < data.result.accept_user_list.length;i++){
-                    if(cnt == 0){
-                        console.log("cnt in 0",cnt);
-                        inner_html = inner_html + '<div class="slide">\n';
-                    }
-                    // inner_html = inner_html + '<section class="w3-container" style="text-align:left;">\n'+
-                    //     '<hr>\n'+
-                    inner_html = inner_html + '<section class="rcorners" style="align:center;">\n'+
-                        '<p style="font-size:1.2em; color:white; text-align:left; float:clear;">\n'+
-                        data.result.accept_user_list[i].name + '<br>\n'+
-                        '전화번호 : 0' + data.result.accept_user_list[i].phone_number +'<br>\n';
-                    if(data.result.accept_user_list[i].difficulty <= 1){
-                        inner_html = inner_html + 'Easy 모드 수락!\n';
-                    }
-                    else{
-                        inner_html = inner_html + 'Hard 모드 수락!\n';
-                    }
-                    inner_html = inner_html + '<div value="ho" id="success_' + data.result.accept_user_list[i].quest_id + '"><button class="goto_success_button" type = "button" junior_id="'+data.result.accept_user_list[i].id+'" quest_id = "'+ data.result.accept_user_list[i].quest_id +'"> 로그인 테스트 </button></div>'
-                    if(length == i+1 || cnt == 3){
-                        inner_html = inner_html +
-                            '</p>\n' +
-                            '</section>\n' +
-                            '</div>\n';
-                        cnt = 0;
-                    }else{
-                        inner_html = inner_html + '</section>\n';
-                        cnt++;
-                    }
+                if(data.quest_id === -1){
+                    location.href='http://ssumon.com/junior';
+                }else{
+
+                    var headers={};
+                    headers['x-access-token']=getCookie('x-access-token');
+                    var id = getCookie('id');
+                    console.log("id : " + id);
+                    console.log("headers : " + JSON.stringify(headers));
+                    $.ajax({
+                        url : "http://52.79.41.31:3000/api/v1g1/user/ranking/" + id,
+                        type:'get',
+                        dataType : "json",
+                        headers : headers,
+                        success : function(data){
+                            console.log("data" , data);
+                            $("#rankName1").append(data.top_ranking[0].name);
+                            $("#rankScore1").append(data.top_ranking[0].score+" 점");
+                            $("#rankName2").append(data.top_ranking[1].name);
+                            $("#rankScore2").append(data.top_ranking[1].score+" 점");
+                            $("#rankName3").append(data.top_ranking[2].name);
+                            $("#rankScore3").append(data.top_ranking[2].score+" 점");
+                            $("#meScore").append(data.my_ranking);
+                        }
+                    });
+                    $.ajax({
+                        url : "http://52.79.41.31:3000/api/v1g1/senior/" + id,
+                        type : "get",
+                        accept: "application/json",
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        headers: headers,
+                        success: function(data) {
+                            console.log(data);
+                            var cnt=0;
+                            var inner_html = "";
+                            var length=data.result.accept_user_list.length;
+                            console.log(length);
+                            for(var i=0; i < data.result.accept_user_list.length;i++){
+                                if(cnt == 0){
+                                    console.log("cnt in 0",cnt);
+                                    inner_html = inner_html + '<div class="slide">\n';
+                                }
+                                // inner_html = inner_html + '<section class="w3-container" style="text-align:left;">\n'+
+                                //     '<hr>\n'+
+                                inner_html = inner_html + '<section class="rcorners" style="align:center;">\n'+
+                                    '<p style="font-size:1.2em; color:white; text-align:left; float:clear;">\n'+
+                                    data.result.accept_user_list[i].name + '<br>\n'+
+                                    '전화번호 : 0' + data.result.accept_user_list[i].phone_number +'<br>\n';
+                                if(data.result.accept_user_list[i].difficulty <= 1){
+                                    inner_html = inner_html + 'Easy 모드 수락!\n';
+                                }
+                                else{
+                                    inner_html = inner_html + 'Hard 모드 수락!\n';
+                                }
+                                inner_html = inner_html + '<div value="ho" id="success_' + data.result.accept_user_list[i].quest_id + '"><button class="goto_success_button" type = "button" junior_id="'+data.result.accept_user_list[i].id+'" quest_id = "'+ data.result.accept_user_list[i].quest_id +'"> 로그인 테스트 </button></div>'
+                                if(length == i+1 || cnt == 3){
+                                    inner_html = inner_html +
+                                        '</p>\n' +
+                                        '</section>\n' +
+                                        '</div>\n';
+                                    cnt = 0;
+                                }else{
+                                    inner_html = inner_html + '</section>\n';
+                                    cnt++;
+                                }
+                            }
+                            console.log(inner_html);
+                            $('#accept_list').html(inner_html);
+                            $('#fullpage').fullpage({
+                                // sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff','deepskyblue','tomato'],
+                                anchors: ['firstPage', 'secondPage', '3rdPage','lastPage'],
+                                menu: '#menu'
+                            });
+                        },
+                        error: function(jqXHR,textStatus,errorThrown) {
+                            console.log(jqXHR);
+                            console.log(textStatus);
+                            console.log(errorThrown);
+                        }
+                    })
                 }
-                console.log(inner_html);
-                $('#accept_list').html(inner_html);
-                $('#fullpage').fullpage({
-                    // sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff','deepskyblue','tomato'],
-                    anchors: ['firstPage', 'secondPage', '3rdPage','lastPage'],
-                    menu: '#menu'
-                });
             },
             error: function(jqXHR,textStatus,errorThrown) {
-                console.log(jqXHR);
-                console.log(textStatus);
-                console.log(errorThrown);
+                $('#fail_change_password').text('서버 에러 또는 점검중');
             }
-        })
+        });
     });
 
     $('body').on('click', '.goto_success_button', function(){
