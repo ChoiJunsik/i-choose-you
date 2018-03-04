@@ -1564,6 +1564,10 @@
                     '<td style="color:#FE2E64; text-align: left;"">'+data.quest_info.reward+'</td>\n' +
                     '</tr>\n' +
                     '<tr>\n' +
+                    '<td style="text-align: right;">현재 신청 인원</td>\n' +
+                    '<td style="color:#FE2E64; text-align: left;"">( '+data.quest_info.people_num+' / 4 )</td>\n' +
+                    '</tr>\n' +
+                    '<tr>\n' +
                     '<td></td>\n' +
                     '<td>\n' +
                     '<div style="padding-left:25%;width:100%;height:70%;back">\n';
@@ -1577,14 +1581,17 @@
                 if(data.quest_status === -1){
                     inner_html = inner_html + '<h4>수락하시겠습니까?</h4><br>\n' + '<button id="yes_1" questId = ' + quest_id + '><img class="img-responsive" src="okbutton.png"  style="height:100px;"></button>\n<button id="backToList"><img class="img-responsive" src="return.png" alt="return" style="height:30px;"></button>\n';
                     img_html = img_html + '<div width="80%">' + data.quest_info.title + '</div>';
+                    img_html = img_html + '<div align="right" width="80%">( ' + data.quest_info.people_num + ' / 4)</div>';
                 }else if(data.quest_status === 0){
                     inner_html = inner_html + '<h4>진행중입니다.</h4><br>\n'+'<button id="backToList"><img class="img-responsive" src="return.png" alt="return" style="height:30px;"></button>\n';
                     img_html = img_html + '<div>' + data.quest_info.title + '</div>';
+                    img_html = img_html + '<div align="right" width="80%">( ' + data.quest_info.people_num + ' / 4)</div>';
                     img_html = img_html + '<img src="progress.png" width="10%" height="10%" align="right">';
                 }else if(data.quest_status === 1){
                     inner_html = inner_html + '<h4>퀘스트 완료!</h4><br>\n'+'<button id="backToList"><img class="img-responsive" src="return.png" alt="return" style="height:30px;"></button>\n';
                     img_html = img_html + '<del style="opacity:0.5;">';
                     img_html = img_html + '<div>' + data.quest_info.title + '</div>';
+                    img_html = img_html + '<div align="right" width="80%">( ' + data.quest_info.people_num + ' / 4)</div>';
                 }
                 $('#quest_index_' + quest_id).html(img_html);
                 inner_html = inner_html + '</div>\n' +
