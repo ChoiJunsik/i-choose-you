@@ -81,29 +81,52 @@ p{
 	-webkit-border-radius: 10px;
             border-radius: 10px;
 }
-#menu #firstPage{
+#menu2 li {
+	display:inline-block;
+	margin: 10px;
 	color: white;
+	background:#fff;
+	background: rgba(255,255,255, 0.5);
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+}
+#menu #firstPage{
+	float: right;
+	color: white;
+	width:      20%;
+	text-align: center;
 	background:#fff;
 	background:  #ec1556;
 	-webkit-border-radius: 10px;
             border-radius: 10px;
 }
 #menu #secondPage{
+	float: right;
 	color: white;
+	width:      20%;
+	text-align: center;
 	background:#fff;
 	background:  #2f97f8;
 	-webkit-border-radius: 10px;
             border-radius: 10px;
 }
-#menu #thirdPage{
+#menu2 #thirdPage{
+	float: right;
 	color: white;
+	width:      20%;
+
+	text-align: center;
 	background:#fff;
 	background:  #797ffc;
 	-webkit-border-radius: 10px;
             border-radius: 10px;
 }
-#menu #lastPage{
+#menu2 #lastPage{
+	float: right;
 	color: white;
+	width:      20%;
+	text-align: center;
+
 	background:#fff;
 	background:  #fbd429;
 	-webkit-border-radius: 10px;
@@ -132,16 +155,89 @@ p{
 #menu li.active a{
 	color: #fff;
 }
-#menu{
-	position:fixed;
-	top:0;
-	left:0;
-	height: 40px;
-	z-index: 70;
-	width: 100%;
-	padding: 0;
-	margin:0;
+
+#menu2 li.active{
+	background:#666;
+	background: rgba(0,0,0, 0.5);
+	color: #fff;
 }
+#menu2 li a{
+	text-decoration:none;
+	color: white;
+}
+#menu2 li.active a:hover{
+	color: #000;
+}
+#menu2 li:hover{
+	background: rgba(255,255,255, 0.8);
+}
+#menu2 li a,
+#menu2 li.active a{
+	padding: 9px 18px;
+	display:block;
+}
+#menu2 li.active a{
+	color: #fff;
+}
+
+
+@media screen and (min-width: 769px) {
+	#menu{
+	position:   fixed;
+	/*left:       50%;*/
+	bottom:     -10%;
+	width:      100%;
+	right: 0;
+	height:     25.3%;
+	margin-left: auto;
+	margin-right: auto;
+	background-color:#1d1d1d;
+	z-index: 70;
+}
+	#menu2{
+		position:   fixed;
+		/*left:       50%;*/
+		bottom:     -10%;
+		width:      100%;
+		right: 0;
+		height:     10%;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 5%;
+		background-color:#1d1d1d;
+		z-index: 71;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	#menu{
+		position:   fixed;
+		/*left:       50%;*/
+		bottom:     -10%;
+		width:      100%;
+		right: 0;
+		height:     25.3%;
+		margin-left: auto;
+		margin-right: auto;
+		background-color:#1d1d1d;
+		z-index: 70;
+	}
+	#menu2{
+		position:   fixed;
+		/*left:       50%;*/
+		bottom:     -10%;
+		width:      100%;
+		right: 0;
+		height:     16%;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 5%;
+		background-color:#1d1d1d;
+		z-index: 71;
+	}
+}
+
+
 .twitter-share-button{
 	position: fixed;
 	z-index: 99;
@@ -269,4 +365,5 @@ p{
 	right:10px;
 	z-index: 999;
  }
+
 
