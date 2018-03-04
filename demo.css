@@ -2,7 +2,7 @@
 -------- Page Styles: Accordion
 \*------------------------------------*/
 .main {
-	padding:10% 10% 10% 10%;
+	padding:2% 10% 10% 10%;
 }
 .main:before {
 	width:100%;
@@ -67,7 +67,7 @@
 
 /*----- Section Content -----*/
 .accordion-section-content {
-	padding:15px;
+	padding:5px;
 	display:none;
 	color:#e2e2e2;
 	background-color:#1d1d1d;
