@@ -990,10 +990,60 @@
                             }
                             console.log(inner_html);
                             $('#accept_list').html(inner_html);
+							var questNum = 0;
+                    var dogamNum = 0;                  
+                    $("#section1 a").click(function(){
+                        targetIndex=event.target.id;
+                        questNum = targetIndex.replace(/[^0-9]/g,"");
+                        $("#section1 a").hide();
+                        $("#quest_accordion-"+questNum).css("display","block");
+                        $("#section1 .fp-controlArrow").hide();
+                        $("body").removeAttr("class");
+                        if(dogamNum != 0){
+                            $("#accordion-"+dogamNum).css("display","block");
+                        }
+                    }); 
+                    $('body').on('click', '#backToList', function(){
+                        $("#section1 a").show();
+                        $("#quest_accordion-"+questNum).css("display","none");
+                        $("#section1 .fp-controlArrow").show();
+                        if(dogamNum != 0){
+                            $("#accordion-"+dogamNum).css("display","block");
+                        }
+                        questNum = targetIndex = 0;
+                    });
+                    $("#section2 a").click(function(){
+                        targetIndex=event.target.id;
+                        dogamNum = targetIndex.replace(/[^0-9]/g,"");
+                        $("#section2 a").hide();
+                        $("#accordion-"+dogamNum).css("display","block");
+                        $("#section2 .fp-controlArrow").hide();
+                        $("body").removeAttr("class");
+                        if(questNum != 0){
+                            $("#quest_accordion-"+questNum).css("display","block");
+                        }
+                    });
+                    $("#section2 button").click(function(){
+                        $("#section2 a").show();
+                        $("#accordion-"+dogamNum).css("display","none");
+                        $("#section2 .fp-controlArrow").show();
+                        if(questNum != 0){
+                            $("#quest_accordion-"+questNum).css("display","block");
+                        }
+                        dogamNum = targetIndex = 0;
+                    });
                             $('#fullpage').fullpage({
                                 // sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff','deepskyblue','tomato'],
                                 anchors: ['firstPage', 'secondPage', '3rdPage','lastPage'],
-                                menu: '#menu'
+                                menu: '#menu',
+								afterLoad: function(anchorLink, index){
+										if(dogamNum != 0){
+										$("#accordion-"+dogamNum).css("display","block");
+											}
+										if(questNum != 0){
+										$("#quest_accordion-"+questNum).css("display","block");
+									}
+                            }
                             });
                         },
                         error: function(jqXHR,textStatus,errorThrown) {
