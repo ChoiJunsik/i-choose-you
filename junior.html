@@ -175,13 +175,13 @@
 </head>
 <body>
 <ul id="menu2">
-    <li id="lastPage" data-menuanchor="lastPage"><a href="#lastPage" >크레딧</a></li>
-    <li id="thirdPage"  data-menuanchor="3rdPage"><a href="#3rdPage">랭킹</a></li>
+    <li id="lastPage" data-menuanchor="lastPage"><a href="#lastPage" style="vertical-align: middle">크레딧</a></li>
+    <li id="thirdPage"  data-menuanchor="3rdPage"><a href="#3rdPage" style="vertical-align: middle">랭킹</a></li>
     <!--<li id="logOut"><button id="logout" style="border: 7px solid #A6A6A6; background:#A6A6A6; border-radius: 10px 10px 10px 10px;">로그아웃</button></li>-->
 </ul>
 <ul id="menu">
-    <li id="secondPage"  data-menuanchor="secondPage"><a href="#secondPage">도감</a></li>
-    <li id="firstPage"  data-menuanchor="firstPage"><a href="#firstPage">의뢰</a></li>
+    <li id="secondPage"  data-menuanchor="secondPage"><a href="#secondPage" style="vertical-align: middle">도감</a></li>
+    <li id="firstPage"  data-menuanchor="firstPage"><a href="#firstPage" style="vertical-align: middle">의뢰</a></li>
     <!--<li id="logOut"><button id="logout" style="border: 7px solid #A6A6A6; background:#A6A6A6; border-radius: 10px 10px 10px 10px;">로그아웃</button></li>-->
 </ul>
 
@@ -1629,16 +1629,17 @@
                     img_html = img_html + data.quest_info.title ;
                     img_html = img_html + '<div random = "' + random + '" id="title_quest_id_' + quest_id + '" align="right"  >( ' + data.quest_info.people_num + ' / 4)</div>';
                 }else if(data.quest_status === 0){
-                    inner_html = inner_html + '<button id="backToList"><img random = "' + random + '" class="img-responsive" src="return.png" alt="return" style="height:30px;"></button>\n';
+                    inner_html = inner_html + '<button id="backToList"><img id="return_button_index' + random + '" random = "' + random + '" class="img-responsive" src="return.png" alt="return" style="height:30px;"></button>\n';
                     img_html = img_html + data.quest_info.title;
                     img_html = img_html + '<img random = "' + random + '" id="title_img_quest_id_' + quest_id + '" src="progress.png" width="8%" height="8%" align="right">';
                 }else if(data.quest_status === 1){
-                    inner_html = inner_html + '<button id="backToList"><img random = "' + random + '" class="img-responsive" src="return.png" alt="return" style="height:30px;"></button>\n';
+                    inner_html = inner_html + '<button id="backToList"><img id="return_button_index' + random + '" random = "' + random + '" class="img-responsive" src="return.png" alt="return" style="height:30px;"></button>\n';
                     img_html = img_html + '<del random = "' + random + '" style="opacity:0.5;">';
+
                     img_html = img_html + data.quest_info.title;
                     img_html = img_html + '<div random = "' + random + '" id="title_quest_id_' + quest_id + '" align="right" >( ' + data.quest_info.people_num + ' / 4)</div>';
                 }else{
-                    inner_html = inner_html + '<button id="yes_1" questId = ' + quest_id + '><img class="img-responsive" src="okbutton.png"  style="height:100px;"></button>\n<button id="backToList"><img id="return_button_index\' + random + \'" random = "' + random + '" class="img-responsive" src="return.png" alt="return" style="height:30px;"></button>\n';
+                    inner_html = inner_html + '<button id="yes_1" questId = ' + quest_id + '><img class="img-responsive" src="okbutton.png"  style="height:100px;"></button>\n<button id="backToList"><img id="return_button_index' + random + '" random = "' + random + '" class="img-responsive" src="return.png" alt="return" style="height:30px;"></button>\n';
                     img_html = img_html + data.quest_info.title ;
                     img_html = img_html + '<div random = "' + random + '" id="title_quest_id_' + quest_id + '" align="right"  >( ' + data.quest_info.people_num + ' / 4)</div>';
                 }
