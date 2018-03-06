@@ -110,6 +110,7 @@ p{
 }
 #menu li a,
 #menu li.active a{
+	vertical-align: middle;
 	padding: 9px 18px;
 	display:block;
 }
@@ -134,6 +135,7 @@ p{
 }
 #menu2 li a,
 #menu2 li.active a{
+	vertical-align: middle;
 	padding: 9px 18px;
 	display:block;
 }
