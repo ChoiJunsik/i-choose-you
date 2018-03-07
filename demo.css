@@ -72,5 +72,8 @@
 	color:#e2e2e2;
 	background-color:#1d1d1d;
 	border:15px solid #6994e3;
-	border-radius: 5px 5px 5px 5px;
+	/* border:groove 1em red; */
+	/* -webkit-border-radius: 15px;
+	-moz-border-radius: 15px; */
+	border-radius: 15px;
 }
