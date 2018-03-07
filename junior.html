@@ -1668,21 +1668,21 @@
                 }
 
                 if(data.quest_status === -1){
-                    inner_html = inner_html + '<button id="yes_1" questId = ' + quest_id + ' random = "' + random + '"><img src="okbutton.png"  width="25%" height="25%"></button>\n<button id="backToList' + random + '"><img id="return_button_index' + random + '" random = "' + random + '" class="img-responsive" src="return.png" alt="return" style="height:30px;"></button>\n';
+                    inner_html = inner_html + '<button id="yes_1" questId = ' + quest_id + ' random = "' + random + '"><img src="okbutton.png"  width="25%" height="25%"></button>\n<button id="backToList' + random + '" class="class_return" ><img id="return_button_index' + random + '" random = "' + random + '" class="class_return" src="return.png" alt="return" style="height:30px;"></button>\n';
                     img_html = img_html + data.quest_info.title ;
                     img_html = img_html + '<div random = "' + random + '" id="title_quest_id_' + quest_id + '" align="right"  >( ' + data.quest_info.people_num + ' / 4)</div>';
                 }else if(data.quest_status === 0){
-                    inner_html = inner_html + '<button id="backToList' + random + '"><img id="return_button_index' + random + '" random = "' + random + '" class="img-responsive" src="return.png" alt="return" style="height:30px;"></button>\n';
+                    inner_html = inner_html + '<button id="backToList' + random + '" class="class_return" ><img id="return_button_index' + random + '" random = "' + random + '" class="class_return" src="return.png" alt="return" style="height:30px;"></button>\n';
                     img_html = img_html + data.quest_info.title;
                     img_html = img_html + '<img random = "' + random + '" id="title_img_quest_id_' + quest_id + '" src="progress.png" width="8%" height="8%" align="right">';
                 }else if(data.quest_status === 1){
-                    inner_html = inner_html + '<button id="backToList' + random + '"><img id="return_button_index' + random + '" random = "' + random + '" class="img-responsive" src="return.png" alt="return" style="height:30px;"></button>\n';
+                    inner_html = inner_html + '<button id="backToList' + random + '" class="class_return" ><img id="return_button_index' + random + '" random = "' + random + '" class="class_return" src="return.png" alt="return" style="height:30px;"></button>\n';
                     img_html = img_html + '<del random = "' + random + '" style="opacity:0.5;">';
 
                     img_html = img_html + data.quest_info.title;
                     img_html = img_html + '<div random = "' + random + '" id="title_quest_id_' + quest_id + '" align="right" >( ' + data.quest_info.people_num + ' / 4)</div>';
                 }else{
-                    inner_html = inner_html + '<button id="yes_1" questId = ' + quest_id + '><img class="img-responsive" src="okbutton.png"  style="height:100px;"></button>\n<button id="backToList' + random + '"><img id="return_button_index' + random + '" random = "' + random + '" class="img-responsive" src="return.png" alt="return" style="height:30px;"></button>\n';
+                    inner_html = inner_html + '<button id="yes_1" questId = ' + quest_id + '><img class="class_return" src="okbutton.png"  style="height:100px;"></button>\n<button id="backToList' + random + '" class="class_return"><img id="return_button_index' + random + '" random = "' + random + '" class="img-responsive" src="return.png" alt="return" style="height:30px;"></button>\n';
                     img_html = img_html + data.quest_info.title ;
                     img_html = img_html + '<div random = "' + random + '" id="title_quest_id_' + quest_id + '" align="right"  >( ' + data.quest_info.people_num + ' / 4)</div>';
                 }
@@ -1792,27 +1792,56 @@
                     });
                     getQuestBool();
                     var questNum = 0;
-                    var dogamNum = 0;                  
+                    var dogamNum = 0;
                     $("#section1 a").click(function(){
+                        console.log('here');
                         targetIndex=event.target.id;
-                        questNum = targetIndex.replace(/[^0-9]/g,"");
-                        $("#section1 a").hide();
-                        $("#quest_accordion-"+questNum).css("display","block");
-                        $("#section1 .fp-controlArrow").hide();
-                        $("body").removeAttr("class");
-                        if(dogamNum != 0){
-                            $("#accordion-"+dogamNum).css("display","block");
+                        console.log('targetIndex : ', targetIndex);
+                        num = targetIndex.replace(/[^0-9]/g,"");
+                        var id_name = targetIndex.replace(/[0-9]/g,"");
+                        console.log('id_name : ', id_name);
+                        if(id_name === 'quest_index_'){
+                            var random = $('#title_quest_id_' + num).attr('random');
+                            console.log('random : ', random);
+                            console.log('num', num);
+                            $("#section1 a").hide();
+                            $("#quest_accordion-"+num).css("display","block");
+                            $(".fp-controlArrow").hide();
+                            $("body").removeAttr("class");
+                            questNum = num;
+                            if(dogamNum != 0){
+                                $("#accordion-"+dogamNum).css("display","block");
+                            }
+                        }else{
+                            var random = $('#title_quest_id_' + num).attr('random');
+                            console.log('random : ', random);
+                            console.log('num', num);
+                            $("#section1 a").hide();
+                            $("#quest_accordion-"+random).css("display","block");
+                            $(".fp-controlArrow").hide();
+                            $("body").removeAttr("class");
+                            questNum = random;
+                            if(dogamNum != 0){
+                                $("#accordion-"+dogamNum).css("display","block");
+                            }
                         }
-                    }); 
-                    $('body').on('click', '#backToList', function(){
+
+                    });
+                    $('body').on('click', '.class_return', function(){
+                        console.log('there');
                         $("#section1 a").show();
-                        $("#quest_accordion-"+questNum).css("display","none");
+                        targetIndex=event.target.id;
+                        console.log('targetIndex : ', targetIndex);
+                        num = targetIndex.replace(/[^0-9]/g,"");
+
+                        $("#quest_accordion-"+num).css("display","none");
                         $("#section1 .fp-controlArrow").show();
                         if(dogamNum != 0){
                             $("#accordion-"+dogamNum).css("display","block");
                         }
                         questNum = targetIndex = 0;
                     });
+
                     $("#section2 a").click(function(){
                         targetIndex=event.target.id;
                         dogamNum = targetIndex.replace(/[^0-9]/g,"");
