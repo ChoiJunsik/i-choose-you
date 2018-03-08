@@ -1433,7 +1433,6 @@
                     <div id="meScore">나의 등수는 ?&nbsp;&nbsp;&nbsp;&nbsp;</div>
                 </div>
             </div>
-
     </section>
     <section id="section4" class="section">
         <div class="container">
@@ -1876,7 +1875,7 @@
                             console.log('num', num);
                             $("#section1 a").hide();
                             $("#quest_accordion-"+num).css("display","block");
-                            $(".fp-controlArrow").hide();
+                            $("#section1 .fp-controlArrow").hide();
                             $("body").removeAttr("class");
                             questNum = num;
                             if(dogamNum != 0){
@@ -1888,7 +1887,7 @@
                             console.log('num', num);
                             $("#section1 a").hide();
                             $("#quest_accordion-"+random).css("display","block");
-                            $(".fp-controlArrow").hide();
+                            $("#section1 .fp-controlArrow").hide();
                             $("body").removeAttr("class");
                             questNum = random;
                             if(dogamNum != 0){
