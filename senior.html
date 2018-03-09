@@ -193,7 +193,7 @@
 <div id="fullpage">
 	<section id="section1" class="section">
 		<div class="container">
-			<button id="test_login" type="button"> 로그인 테스트 </button>
+
 			<div id="accept_list" class="container">
 
 			</div>
@@ -1014,6 +1014,10 @@
                             var inner_html = "";
                             var length=data.result.accept_user_list.length;
                             console.log(length);
+                            if(data.result.accept_user_list.length === 0){
+                                var inner_html = '<div class = "rcorners" style="align:center;">아무도 신청하지 않았습니다.</div>'
+                                $('#accept_list').html(inner_html);
+                            }
                             for(var i=0; i < data.result.accept_user_list.length;i++){
                                 if(cnt == 0){
                                     console.log("cnt in 0",cnt);
