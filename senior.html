@@ -83,7 +83,7 @@
         }
         #section3 .col-md-10,#section3 .col-md-12{
             color: white;
-            font-size: 2rem;
+            font-size: 1.3rem;
             background-color: black;
             opacity: 0.7;
             border-radius: 15px;
@@ -1092,13 +1092,18 @@
                                 anchors: ['firstPage', 'secondPage', '3rdPage','lastPage'],
                                 menu: '#menu',
 								afterLoad: function(anchorLink, index){
+                                        $("#section"+index+" .fp-controlArrow").show();
 										if(dogamNum != 0){
-										$("#accordion-"+dogamNum).css("display","block");
-											}
+										    $("#accordion-"+dogamNum).css("display","block");
+										}
 										if(questNum != 0){
-										$("#quest_accordion-"+questNum).css("display","block");
-									}
-                            }
+										    $("#quest_accordion-"+questNum).css("display","block");
+										}
+									},
+                                onLeave: function(index, nextIndex, direction){
+                                    var leavingSection = $(this);
+                                    $("#section"+index+" .fp-controlArrow").hide();
+                                }
                             });
                         },
                         error: function(jqXHR,textStatus,errorThrown) {
