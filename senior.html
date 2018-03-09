@@ -951,26 +951,7 @@
     }
 
     $(document).ready(function(){
-        $.ajax({
-            url : "http://52.79.41.31:3000/api/v1g1/user/authenticate",
-            type : "post",
-            accept: "application/json",
-            contentType: "application/json; charset=utf-8",
-            data : JSON.stringify({id : "20170294", password : "20170294qkrgodud"}),
-            dataType: "json",
-            success: function(data) {
-                console.log("login data : " + JSON.stringify(data));
-                setCookie('x-access-token', data.token, 1);
-                setCookie('id', data.id, 1);
 
-
-            },
-            error: function(jqXHR,textStatus,errorThrown) {
-                console.log(jqXHR);
-                console.log(textStatus);
-                console.log(errorThrown);
-            }
-        });
 
 		$(document).keydown(function(e){
         if(e.target.nodeName != "INPUT" && e.target.nodeName != "TEXTAREA"){
@@ -1192,27 +1173,7 @@
 
     });
 
-    $('body').on('click', '#test_login', function(){
-        $.ajax({
-            url : "http://52.79.41.31:3000/api/v1g1/user/authenticate",
-            type : "post",
-            accept: "application/json",
-            contentType: "application/json; charset=utf-8",
-            data : JSON.stringify({id : "20170294", password : "20170294qkrgodud"}),
-            dataType: "json",
-            success: function(data) {
-                console.log("login data : " + JSON.stringify(data));
-                setCookie('x-access-token', data.token, 1);
-                setCookie('id', data.id, 1);
 
-
-            },
-            error: function(jqXHR,textStatus,errorThrown) {
-                console.log(jqXHR);
-                console.log(textStatus);
-                console.log(errorThrown);
-            }
-        });
 	});
 </script>
 </body>
