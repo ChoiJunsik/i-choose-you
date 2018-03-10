@@ -56,8 +56,9 @@ html.fp-enabled,
     -khtml-user-select: none; /* webkit (konqueror) browsers */
     -ms-user-select: none; /* IE10+ */
     position: absolute;
-    z-index: 4;
-    top: 50%;
+    /*top: 80%;*/
+    bottom: 2.5%;
+    z-index: 100;
     cursor: pointer;
     width: 0;
     height: 0;
@@ -68,13 +69,14 @@ html.fp-enabled,
     transform: translate3d(0,0,0);
 }
 .fp-controlArrow.fp-prev {
-    left: 15px;
+    z-index: 100;
+    left: 10%;
     width: 0;
     border-width: 38.5px 34px 38.5px 0;
     border-color: transparent #fff transparent transparent;
 }
 .fp-controlArrow.fp-next {
-    right: 15px;
+    left: 25%;
     border-width: 38.5px 0 38.5px 34px;
     border-color: transparent transparent transparent #fff;
 }

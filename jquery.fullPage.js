@@ -2207,6 +2207,7 @@
                 sectionHeight = (windowsHeight - paddings);
             }
 
+            sectionHeight = sectionHeight/3;
             return sectionHeight;
         }
 

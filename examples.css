@@ -74,41 +74,25 @@ p{
 }
 #menu li {
 	display:inline-block;
-	margin: 10px;
+	margin-top: 1%;
+	margin-right: 2%;
 	color: white;
 	background:#fff;
 	background: rgba(255,255,255, 0.5);
 	-webkit-border-radius: 10px;
             border-radius: 10px;
 }
-#menu #firstPage{
+#menu2 li {
+	display:inline-block;
+	margin-top: 1%;
+	margin-right: 2%;
 	color: white;
 	background:#fff;
-	background:  #ec1556;
+	background: rgba(255,255,255, 0.5);
 	-webkit-border-radius: 10px;
-            border-radius: 10px;
+	border-radius: 10px;
 }
-#menu #secondPage{
-	color: white;
-	background:#fff;
-	background:  #2f97f8;
-	-webkit-border-radius: 10px;
-            border-radius: 10px;
-}
-#menu #thirdPage{
-	color: white;
-	background:#fff;
-	background:  #797ffc;
-	-webkit-border-radius: 10px;
-            border-radius: 10px;
-}
-#menu #lastPage{
-	color: white;
-	background:#fff;
-	background:  #fbd429;
-	-webkit-border-radius: 10px;
-            border-radius: 10px;
-}
+
 #menu li.active{
 	background:#666;
 	background: rgba(0,0,0, 0.5);
@@ -126,22 +110,397 @@ p{
 }
 #menu li a,
 #menu li.active a{
+	vertical-align: middle;
 	padding: 9px 18px;
 	display:block;
 }
 #menu li.active a{
 	color: #fff;
 }
-#menu{
-	position:fixed;
-	top:0;
-	left:0;
-	height: 40px;
-	z-index: 70;
-	width: 100%;
-	padding: 0;
-	margin:0;
+
+#menu2 li.active{
+	background:#666;
+	background: rgba(0,0,0, 0.5);
+	color: #fff;
 }
+#menu2 li a{
+	text-decoration:none;
+	color: white;
+}
+#menu2 li.active a:hover{
+	color: #000;
+}
+#menu2 li:hover{
+	background: rgba(255,255,255, 0.8);
+}
+#menu2 li a,
+#menu2 li.active a{
+	vertical-align: middle;
+	padding: 9px 18px;
+	display:block;
+}
+#menu2 li.active a{
+	color: #fff;
+}
+
+
+@media screen and (min-width: 769px) {
+	#menu #firstPage{
+		float: right;
+		color: white;
+		width:      40%;
+		height:     20%;
+		text-align: center;
+		background:#fff;
+		background:  #ec1556;
+		-webkit-border-radius: 10px;
+		border-radius: 10px;
+	}
+	#menu #secondPage{
+		float: right;
+		color: white;
+		width:      40%;
+		height:     20%;
+		text-align: center;
+		background:#fff;
+		background:  #2f97f8;
+		-webkit-border-radius: 10px;
+		border-radius: 10px;
+	}
+	#menu2 #thirdPage{
+		float: right;
+		color: white;
+		width:      40%;
+		height:     50%;
+		text-align: center;
+		background:#fff;
+		background:  #797ffc;
+		-webkit-border-radius: 10px;
+		border-radius: 10px;
+	}
+	#menu2 #lastPage{
+		float: right;
+		color: white;
+		width:      40%;
+		height:     50%;
+		text-align: center;
+
+		background:#fff;
+		background:  #fbd429;
+		-webkit-border-radius: 10px;
+		border-radius: 10px;
+	}
+
+	#menu{
+	position:   fixed;
+	/*left:       50%;*/
+	bottom:     -10%;
+	width:      50%;
+	right: 0;
+	height:     25.3%;
+	margin-left: auto;
+	margin-right: auto;
+	background-color:#1d1d1d;
+	z-index: 98;
+}
+	#menu2{
+		position:   fixed;
+		/*left:       50%;*/
+		bottom:     -10%;
+		width:      50%;
+		right: 0;
+		height:     10%;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 5%;
+		/*background-color:#1d1d1d;*/
+		z-index: 99;
+	}
+	#menu_background{
+		position:   fixed;
+		/*left:       50%;*/
+		bottom:     -10%;
+		width:      100%;
+		right: 0;
+		height:     25.3%;
+		margin-left: auto;
+		margin-right: auto;
+		background-color:#1d1d1d;
+		z-index: -1;
+	}
+}
+
+@media screen and (min-width: 769px) and (max-width: 1065px){
+	#menu #firstPage{
+		float: right;
+		color: white;
+		width:      40%;
+		height:     20%;
+		text-align: center;
+		background:#fff;
+		background:  #ec1556;
+		-webkit-border-radius: 10px;
+		border-radius: 10px;
+	}
+	#menu #secondPage{
+		float: right;
+		color: white;
+		width:      40%;
+		height:     20%;
+		text-align: center;
+		background:#fff;
+		background:  #2f97f8;
+		-webkit-border-radius: 10px;
+		border-radius: 10px;
+	}
+	#menu2 #thirdPage{
+		float: right;
+		color: white;
+		width:      40%;
+		height:     50%;
+		text-align: center;
+		background:#fff;
+		background:  #797ffc;
+		-webkit-border-radius: 10px;
+		border-radius: 10px;
+	}
+	#menu2 #lastPage{
+		float: right;
+		color: white;
+		width:      40%;
+		height:     50%;
+		text-align: center;
+
+		background:#fff;
+		background:  #fbd429;
+		-webkit-border-radius: 10px;
+		border-radius: 10px;
+	}
+
+	#menu{
+		position:   fixed;
+		/*left:       50%;*/
+		bottom:     -10%;
+		width:      50%;
+		right: 0;
+		height:     25.3%;
+		margin-left: auto;
+		margin-right: auto;
+		background-color:#1d1d1d;
+		z-index: 98;
+	}
+	#menu2{
+		position:   fixed;
+		/*left:       50%;*/
+		bottom:     -7%;
+		width:      50%;
+		right: 0;
+		height:     10%;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 5%;
+		/*background-color:#1d1d1d;*/
+		z-index: 99;
+	}
+	#menu_background{
+		position:   fixed;
+		/*left:       50%;*/
+		bottom:     -10%;
+		width:      100%;
+		right: 0;
+		height:     25.3%;
+		margin-left: auto;
+		margin-right: auto;
+		background-color:#1d1d1d;
+		z-index: -1;
+	}
+}
+
+
+@media screen and (min-width: 650px) and (max-width: 768px){
+	#menu #firstPage{
+		float: right;
+		color: white;
+		width:      40%;
+		height:     20%;
+		text-align: center;
+		background:#fff;
+		background:  #ec1556;
+		-webkit-border-radius: 10px;
+		border-radius: 10px;
+	}
+	#menu #secondPage{
+		float: right;
+		color: white;
+		width:      40%;
+		height:     20%;
+		text-align: center;
+		background:#fff;
+		background:  #2f97f8;
+		-webkit-border-radius: 10px;
+		border-radius: 10px;
+	}
+	#menu2 #thirdPage{
+		float: right;
+		color: white;
+		width:      40%;
+		height:     50%;
+		text-align: center;
+		background:#fff;
+		background:  #797ffc;
+		-webkit-border-radius: 10px;
+		border-radius: 10px;
+	}
+	#menu2 #lastPage{
+		float: right;
+		color: white;
+		width:      40%;
+		height:     50%;
+		text-align: center;
+
+		background:#fff;
+		background:  #fbd429;
+		-webkit-border-radius: 10px;
+		border-radius: 10px;
+	}
+
+	#menu{
+		position:   fixed;
+		/*left:       50%;*/
+		bottom:     -10%;
+		width:      50%;
+		right: 0;
+		height:     25.3%;
+		margin-left: auto;
+		margin-right: auto;
+		background-color:#1d1d1d;
+		z-index: 98;
+	}
+	#menu2{
+		position:   fixed;
+		/*left:       50%;*/
+		bottom:     -7%;
+		width:      50%;
+		right: 0;
+		height:     10%;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 5%;
+		/*background-color:#1d1d1d;*/
+		z-index: 99;
+	}
+	#menu_background{
+		position:   fixed;
+		/*left:       50%;*/
+		bottom:     -10%;
+		width:      100%;
+		right: 0;
+		height:     25.3%;
+		margin-left: auto;
+		margin-right: auto;
+		background-color:#1d1d1d;
+		z-index: -1;
+	}
+}
+
+
+@media screen and (max-width: 649px) {
+	#menu #firstPage{
+		z-index: 99;
+		margin-right: 4%;
+		float: right;
+		color: white;
+		margin-top: 4%;
+		width:      40%;
+		height:     19%;
+		text-align: center;
+		background:#fff;
+		background:  #ec1556;
+		-webkit-border-radius: 10px;
+		border-radius: 10px;
+	}
+	#menu #secondPage{
+		z-index: 99;
+		margin-right: 5%;
+		float: right;
+		color: white;
+		margin-top: 4%;
+		width:      40%;
+		height:     19%;
+		text-align: center;
+		background:#fff;
+		background:  #2f97f8;
+		-webkit-border-radius: 10px;
+		border-radius: 10px;
+	}
+	#menu2 #thirdPage{
+		z-index: 99;
+		margin-right: 4%;
+		float: right;
+		color: white;
+		width:      40%;
+		height:     30%;
+		text-align: center;
+		background:#fff;
+		background:  #797ffc;
+		-webkit-border-radius: 10px;
+		border-radius: 10px;
+	}
+	#menu2 #lastPage{
+		z-index: 99;
+		margin-right: 5%;
+		float: right;
+		color: white;
+		width:      40%;
+		height:     30%;
+		text-align: center;
+
+		background:#fff;
+		background:  #fbd429;
+		-webkit-border-radius: 10px;
+		border-radius: 10px;
+	}
+
+	#menu{
+		position:   fixed;
+		/*left:       50%;*/
+		bottom:     -10%;
+		width:      50%;
+		right: 0;
+		height:     25.3%;
+		margin-left: auto;
+		margin-right: auto;
+		/*background-color:#1d1d1d;*/
+		z-index: 98;
+	}
+	#menu2{
+		position:   fixed;
+		/*left:       50%;*/
+		bottom:     -11%;
+		width:      50%;
+		right: 0;
+		height:     16%;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 5%;
+		/*background-color:#1d1d1d;*/
+		z-index: 99;
+	}
+	#menu_background{
+		position:   fixed;
+		/*left:       50%;*/
+		bottom:     -10%;
+		width:      100%;
+		right: 0;
+		height:     25.3%;
+		margin-left: auto;
+		margin-right: auto;
+		background-color:#1d1d1d;
+		z-index: -1;
+	}
+}
+
+
 .twitter-share-button{
 	position: fixed;
 	z-index: 99;
@@ -269,4 +628,3 @@ p{
 	right:10px;
 	z-index: 999;
  }
-
