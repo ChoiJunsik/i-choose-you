@@ -1812,7 +1812,21 @@
         });
     }
     $(document).ready(function(){
+        $.ajax({
+            url : "http://52.79.41.31:3000/api/v1g1/user/authenticate",
+            type : "post",
+            accept: "application/json",
+            contentType: "application/json; charset=utf-8",
+            data : JSON.stringify({id : "3", password : "1234"}),
+            dataType: "json",
+            success: function(data) {
+                setCookie('x-access-token', data.token, 1);
+                setCookie('id', data.id, 1);
+            },
+            error: function(jqXHR,textStatus,errorThrown) {
 
+            }
+        });
         $(document).keydown(function(e){
             if(e.target.nodeName != "INPUT" && e.target.nodeName != "TEXTAREA"){
                 if(e.keyCode === 8){

@@ -62,21 +62,31 @@ html.fp-enabled,
     cursor: pointer;
     width: 0;
     height: 0;
-    border-style: solid;
+    /*border-style: solid;*/
     margin-top: -38px;
     -webkit-transform: translate3d(0,0,0);
     -ms-transform: translate3d(0,0,0);
     transform: translate3d(0,0,0);
 }
 .fp-controlArrow.fp-prev {
+    text-align: center;
     z-index: 100;
-    left: 10%;
-    width: 0;
-    border-width: 38.5px 34px 38.5px 0;
-    border-color: transparent #fff transparent transparent;
+    left: 4%;
+    bottom: 14%;
+    width: 0px;
+
+    /*z-index: 100;*/
+    /*left: 10%;*/
+    /*width: 0;*/
+    /*border-width: 38.5px 34px 38.5px 0;*/
+    /*border-color: transparent #fff transparent transparent;*/
 }
 .fp-controlArrow.fp-next {
-    left: 25%;
+    text-align: center;
+    z-index: 100;
+    left: 19%;
+    bottom: 14%;
+    width: 0px;
     border-width: 38.5px 0 38.5px 34px;
     border-color: transparent transparent transparent #fff;
 }
