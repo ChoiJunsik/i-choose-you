@@ -15,7 +15,7 @@
     <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
     <style>
         @media screen and (max-height: 700px) {
-            #section2 .col-md-12, #section2 .col-md-7, .main{
+            #section2 .col-md-12, #section2 .col-md-7, #section2 .main{
                 padding-left:0px;
                 padding-right:0px;
             }
@@ -23,21 +23,13 @@
                 padding-left:10px;
                 padding-right:10px;
             }
-            #section3 img{
-                width: 80px;
-                margin:0 auto;
-            }
-            #section3 .col-md-10{
-                width:50%;
-                margin:0 auto;
-            }
         }
         #menu li{
         }
         /* Sections
          * --------------------------------------- */
         @font-face {
-            font-family: morris9;
+            font-family: 'morris9';
             src: url(./fonts/morris9.ttf) format('truetype');
         }
         body{
@@ -54,7 +46,7 @@
             background-color:#1d1d1d;
             opacity: 1;
             border:15px solid #6994e3;
-            border-radius: 15px;
+            border-radius: 10px 10px 10px 10px;
         }
         #section2 .col-md-12 .col-md-12:first-child{
             padding-bottom: 10px;
@@ -88,7 +80,7 @@
         }
         #section3 .col-md-10,#section3 .col-md-12{
             color: white;
-            font-size: 1rem;
+            font-size: 1.3rem;
             background-color: black;
             opacity: 0.7;
             border-radius: 15px;
@@ -154,6 +146,15 @@
             -webkit-transition: all .35s;
             -o-transition: all .35s;
             transition: all .35s;
+        }
+        .rcorners {
+            border-radius: 25px;
+            background: black;
+            opacity: 0.6;
+            padding: 20px;
+            margin: 10px;
+            margin-left: 10%;
+            width: 80%;
         }
         .credit{
             color:#e2e2e2;
