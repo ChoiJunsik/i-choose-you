@@ -10,6 +10,7 @@
     <link rel="stylesheet" type="text/css" href="demo.css">
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico" />
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
     <style>
@@ -788,7 +789,8 @@
             </div>
         </div>
     </section>
-	<section id="section2" class="section">
+
+  <section id="section2" class="section">
         <div class="container">
               <div class="container">
                       <div class="slide active">
@@ -1404,9 +1406,10 @@
                                 </div>
                             </div>
           </div>
-       </section>
-       <section id="section3" class="section text-center">
-        <div class="container" style="margin-bottom: 50%;">
+  </section>
+
+  <section id="section3" class="section text-center">
+        <div class="container">
             <div class="row">
                 <div class="col-md-2 scoreName"><img class="img-responsive" src="gold.png" alt=""></div>
                 <div class="col-md-10 scoreInfo">
@@ -1431,8 +1434,10 @@
             <div class="row">
                 <div class="col-md-12 scoreInfo">
                     <div id="meScore">나의 등수는 ?&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                    <div id="meScore2">나의 점수는 ?&nbsp;&nbsp;&nbsp;&nbsp;</div>
                 </div>
             </div>
+        </div>
     </section>
     <section id="section4" class="section">
         <div class="container">
@@ -1471,7 +1476,7 @@
                         </tbody>
                     </table>
                     <br>
-                    <button id="logout" style="border: 7px solid #A6A6A6; background:#A6A6A6; border-radius: 10px 10px 10px 10px;">로그아웃</button>
+                    <button id="logout_button" style="border: 7px solid #A6A6A6; background:#A6A6A6; border-radius: 10px 10px 10px 10px;">로그아웃</button>
                 </div><!--end .accordion-section-content-->
             </h4>
         </div>
@@ -1637,7 +1642,7 @@
                     }
                 }
 
-                for(var q_index = 2; q_index < data.result.quest_bool.length; q_index++){
+                for(var q_index = 2; q_index <= data.result.quest_bool.length; q_index++){
                     if(checkArray[q_index] === false && q_index % 2 === 1){
                         var questId = 0;
                         if(q_index % 2 === 1){
@@ -1807,6 +1812,7 @@
         });
     }
     $(document).ready(function(){
+
         $(document).keydown(function(e){
             if(e.target.nodeName != "INPUT" && e.target.nodeName != "TEXTAREA"){
                 if(e.keyCode === 8){
@@ -1817,6 +1823,7 @@
         window.history.forward(0);
         $("#section2 #hideOrShow1").hide();
         $("#section2 #hideOrShow2").hide();
+
         $("#section2 .accordion-section-content .col-md-12 .col-md-12:nth-child(1)").append("<div  id=\"hideQ1\" class=\"col-md-7\"><div class=\"text-left\">???<br>???<br>???</div>");
         $("#section2 .accordion-section-content .col-md-12 .col-md-12:nth-child(2)").append("<div  id=\"hideQ2\" class=\"col-md-7\"><div class=\"text-left\">???<br>???<br>???</div>");
         $("#section2 .accordion-section-content .col-md-12 .col-md-12:nth-child(2)").append("<button  id=\"hideQ2\" type=\"button\"><img class=\"img-responsive\" src=\"return.png\" alt=\"return\" style=\"height:55px;\"></button>");
@@ -1857,6 +1864,7 @@
                             $("#rankName3").append(data.top_ranking[2].name);
                             $("#rankScore3").append(data.top_ranking[2].score+" 점");
                             $("#meScore").append(data.my_ranking);
+                            $("#meScore2").append(data.my_ranking_info.score+" 점");
                         }
                     });
                     getQuestBool();
@@ -1936,12 +1944,17 @@
                         anchors: ['firstPage', 'secondPage', '3rdPage','lastPage'],
                         menu: '#menu',
                         afterLoad: function(anchorLink, index){
+                            $("#section"+index+" .fp-controlArrow").show();                            
                             if(dogamNum != 0){
                                 $("#accordion-"+dogamNum).css("display","block");
                             }
                             if(questNum != 0){
                                 $("#quest_accordion-"+questNum).css("display","block");
                             }
+                        },
+                        onLeave: function(index, nextIndex, direction){
+                            var leavingSection = $(this);
+                            $("#section"+index+" .fp-controlArrow").hide();                            
                         }
                     });
 
@@ -1953,27 +1966,15 @@
                 $('#fail_change_password').text('서버 에러 또는 점검중');
             }
         });
-        $.ajax({
-            url : "http://52.79.41.31:3000/api/v1g1/user/authenticate",
-            type : "post",
-            accept: "application/json",
-            contentType: "application/json; charset=utf-8",
-            data : JSON.stringify({id : "20189999", password : "20189999gnqo"}),
-            dataType: "json",
-            success: function(data) {
-                console.log("login data : " + JSON.stringify(data));
-                setCookie('x-access-token', data.token, 1);
-                setCookie('id', data.id, 1);
-            },
-            error: function(jqXHR,textStatus,errorThrown) {
-                console.log(jqXHR);
-                console.log(textStatus);
-                console.log(errorThrown);
-            }
-        });
     });
-    $('body').on('click', '#test_login', function(){
+
+    $('body').on('click', '#logout_button', function(){
+        setCookie('x-access-token', "", -1);
+        setCookie('id', "", -1);
+        location.href = "http://ssumon.com/"
     });
+
+
     $('body').on('click', '#yes_1', function(){
         var id = getCookie('id');
         var headers = {};
