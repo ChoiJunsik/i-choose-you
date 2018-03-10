@@ -27,7 +27,7 @@
                 width: 80px;
                 margin:0 auto;
             }
-            #section3 .col-md-10{
+            #section3 .col-xs-10{
                 width:50%;
                 margin:0 auto;
             }
@@ -86,7 +86,7 @@
         #section3 .row:first-child{
             margin-top:15px;
         }
-        #section3 .col-md-10,#section3 .col-md-12{
+        #section3 .col-xs-8,#section3 .col-xs-12{
             color: white;
             font-size: 1rem;
             background-color: black;
@@ -99,6 +99,10 @@
             border:10px solid rgb(46, 46, 46);
             width: 100px;
         }
+        .scoreInfo{
+            margin-top: 15px;
+        }
+
         /* Acordeon styles */
         .tab {
             position: relative;
@@ -1411,28 +1415,28 @@
   <section id="section3" class="section text-center">
         <div class="container">
             <div class="row">
-                <div class="col-md-2 scoreName"><img class="img-responsive" src="gold.png" alt=""></div>
-                <div class="col-md-10 scoreInfo">
+                <div class="col-md-2 col-xs-4 scoreName"><img class="img-responsive" src="gold.png" alt=""></div>
+                <div class="col-md-8 col-xs-8 scoreInfo">
                     <div id="rankName1"></div>
                     <div id="rankScore1"></div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-2" id="secondMan"><div class="scoreName"><img class="img-responsive" src="silver.png" alt=""></div></div>
-                <div class="col-md-10 scoreInfo">
+                <div class="col-md-2 col-xs-4" id="secondMan"><div class="scoreName"><img class="img-responsive" src="silver.png" alt=""></div></div>
+                <div class="col-md-8 col-xs-8 scoreInfo">
                     <div id="rankName2"></div>
                     <div id="rankScore2"></div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-2" id="thirdMan"><div class="scoreName"><img class="img-responsive" src="bronze.png" alt=""></div></div>
-                <div class="col-md-10 scoreInfo">
+                <div class="col-md-2 col-xs-4" id="thirdMan"><div class="scoreName"><img class="img-responsive" src="bronze.png" alt=""></div></div>
+                <div class="col-md-8 col-xs-8 scoreInfo">
                     <div id="rankName3"></div>
                     <div id="rankScore3"></div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-12 scoreInfo">
+                <div class="col-xs-12 scoreInfo" style="margin-bottom:80px;">
                     <div id="meScore">나의 등수는 ?&nbsp;&nbsp;&nbsp;&nbsp;</div>
                     <div id="meScore2">나의 점수는 ?&nbsp;&nbsp;&nbsp;&nbsp;</div>
                 </div>
