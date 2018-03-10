@@ -789,7 +789,8 @@
             </div>
         </div>
     </section>
-	<section id="section2" class="section">
+
+  <section id="section2" class="section">
         <div class="container">
               <div class="container">
                       <div class="slide active">
@@ -1405,9 +1406,10 @@
                                 </div>
                             </div>
           </div>
-       </section>
-       <section id="section3" class="section text-center">
-        <div class="container" style="margin-bottom: 50%;">
+  </section>
+
+  <section id="section3" class="section text-center">
+        <div class="container">
             <div class="row">
                 <div class="col-md-2 scoreName"><img class="img-responsive" src="gold.png" alt=""></div>
                 <div class="col-md-10 scoreInfo">
@@ -1432,8 +1434,10 @@
             <div class="row">
                 <div class="col-md-12 scoreInfo">
                     <div id="meScore">나의 등수는 ?&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                    <div id="meScore2">나의 점수는 ?&nbsp;&nbsp;&nbsp;&nbsp;</div>
                 </div>
             </div>
+        </div>
     </section>
     <section id="section4" class="section">
         <div class="container">
@@ -1860,6 +1864,7 @@
                             $("#rankName3").append(data.top_ranking[2].name);
                             $("#rankScore3").append(data.top_ranking[2].score+" 점");
                             $("#meScore").append(data.my_ranking);
+                            $("#meScore2").append(data.my_ranking_info.score+" 점");
                         }
                     });
                     getQuestBool();
