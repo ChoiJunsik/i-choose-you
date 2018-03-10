@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
     <style>
-        @media screen and (max-height: 700px) {
+                @media screen and (max-height: 700px) {
             #section2 .col-md-12, #section2 .col-md-7, .main{
                 padding-left:0px;
                 padding-right:0px;
@@ -27,9 +27,29 @@
                 width: 80px;
                 margin:0 auto;
             }
-            #section3 .col-md-10{
-                width:50%;
+            #section3 .col-xs-12{
                 margin:0 auto;
+            }
+            #meScore,#meScore2{
+                padding-left:100px;
+            }
+            .scoreInfo{
+                margin-top: 15px;
+             }
+            #section2 img{
+                margin-left:70px;
+            }
+        }
+        @media screen and (min-height: 700px) {
+            #section3 .container{
+                    margin-left:300px;
+            }
+            #section3 .row div{
+                font-size:2rem;
+            }
+            #meScore,#meScore2{
+                    font-size:2rem;
+                    padding-left:350px;
             }
         }
         #menu li{
@@ -77,16 +97,17 @@
         #section2 button img{
             margin-left:0px;
         }
-        #hideOrShow{
-            padding-top:10px;
-        }
-        #section3 .row{
-            margin-bottom:30px;
-        }
+    	#hideOrShow{
+    		padding-top:10px;
+    	}
+    	#section3 .row{
+    		margin-bottom:30px;
+            margin-right: 30px;
+    	}
         #section3 .row:first-child{
             margin-top:15px;
         }
-        #section3 .col-md-10,#section3 .col-md-12{
+        #section3 .col-xs-8,#section3 .col-xs-12{
             color: white;
             font-size: 1rem;
             background-color: black;
@@ -96,8 +117,11 @@
         .scoreName img{
             background-color: rgb(172, 169, 169);
             border-radius: 15px;
-            border:10px solid rgb(46, 46, 46);
+            border:10px solid rgba(0, 0, 0, .7);
             width: 100px;
+        }
+        .scoreInfo{
+            margin-top: 8px;
         }
         /* Acordeon styles */
         .tab {
@@ -809,38 +833,39 @@
                         </div>
                     </div>
     </section>
-
     <section id="section3" class="section text-center">
         <div class="container">
             <div class="row">
-                <div class="col-md-2 scoreName"><img class="img-responsive" src="gold.png" alt=""></div>
-                <div class="col-md-10 scoreInfo">
+                <div class="col-md-2 col-xs-4 scoreName"><img class="img-responsive" src="gold.png" alt=""></div>
+                <div class="col-md-8 col-xs-8 scoreInfo">
                     <div id="rankName1"></div>
                     <div id="rankScore1"></div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-2" id="secondMan"><div class="scoreName"><img class="img-responsive" src="silver.png" alt=""></div></div>
-                <div class="col-md-10 scoreInfo">
+                <div class="col-md-2 col-xs-4" id="secondMan"><div class="scoreName"><img class="img-responsive" src="silver.png" alt=""></div></div>
+                <div class="col-md-8 col-xs-8 scoreInfo">
                     <div id="rankName2"></div>
                     <div id="rankScore2"></div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-2" id="thirdMan"><div class="scoreName"><img class="img-responsive" src="bronze.png" alt=""></div></div>
-                <div class="col-md-10 scoreInfo">
+                <div class="col-md-2 col-xs-4" id="thirdMan"><div class="scoreName"><img class="img-responsive" src="bronze.png" alt=""></div></div>
+                <div class="col-md-8 col-xs-8 scoreInfo">
                     <div id="rankName3"></div>
                     <div id="rankScore3"></div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-12 scoreInfo">
-                    <div id="meScore">나의 등수는 ?&nbsp;&nbsp;&nbsp;&nbsp;</div>
-                    <div id="meScore2">나의 점수는 ?&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                <div class="col-md-10 col-xs-12 scoreInfo" style="margin-left:10px; margin-bottom:80px;">
+                    <div class="text-left" id="meScore">나의 등수는 ?&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                    <div class="text-left" id="meScore2">나의 점수는 ?&nbsp;&nbsp;&nbsp;&nbsp;</div>
                 </div>
             </div>
         </div>
     </section>
+
+
     <section id="section4" class="section">
         <div class="container">
             <h4>
@@ -1017,8 +1042,9 @@
                             $("#rankName2").append(data.top_ranking[1].name);
                             $("#rankScore2").append(data.top_ranking[1].score+" 점");
                             $("#rankName3").append(data.top_ranking[2].name);
-                            $("#rankScore3").append(data.top_ranking[2].score+" 점");
-                            $("#meScore").append(data.my_ranking);
+                            $("#rankScore3").append(data.top_ranking[2].score+" 점");                            
+                            $("#meScore").append(data.my_ranking+" 등");
+                            $("#meScore2").append(data.my_ranking_info.score+" 점");
                         }
                     });
                     $.ajax({
