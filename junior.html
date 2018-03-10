@@ -1903,6 +1903,7 @@
                     var questNum = 0;
                     var dogamNum = 0;
                     $("#section1 a").click(function(){
+                        $("#section1 .fp-controlArrow").css({ 'pointer-events': 'none' });
                         console.log('here');
                         targetIndex=event.target.id;
                         console.log('targetIndex : ', targetIndex);
@@ -1915,7 +1916,6 @@
                             console.log('num', num);
                             $("#section1 a").hide();
                             $("#quest_accordion-"+num).css("display","block");
-                            $("#section1 .fp-controlArrow").hide();
                             $("body").removeAttr("class");
                             questNum = num;
                             if(dogamNum != 0){
@@ -1927,7 +1927,6 @@
                             console.log('num', num);
                             $("#section1 a").hide();
                             $("#quest_accordion-"+random).css("display","block");
-                            $("#section1 .fp-controlArrow").hide();
                             $("body").removeAttr("class");
                             questNum = random;
                             if(dogamNum != 0){
@@ -1937,14 +1936,13 @@
 
                     });
                     $('body').on('click', '.class_return', function(){
+                        $("#section1 .fp-controlArrow").css({ 'pointer-events': 'auto' });
                         console.log('there');
                         $("#section1 a").show();
                         targetIndex=event.target.id;
                         console.log('targetIndex : ', targetIndex);
                         num = targetIndex.replace(/[^0-9]/g,"");
-
                         $("#quest_accordion-"+num).css("display","none");
-                        $("#section1 .fp-controlArrow").show();
                         if(dogamNum != 0){
                             $("#accordion-"+dogamNum).css("display","block");
                         }
@@ -1952,20 +1950,20 @@
                     });
 
                     $("#section2 a").click(function(){
+                        $("#section2 .fp-controlArrow").css({ 'pointer-events': 'none' });
                         targetIndex=event.target.id;
                         dogamNum = targetIndex.replace(/[^0-9]/g,"");
                         $("#section2 a").hide();
                         $("#accordion-"+dogamNum).css("display","block");
-                        $("#section2 .fp-controlArrow").hide();
                         $("body").removeAttr("class");
                         if(questNum != 0){
                             $("#quest_accordion-"+questNum).css("display","block");
                         }
                     });
                     $("#section2 button").click(function(){
+                        $("#section2 .fp-controlArrow").css({ 'pointer-events': 'auto' });
                         $("#section2 a").show();
                         $("#accordion-"+dogamNum).css("display","none");
-                        $("#section2 .fp-controlArrow").show();
                         if(questNum != 0){
                             $("#quest_accordion-"+questNum).css("display","block");
                         }
