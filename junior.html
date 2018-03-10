@@ -1638,7 +1638,7 @@
                     }
                 }
 
-                for(var q_index = 2; q_index < data.result.quest_bool.length; q_index++){
+                for(var q_index = 2; q_index <= data.result.quest_bool.length; q_index++){
                     if(checkArray[q_index] === false && q_index % 2 === 1){
                         var questId = 0;
                         if(q_index % 2 === 1){
@@ -1808,6 +1808,7 @@
         });
     }
     $(document).ready(function(){
+
         $(document).keydown(function(e){
             if(e.target.nodeName != "INPUT" && e.target.nodeName != "TEXTAREA"){
                 if(e.keyCode === 8){
@@ -1818,6 +1819,7 @@
         window.history.forward(0);
         $("#section2 #hideOrShow1").hide();
         $("#section2 #hideOrShow2").hide();
+
         $("#section2 .accordion-section-content .col-md-12 .col-md-12:nth-child(1)").append("<div  id=\"hideQ1\" class=\"col-md-7\"><div class=\"text-left\">???<br>???<br>???</div>");
         $("#section2 .accordion-section-content .col-md-12 .col-md-12:nth-child(2)").append("<div  id=\"hideQ2\" class=\"col-md-7\"><div class=\"text-left\">???<br>???<br>???</div>");
         $("#section2 .accordion-section-content .col-md-12 .col-md-12:nth-child(2)").append("<button  id=\"hideQ2\" type=\"button\"><img class=\"img-responsive\" src=\"return.png\" alt=\"return\" style=\"height:55px;\"></button>");
