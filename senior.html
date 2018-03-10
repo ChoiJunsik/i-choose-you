@@ -2,40 +2,45 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>너로 정했다!</title>
-	<link rel="stylesheet" type="text/css" href="jquery.fullPage.css" />
-	<link rel="stylesheet" type="text/css" href="examples.css" />
-	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
-	<link rel="stylesheet" type="text/css" href="demo.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>너로 정했다!</title>
+    <link rel="stylesheet" type="text/css" href="jquery.fullPage.css" />
+    <link rel="stylesheet" type="text/css" href="examples.css" />
+    <link rel="stylesheet" type="text/css" href="demo.css">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico" />
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-	<script type="text/javascript" src="accordion.js"></script>
-	<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
-	<!-- Bootstrap -->
-	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<style>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+    <style>
         @media screen and (max-height: 700px) {
-            #section2 .col-md-12, #section2 .col-md-7, #section2 .main{
+            #section2 .col-md-12, #section2 .col-md-7, .main{
                 padding-left:0px;
                 padding-right:0px;
             }
             #section2 .accordion-section-content{
                 padding-left:10px;
                 padding-right:10px;
-			}
+            }
+            #section3 img{
+                width: 80px;
+                margin:0 auto;
+            }
+            #section3 .col-md-10{
+                width:50%;
+                margin:0 auto;
+            }
         }
-		#menu li{
-		}
-		/* Sections
-		 * --------------------------------------- */
-		@font-face {
-			font-family: 'morris9';
-			src: url(./fonts/morris9.ttf) format('truetype');
-		}
-		body{
+        #menu li{
+        }
+        /* Sections
+         * --------------------------------------- */
+        @font-face {
+            font-family: morris9;
+            src: url(./fonts/morris9.ttf) format('truetype');
+        }
+        body{
             font-family: morris9;
             background-image: url('back.png');
             background-color: #D9E5FF;
@@ -49,15 +54,15 @@
             background-color:#1d1d1d;
             opacity: 1;
             border:15px solid #6994e3;
-            border-radius: 10px 10px 10px 10px;
+            border-radius: 15px;
         }
         #section2 .col-md-12 .col-md-12:first-child{
             padding-bottom: 10px;
             border-bottom: 5px solid gray;
         }
         #section2 .text-left{
-	    	padding-bottom:10px;
-	    	font-size: 1.3rem;
+            padding-bottom:10px;
+            font-size: 1.3rem;
         }
         #section1 button{
             background-color: #1d1d1d;
@@ -72,18 +77,18 @@
         #section2 button img{
             margin-left:0px;
         }
-    	#hideOrShow{
-    		padding-top:10px;
-    	}
-    	#section3 .row{
-    		margin-bottom:30px;
-    	}
+        #hideOrShow{
+            padding-top:10px;
+        }
+        #section3 .row{
+            margin-bottom:30px;
+        }
         #section3 .row:first-child{
             margin-top:15px;
         }
         #section3 .col-md-10,#section3 .col-md-12{
             color: white;
-            font-size: 1.3rem;
+            font-size: 1rem;
             background-color: black;
             opacity: 0.7;
             border-radius: 15px;
@@ -93,72 +98,63 @@
             border-radius: 15px;
             border:10px solid rgb(46, 46, 46);
             width: 100px;
-        }		
-		/* Acordeon styles */
-		.tab {
-			position: relative;
-			margin-bottom: 1px;
-			width: 100%;
-			color: #fff;
-			overflow: hidden;
-		}
-		input {
-			position: absolute;
-			opacity: 0;
-			z-index: -1;
-		}
-		label {
-			position: relative;
-			display: block;
-			padding: 0 0 0 1em;
-			font-weight: bold;
-			line-height: 3;
-			cursor: pointer;
-		}
-		.blue label {
-			background: #2980b9; /* 제목 배경색 */
-		}
-		.tab-content {
-			max-height: 0;
-			overflow: hidden;
-			background: #1abc9c;
-			-webkit-transition: max-height .35s;
-			-o-transition: max-height .35s;
-			transition: max-height .35s;
-		}
-		.blue .tab-content {
-			background: #3498db;
-		}
-		.tab-content p {
-			margin: 1em;
-		}
-		/* :checked */
-		input:checked ~ .tab-content {
-			max-height: 10em;
-		}
-		/* Icon */
-		label::after {
-			position: absolute;
-			right: 0;
-			top: 0;
-			display: block;
-			width: 3em;
-			height: 3em;
-			line-height: 3;
-			text-align: center;
-			-webkit-transition: all .35s;
-			-o-transition: all .35s;
-			transition: all .35s;
-		}
-		.rcorners {
-			border-radius: 25px;
-			background: black;
-			opacity: 0.6;
-			padding: 20px;
-			margin: 10px;
-			margin-left: 10%;
-			width: 80%;
-		}
+        }
+        /* Acordeon styles */
+        .tab {
+            position: relative;
+            margin-bottom: 1px;
+            width: 100%;
+            color: #fff;
+            overflow: hidden;
+        }
+        input {
+            position: absolute;
+            opacity: 0;
+            z-index: -1;
+        }
+        label {
+            position: relative;
+            display: block;
+            padding: 0 0 0 1em;
+            font-weight: bold;
+            line-height: 3;
+            cursor: pointer;
+        }
+        .blue label {
+            background: #2980b9; /* 제목 배경색 */
+        }
+        .tab-content {
+            max-height: 0;
+            overflow: hidden;
+            background: #1abc9c;
+            -webkit-transition: max-height .35s;
+            -o-transition: max-height .35s;
+            transition: max-height .35s;
+        }
+        .blue .tab-content {
+            background: #3498db;
+        }
+        .tab-content p {
+            margin: 1em;
+        }
+        /* :checked */
+        input:checked ~ .tab-content {
+            max-height: 10em;
+        }
+        /* Icon */
+        label::after {
+            position: absolute;
+            right: 0;
+            top: 0;
+            display: block;
+            width: 3em;
+            height: 3em;
+            line-height: 3;
+            text-align: center;
+            -webkit-transition: all .35s;
+            -o-transition: all .35s;
+            transition: all .35s;
+        }
         .credit{
             color:#e2e2e2;
             background-color:#1d1d1d;
@@ -168,37 +164,34 @@
             border:15px solid #6994e3;
             border-radius: 15px;
         }
-	</style>
+    </style>
     <script src="jquery.min.js"></script>
     <script src="jquery-ui.min.js"></script>
     <script type="text/javascript" src="accordion.js"></script>
     <script type="text/javascript" src="jquery.fullPage.js"></script>
     <script src="js/bootstrap.min.js"></script>
-	<script>
+    <script>
+    </script>
 
-	</script>
 </head>
 <body>
-
 <ul id="menu2">
-    <li id="lastPage" data-menuanchor="lastPage"><a href="#lastPage" style="vertical-align: middle">크레딧</a></li>
-    <li id="thirdPage"  data-menuanchor="3rdPage"><a href="#3rdPage" style="vertical-align: middle">랭킹</a></li>
+    <li id="lastPage" data-menuanchor="lastPage"><a href="#lastPage" style="height: 100%; vertical-align:middle;display: inline-block; line-height:normal;">크레딧</a></li>
+    <li id="thirdPage"  data-menuanchor="3rdPage"><a href="#3rdPage" style="height: 100%; vertical-align:middle;display: inline-block; line-height:normal;">랭킹</a></li>
 </ul>
 <ul id="menu">
-    <li id="secondPage"  data-menuanchor="secondPage"><a href="#secondPage" style="vertical-align: middle">도감</a></li>
-    <li id="firstPage"  data-menuanchor="firstPage"><a href="#firstPage" style="vertical-align: middle">의뢰</a></li>
+    <li id="secondPage"  data-menuanchor="secondPage"><a href="#secondPage" style="height: 100%; vertical-align:middle;display: inline-block; line-height:normal;">도감</a></li>
+    <li id="firstPage"  data-menuanchor="firstPage"><a href="#firstPage" style="height: 100%; vertical-align:middle;display: inline-block; line-height:normal;">의뢰</a></li>
 </ul>
+
 <ul id="menu_background"></ul>
 
-<div id="fullpage">
-	<section id="section1" class="section">
-		<div class="container">
 
-			<div id="accept_list" class="container">
+<div id="fullpage" class="background">
+    <section id="section1" class="section">
+        <div id="accept_list" class="container">
+    </section>
 
-			</div>
-		</div>
-	</section>
     <section id="section2" class="section">
         <div class="container">
             <div class="container">
@@ -816,8 +809,9 @@
                         </div>
                     </div>
     </section>
+
     <section id="section3" class="section text-center">
-        <div class="container" style="margin-bottom: 50%;">
+        <div class="container">
             <div class="row">
                 <div class="col-md-2 scoreName"><img class="img-responsive" src="gold.png" alt=""></div>
                 <div class="col-md-10 scoreInfo">
@@ -842,10 +836,12 @@
             <div class="row">
                 <div class="col-md-12 scoreInfo">
                     <div id="meScore">나의 등수는 ?&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                    <div id="meScore2">나의 점수는 ?&nbsp;&nbsp;&nbsp;&nbsp;</div>
                 </div>
             </div>
+        </div>
     </section>
-	<section id="section4" class="section">
+    <section id="section4" class="section">
         <div class="container">
             <h4>
                 <div class="credit">
@@ -869,11 +865,15 @@
                         </tr>
                         <tr>
                             <td></td>
-                            <td style="text-align: left; color:yellow;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;최준식</td>
+                            <td style="text-align: left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;최준식</td>
                         </tr>
                         <tr>
                             <td style="text-align: right">Sponsor</td>
                             <td style="text-align: left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sofrano</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td style="text-align: left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ISTeam</td>
                         </tr>
                         </tbody>
                     </table>
@@ -882,7 +882,7 @@
                 </div><!--end .accordion-section-content-->
             </h4>
         </div>
-	</section>
+    </section>
 </div>
 <script>
     var data_url_bool = false;
@@ -973,14 +973,14 @@
     $(document).ready(function(){
 
 
-		$(document).keydown(function(e){
-        if(e.target.nodeName != "INPUT" && e.target.nodeName != "TEXTAREA"){
-            if(e.keyCode === 8){
-            return false;
+        $(document).keydown(function(e){
+            if(e.target.nodeName != "INPUT" && e.target.nodeName != "TEXTAREA"){
+                if(e.keyCode === 8){
+                    return false;
+                }
             }
-        	}
-    	});
- 	    window.history.forward(0);
+        });
+        window.history.forward(0);
         var id = getCookie('id');
         var headers={};
         headers['x-access-token']=getCookie('x-access-token');
@@ -1035,7 +1035,13 @@
                             var length=data.result.accept_user_list.length;
                             console.log(length);
                             if(data.result.accept_user_list.length === 0){
-                                var inner_html = '<div class = "rcorners" style="align:center;">아무도 신청하지 않았습니다.</div>'
+                                var inner_html = '<div class="container">\n' +
+                                    '<div class="container">\n' +
+                                    '<div class="slide active">\n' +
+                                    '<div class="main"><div class="main">\n' +
+                                    '<div class="accordion"><div class="accordion-section">\n' +
+                                    '                                <a class="accordion-section-title"  href="#">아무도 신청하지 않았습니다.</a>\n' +
+                                    '                            </div><!--end .accordion-section--></div></div></div></div></div>'
                                 $('#accept_list').html(inner_html);
                             }
                             for(var i=0; i < data.result.accept_user_list.length;i++){
@@ -1069,16 +1075,16 @@
                             }
                             console.log(inner_html);
                             $('#accept_list').html(inner_html);
-							var questNum = 0;
+                            var questNum = 0;
 
 
                             $('#fullpage').fullpage({
                                 // sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff','deepskyblue','tomato'],
                                 anchors: ['firstPage', 'secondPage', '3rdPage','lastPage'],
                                 menu: '#menu',
-								afterLoad: function(anchorLink, index){
-                                        $("#section"+index+" .fp-controlArrow").show();
-									},
+                                afterLoad: function(anchorLink, index){
+                                    $("#section"+index+" .fp-controlArrow").show();
+                                },
                                 onLeave: function(index, nextIndex, direction){
                                     var leavingSection = $(this);
                                     $("#section"+index+" .fp-controlArrow").hide();
