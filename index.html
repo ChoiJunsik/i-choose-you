@@ -16,16 +16,18 @@
           font-family: morris9;
           color:white;
           overflow-x: hidden;
-          /*background: url(login.png) center center / cover no-repeat;;*/
+          /*background: url(login.png) center center / cover no-repeat;*/
+            background: url(login.png) no-repeat center center;
           -webkit-background-size: cover;
           -moz-background-size: cover;
           -o-background-size: cover;
-          /*background-size: 100% 100%;*/
-          min-width:40px;
-
-
-            background: url(login.png) no-repeat center center fixed;
             background-size: cover;
+          /*background-size: 100% 100%;*/
+          /*min-width:40px;*/
+            min-height:100%;
+
+
+
 
 
         }
@@ -66,7 +68,7 @@
 </head>
 <body>
 
-    <div class="row">
+    <div class="row" style="height: -webkit-fill-available;">
           <div class="col-md-12"><img class="img-responsive" src="title.png" style="max-height:280px;" alt=""></div>
         <div class="col-md-offset-4 col-md-4">
                 <div class="form-login">
