@@ -16,12 +16,18 @@
           font-family: morris9;
           color:white;
           overflow-x: hidden;
-          background: url(login.png) no-repeat center center fixed;
+          /*background: url(login.png) center center / cover no-repeat;;*/
           -webkit-background-size: cover;
           -moz-background-size: cover;
           -o-background-size: cover;
           background-size: 100% 100%;
           min-width:40px;
+
+
+            background: url(login.png) no-repeat center center fixed;
+            background-size: cover;
+
+
         }
         .col-md-12 .img-responsive {
           margin: 0 auto;
@@ -125,7 +131,7 @@
                         location.href='http://ssumon.com/ChangePassword';
                     }else{
                         if(data.quest_id === -1){
-                            location.href='http://ssumon.com/junior';
+                            // location.href='http://ssumon.com/junior';
                             console.log('후배 로그인');
                         }else{
 
