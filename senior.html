@@ -1078,12 +1078,6 @@
                                 menu: '#menu',
 								afterLoad: function(anchorLink, index){
                                         $("#section"+index+" .fp-controlArrow").show();
-										if(dogamNum != 0){
-										    $("#accordion-"+dogamNum).css("display","block");
-										}
-										if(questNum != 0){
-										    $("#quest_accordion-"+questNum).css("display","block");
-										}
 									},
                                 onLeave: function(index, nextIndex, direction){
                                     var leavingSection = $(this);
