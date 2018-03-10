@@ -207,6 +207,8 @@
     <li id="secondPage"  data-menuanchor="secondPage"><a href="#secondPage" style="height: 100%; vertical-align:middle;display: inline-block; line-height:normal;">도감</a></li>
     <li id="firstPage"  data-menuanchor="firstPage"><a href="#firstPage" style="height: 100%; vertical-align:middle;display: inline-block; line-height:normal;">의뢰</a></li>
 </ul>
+<div id="dump_button_img"><div class="fp-controlArrow fp-prev"><img src="arrowLeft.png" style="width: 100px;height: 100px;margin-left: 0px;"></div><div class="fp-controlArrow fp-next"><img src="arrowRight.png" style="margin-left: 0px;width: 100px;height: 100px;"></div></div>
+
 
 <ul id="menu_background"></ul>
 
@@ -1836,6 +1838,7 @@
         });
     }
     $(document).ready(function(){
+
         $(document).keydown(function(e){
             if(e.target.nodeName != "INPUT" && e.target.nodeName != "TEXTAREA"){
                 if(e.keyCode === 8){
@@ -1967,7 +1970,11 @@
                         anchors: ['firstPage', 'secondPage', '3rdPage','lastPage'],
                         menu: '#menu',
                         afterLoad: function(anchorLink, index){
-                            $("#section"+index+" .fp-controlArrow").show();                            
+                            $("#section"+index+" .fp-controlArrow").show();
+                            $("#dump_button_img").hide();
+                            if(index === 3 || index === 4){
+                                $("#dump_button_img").show();
+                            }
                             if(dogamNum != 0){
                                 $("#accordion-"+dogamNum).css("display","block");
                             }
@@ -1977,7 +1984,8 @@
                         },
                         onLeave: function(index, nextIndex, direction){
                             var leavingSection = $(this);
-                            $("#section"+index+" .fp-controlArrow").hide();                            
+                            $("#section"+index+" .fp-controlArrow").hide();
+                            $("#dump_button_img").show();
                         }
                     });
 
