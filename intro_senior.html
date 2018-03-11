@@ -60,24 +60,24 @@
 
 
 <div id="fullpage" class="background">
-    <section id="section1" class="section">
+  <section id="section1" class="section">
         <div class="container">
             <div class="container">
-                <img class="tut_img"  src="intro/1.png" >
+                <img class="tut_img"  src="intro_senior/1.png" >
             </div>
         </div>
     </section>
     <section id="section2" class="section">
         <div class="container">
             <div class="container">
-                <img class="tut_img"  src="intro/2.png" >
+                <img class="tut_img"  src="intro_senior/2.png" >
             </div>
-            1.png        </div>
+        </div>
     </section>
     <section id="section3" class="section">
         <div class="container">
             <div class="container">
-                <img class="tut_img"  src="intro/3.png" >
+                <img class="tut_img"  src="intro_senior/3.png" >
             </div>
         </div>
     </section>
@@ -85,7 +85,7 @@
     <section id="section4" class="section">
         <div class="container">
             <div class="container">
-                <img class="tut_img"  src="intro/4.png" >
+                <img class="tut_img"  src="intro_senior/3.png" >
             </div>
         </div>
     </section>
@@ -93,53 +93,31 @@
     <section id="section5" class="section">
         <div class="container">
             <div class="container">
-                <img class="tut_img"  src="intro/5.png" >
+                <img class="tut_img"  src="intro_senior/5.png" >
             </div>
         </div>
     </section>
     <section id="section6" class="section">
         <div class="container">
             <div class="container">
-                <img class="tut_img"  src="intro/6.png" >
+                <img class="tut_img"  src="intro_senior/6.png" >
             </div>
         </div>
     </section>
     <section id="section7" class="section">
         <div class="container">
             <div class="container">
-                <img class="tut_img"  src="intro/7.png" >
+                <img class="tut_img"  src="intro_senior/7.png" >
             </div>
         </div>
     </section>
     <section id="section8" class="section">
         <div class="container">
             <div class="container">
-                <img class="tut_img"  src="intro/8.png" >
+                <img class="tut_img"  src="intro_senior/8.png" >
             </div>
         </div>
     </section>
-    <section id="section9" class="section">
-        <div class="container">
-            <div class="container">
-                <img class="tut_img"  src="intro/9.png" >
-            </div>
-        </div>
-    </section>
-    <section id="section10" class="section">
-        <div class="container">
-            <div class="container">
-                <img class="tut_img"  src="intro/10.png" >
-            </div>
-        </div>
-    </section>
-    <section id="section11" class="section">
-        <div class="container">
-            <div class="container">
-                <img class="tut_img"  src="intro/11.png" >
-            </div>
-        </div>
-    </section>
-
     <section id="section99" class="section">
         <div class="container">
             <div class="container">
@@ -188,7 +166,7 @@
     $(document).ready(function () {
         $('#fullpage').fullpage({
             // sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff','deepskyblue','tomato'],
-            anchors: ['1', '2', '3', '4', '5' ,'6', '7', '8', '9', '10', '11', 'start'],
+            anchors: ['1', '2', '3', '4'],
             menu: '#menu',
             afterLoad: function(anchorLink, index){
                 $("#section"+index+" .fp-controlArrow").show();
