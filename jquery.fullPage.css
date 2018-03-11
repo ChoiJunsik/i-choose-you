@@ -68,28 +68,112 @@ html.fp-enabled,
     -ms-transform: translate3d(0,0,0);
     transform: translate3d(0,0,0);
 }
-.fp-controlArrow.fp-prev {
-    text-align: center;
-    z-index: 100;
-    left: 4%;
-    bottom: 17%;
-    width: 0px;
 
-    /*z-index: 100;*/
-    /*left: 10%;*/
-    /*width: 0;*/
-    /*border-width: 38.5px 34px 38.5px 0;*/
-    /*border-color: transparent #fff transparent transparent;*/
+@media screen and (min-width: 769px) {
+    .fp-controlArrow.fp-prev {
+        text-align: center;
+        z-index: 100;
+        left: 18%;
+        bottom: 15%;
+        width: 0px;
+
+        /*z-index: 100;*/
+        /*left: 10%;*/
+        /*width: 0;*/
+        /*border-width: 38.5px 34px 38.5px 0;*/
+        /*border-color: transparent #fff transparent transparent;*/
+    }
+    .fp-controlArrow.fp-next {
+        text-align: center;
+        z-index: 100;
+        left: 32%;
+        bottom: 15%;
+        width: 0px;
+        border-width: 38.5px 0 38.5px 34px;
+        border-color: transparent transparent transparent #fff;
+    }
 }
-.fp-controlArrow.fp-next {
-    text-align: center;
-    z-index: 100;
-    left: 19%;
-    bottom: 17%;
-    width: 0px;
-    border-width: 38.5px 0 38.5px 34px;
-    border-color: transparent transparent transparent #fff;
+
+@media screen and (min-width: 769px) and (max-width: 1065px){
+    .fp-controlArrow.fp-prev {
+        text-align: center;
+        z-index: 100;
+        left: 11%;
+        bottom: 15%;
+        width: 0px;
+
+        /*z-index: 100;*/
+        /*left: 10%;*/
+        /*width: 0;*/
+        /*border-width: 38.5px 34px 38.5px 0;*/
+        /*border-color: transparent #fff transparent transparent;*/
+    }
+    .fp-controlArrow.fp-next {
+        text-align: center;
+        z-index: 100;
+        left: 25%;
+        bottom: 15%;
+        width: 0px;
+        border-width: 38.5px 0 38.5px 34px;
+        border-color: transparent transparent transparent #fff;
+    }
 }
+
+
+@media screen and (min-width: 650px) and (max-width: 768px){
+    .fp-controlArrow.fp-prev {
+        text-align: center;
+        z-index: 100;
+        left: 9%;
+        bottom: 15%;
+        width: 0px;
+
+        /*z-index: 100;*/
+        /*left: 10%;*/
+        /*width: 0;*/
+        /*border-width: 38.5px 34px 38.5px 0;*/
+        /*border-color: transparent #fff transparent transparent;*/
+    }
+    .fp-controlArrow.fp-next {
+        text-align: center;
+        z-index: 100;
+        left: 28%;
+        bottom: 15%;
+        width: 0px;
+        border-width: 38.5px 0 38.5px 34px;
+        border-color: transparent transparent transparent #fff;
+    }
+}
+
+@media screen and (max-width: 649px){
+    .fp-controlArrow.fp-prev {
+        text-align: center;
+        z-index: 100;
+        left: 4%;
+        bottom: 17%;
+        width: 0px;
+
+        /*z-index: 100;*/
+        /*left: 10%;*/
+        /*width: 0;*/
+        /*border-width: 38.5px 34px 38.5px 0;*/
+        /*border-color: transparent #fff transparent transparent;*/
+    }
+    .fp-controlArrow.fp-next {
+        text-align: center;
+        z-index: 100;
+        left: 19%;
+        bottom: 17%;
+        width: 0px;
+        border-width: 38.5px 0 38.5px 34px;
+        border-color: transparent transparent transparent #fff;
+    }
+}
+
+
+
+
+
 .fp-scrollable {
     overflow: hidden;
     position: relative;
