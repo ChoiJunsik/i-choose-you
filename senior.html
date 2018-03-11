@@ -1121,20 +1121,20 @@
                     console.log("id : " + id);
                     console.log("headers : " + JSON.stringify(headers));
                     $.ajax({
-                        url : "http://52.79.41.31:3000/api/v1g1/user/ranking/" + id,
+                        url : "http://52.79.41.31:3000/api/v1g1/user/older_ranking/" + id,
                         type:'get',
                         dataType : "json",
                         headers : headers,
                         success : function(data){
                             console.log("data" , data);
                             $("#rankName1").append(data.top_ranking[0].name);
-                            $("#rankScore1").append(data.top_ranking[0].score+" 점");
+                            $("#rankScore1").append(data.top_ranking[0].score * -1000+" 점");
                             $("#rankName2").append(data.top_ranking[1].name);
-                            $("#rankScore2").append(data.top_ranking[1].score+" 점");
+                            $("#rankScore2").append(data.top_ranking[1].score  * -1000+" 점");
                             $("#rankName3").append(data.top_ranking[2].name);
-                            $("#rankScore3").append(data.top_ranking[2].score+" 점");
+                            $("#rankScore3").append(data.top_ranking[2].score  * -1000+" 점");
                             $("#meScore").append(data.my_ranking+" 등");
-                            $("#meScore2").append(data.my_ranking_info.score+" 점");
+                            $("#meScore2").append(data.my_ranking_info.score  * -1000+" 점");
                         }
                     });
                     $.ajax({
