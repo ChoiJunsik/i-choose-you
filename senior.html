@@ -1261,7 +1261,7 @@
     $("#section2 button").click(function(){
         $("#section2 .fp-controlArrow").css({ 'pointer-events': 'auto' });
         $("#section2 a").show();
-        $("#accordion-"+dogamNum).removeClass("open").removeAttr("style").css("overflow","hidden");
+        $("#accordion-"+dogamNum).css("display","none");
         dogamNum = targetIndex = 0;
     });
     $('body').on('click', '#logout_button', function(){
