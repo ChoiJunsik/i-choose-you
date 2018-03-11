@@ -1243,12 +1243,17 @@
     });
 
     var dogamNum = 0;
+    var dogamNumtmp = 0;
     $("#section2 a").click(function(){
         $("#section2 .fp-controlArrow").css({ 'pointer-events': 'none' });
         targetIndex=event.target.id;
         dogamNum = targetIndex.replace(/[^0-9]/g,"");
         $("#section2 a").hide();
-        // $("#accordion-"+dogamNum).css("display","block");
+        if(dogamNumtmp == dogamNum)
+            $("#accordion-"+dogamNum).css("display","block");
+        else{
+            dogamNumtmp = dogamNum;
+        }
         $("body").removeAttr("class");
     });
     $("#section2 button").click(function(){
