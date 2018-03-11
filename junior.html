@@ -15,6 +15,11 @@
 
     <style>
         @media screen and (max-height: 700px) {
+            #section3 .row{
+                margin-bottom:30px;
+                margin-right: 30px;
+            }
+
             #section2 .col-md-12, #section2 .col-md-7, .main{
                 padding-left:0px;
                 padding-right:0px;
@@ -43,13 +48,21 @@
                 margin-right:auto;
             }
             .ranking_section_row_name{
-                padding-left: 0;
+                padding-left: 15px;
             }
             .ranking_section_row_info{
-                right : 3%
+                right : -1%
+            }
+            .ranking_section_row_me{
+                left : 5%;
+                width: 96.7%;
             }
         }
         @media screen and (min-height: 700px) and (min-width: 992px) {
+            #section3 .row{
+                margin-bottom:30px;
+                /*margin-right: 30px;*/
+            }
             #section3 .container{
                 margin-bottom: 15%;
                 margin-left:auto;
@@ -66,11 +79,19 @@
                 left : 4%
             }
             .ranking_section_row_info{
-                right : -9%
+                right : -11%
+            }
+            .ranking_section_row_me{
+                left : 2%;
+                width: 95%;
             }
         }
 
         @media screen and (min-height: 700px) and (max-width: 991px)  {
+            #section3 .row{
+                margin-bottom:30px;
+                /*margin-right: 30px;*/
+            }
             #section3 .container{
                 margin-bottom: 15%;
                 margin-left:auto;
@@ -88,6 +109,10 @@
             }
             .ranking_section_row_info{
                 right : 2%
+            }
+            .ranking_section_row_me{
+                left : 2%;
+                width: 95%;
             }
         }
 
@@ -113,12 +138,13 @@
             border-radius: 15px;
         }
         #section2 .col-md-12 .col-md-12:first-child{
+            margin-bottom: 10px;
             padding-bottom: 10px;
             border-bottom: 5px solid gray;
         }
         #section2 .text-left{
 	    	padding-bottom:10px;
-	    	font-size: 1.3rem;
+	    	font-size: 1.0rem;
         }
         #section1 button{
             background-color: #1d1d1d;
@@ -142,10 +168,7 @@
         #section2 .main{
             margin-top:30px;
         }
-    	#section3 .row{
-    		margin-bottom:30px;
-            margin-right: 30px;
-    	}
+
         #section3 .row:first-child{
             margin-top:15px;
         }
@@ -750,7 +773,7 @@
                             <div class="accordion-section">
                                 <a id="quest_index_301" class="accordion-section-title" href="#quest_accordion-301" questId = "301">로딩중...</a>
                                 <div id="quest_accordion-301" class="accordion-section-content">
-                                    <div id="quest_302">로딩중...</div>
+                                    <div id="quest_301">로딩중...</div>
                                 </div><!--end .accordion-section-content-->
                             </div><!--end .accordion-section-->
 
@@ -1500,12 +1523,12 @@
                     <div id="rankScore3"></div>
                 </div>
             </div>
-
+            <hr class="ranking_section_row_me" style="border-radius: 15px; border:2px solid rgba(0, 0, 0, .7); margin-left: 1%;"/>
             <div class="row">
-                <div class="col-md-2 col-xs-4 ranking_section_row_name" id="my_ranking" ><div class="scoreName"><img class="img-responsive" src="bronze.png" alt=""></div></div>
-                <div class="col-md-8 col-xs-8 scoreInfo ranking_section_row_info" >
-                    <div class="text-left" id="meScore" style="text-align: center;"></div>
-                    <div class="text-left" id="meScore2" style="text-align: center;"></div>
+                <!--<div class="col-md-2 col-xs-4 ranking_section_row_name" id="my_ranking" ><div class="scoreName"><img class="img-responsive" src="favicon.ico" alt=""></div></div>-->
+                <div class="col-md-8 col-xs-8 scoreInfo ranking_section_row_me" >
+                    <div class="text-left" id="meScore" style="text-align: center;">나의 등수는 ?&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                    <div class="text-left" id="meScore2" style="text-align: center;">나의 점수는 ?&nbsp;&nbsp;&nbsp;&nbsp;</div>
                 </div>
             </div>
         </div>
@@ -1901,7 +1924,7 @@
         $("#section2 #hideOrShow2").hide();
 
         $("#section2 .accordion-section-content .col-md-12 .col-md-12:nth-child(1)").append("<div  id=\"hideQ1\" class=\"col-md-7 col-xs-7\"><div class=\"text-left\">???<br>???<br>???</div>");
-        $("#section2 .accordion-section-content .col-md-12 .col-md-12:nth-child(2)").append("<div  id=\"hideQ2\" class=\"col-md-7 col-xs-7\"><div class=\"text-left\">???<br>???<br>???</div>");
+        $("#section2 .accordion-section-content .col-md-12 .col-md-12:nth-child(2)").append("<div  id=\"hideQ2\" class=\"col-md-7 col-xs-7\"><div  class=\"text-left\">???<br>???<br>???</div>");
         $("#section2 .accordion-section-content .col-md-12 .col-md-12:nth-child(2)").append("<button  id=\"hideQ2\" type=\"button\"><img class=\"img-responsive\" src=\"return.png\" alt=\"return\" style=\"height:55px; margin-top:40px;\"></button>");
 
 

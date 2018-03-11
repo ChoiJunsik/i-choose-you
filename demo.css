@@ -40,7 +40,7 @@
 	/*background:#333;*/
 	transition:all linear 0.15s;
 	/* Type */
-	font-size:1.200em;
+	font-size:1em;
 	text-shadow:0px 1px 0px #1a1a1a;
 	color:#fff;
 
@@ -73,6 +73,7 @@
 	background-color:#1d1d1d;
 	border:15px solid #6994e3;
 	opacity: 0.9;
+	font-size:0.8em;
 	/* border:groove 1em red; */
 	/* -webkit-border-radius: 15px;
 	-moz-border-radius: 15px; */
