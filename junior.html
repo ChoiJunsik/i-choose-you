@@ -31,24 +31,66 @@
                 margin:0 auto;
             }
             #meScore,#meScore2{
-                padding-left:100px;
+                /*padding-left:100px;*/
             }
             .scoreInfo{
                 margin-top: 15px;
              }
-        }
-        @media screen and (min-height: 700px) {
+
             #section3 .container{
-                    margin-left:300px;
+                margin-bottom: 30%;
+                margin-left:auto;
+                margin-right:auto;
+            }
+            .ranking_section_row_name{
+                padding-left: 0;
+            }
+            .ranking_section_row_info{
+                right : 3%
+            }
+        }
+        @media screen and (min-height: 700px) and (min-width: 992px) {
+            #section3 .container{
+                margin-bottom: 15%;
+                margin-left:auto;
+                margin-right:auto;
             }
             #section3 .row div{
                 font-size:2rem;
             }
             #meScore,#meScore2{
-                    font-size:2rem;
-                    padding-left:350px;
+                font-size:2rem;
+                /*padding-left:350px;*/
+            }
+            .ranking_section_row_name{
+                left : 4%
+            }
+            .ranking_section_row_info{
+                right : -9%
             }
         }
+
+        @media screen and (min-height: 700px) and (max-width: 991px)  {
+            #section3 .container{
+                margin-bottom: 15%;
+                margin-left:auto;
+                margin-right:auto;
+            }
+            #section3 .row div{
+                font-size:2rem;
+            }
+            #meScore,#meScore2{
+                font-size:2rem;
+                /*padding-left:350px;*/
+            }
+            .ranking_section_row_name{
+                left : 2%
+            }
+            .ranking_section_row_info{
+                right : 2%
+            }
+        }
+
         #menu li{
         }
         /* Sections
@@ -1435,37 +1477,39 @@
                             </div>
           </div>
   </section>
-  <section id="section3" class="section text-center">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-2 col-xs-4 scoreName"><img class="img-responsive" src="gold.png" alt=""></div>
-            <div class="col-md-8 col-xs-8 scoreInfo">
-                <div id="rankName1"></div>
-                <div id="rankScore1"></div>
+    <section id="section3" class="section text-center">
+        <div class="container">
+            <div class="row ">
+                <div class="col-md-2 col-xs-4 scoreName ranking_section_row_name" ><img class="img-responsive" src="gold.png" alt=""></div>
+                <div class="col-md-8 col-xs-8 scoreInfo ranking_section_row_info">
+                    <div id="rankName1"></div>
+                    <div id="rankScore1"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2 col-xs-4 ranking_section_row_name" id="secondMan" ><div class="scoreName"><img class="img-responsive" src="silver.png" alt=""></div></div>
+                <div class="col-md-8 col-xs-8 scoreInfo ranking_section_row_info" >
+                    <div id="rankName2"></div>
+                    <div id="rankScore2"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2 col-xs-4 ranking_section_row_name" id="thirdMan"><div class="scoreName"><img class="img-responsive" src="bronze.png" alt=""></div></div>
+                <div class="col-md-8 col-xs-8 scoreInfo ranking_section_row_info" >
+                    <div id="rankName3"></div>
+                    <div id="rankScore3"></div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-2 col-xs-4 ranking_section_row_name" id="my_ranking" ><div class="scoreName"><img class="img-responsive" src="bronze.png" alt=""></div></div>
+                <div class="col-md-8 col-xs-8 scoreInfo ranking_section_row_info" >
+                    <div class="text-left" id="meScore" style="text-align: center;"></div>
+                    <div class="text-left" id="meScore2" style="text-align: center;"></div>
+                </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-2 col-xs-4" id="secondMan"><div class="scoreName"><img class="img-responsive" src="silver.png" alt=""></div></div>
-            <div class="col-md-8 col-xs-8 scoreInfo">
-                <div id="rankName2"></div>
-                <div id="rankScore2"></div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-2 col-xs-4" id="thirdMan"><div class="scoreName"><img class="img-responsive" src="bronze.png" alt=""></div></div>
-            <div class="col-md-8 col-xs-8 scoreInfo">
-                <div id="rankName3"></div>
-                <div id="rankScore3"></div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-10 col-xs-12 scoreInfo" style="margin-left:10px; margin-bottom:80px;">
-                <div class="text-left" id="meScore">나의 등수는 ?&nbsp;&nbsp;&nbsp;&nbsp;</div>
-                <div class="text-left" id="meScore2">나의 점수는 ?&nbsp;&nbsp;&nbsp;&nbsp;</div>
-            </div>
-        </div>
-    </div>
-</section>
+    </section>
     <section id="section4" class="section">
         <div class="container">
             <h4>
