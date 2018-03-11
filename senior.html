@@ -1222,7 +1222,7 @@
                                     $("#dump_button_img").show();
                                 }
                             });
-                            if(data.result.accept_user_list.length < 3){
+                            if(data.result.accept_user_list.length <= 3){
                                 console.log('data.result.accept_user_list.length : ', data.result.accept_user_list.length);
                                 accept_user_list_length =data.result.accept_user_list.length;
                                 $("#dump_button_img").show();

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>너로 정했다!</title>
+    <link rel="stylesheet" type="text/css" href="jquery.fullPage.css" />
+    <link rel="stylesheet" type="text/css" href="examples.css" />
+    <link rel="stylesheet" type="text/css" href="demo.css">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <style>
+        @media screen and (max-height: 700px) {
+            #section3 .row{
+                margin-bottom:30px;
+                margin-right: 30px;
+            }
+
+            #section2 .col-md-12, #section2 .col-md-7, .main{
+                padding-left:0px;
+                padding-right:0px;
+            }
+            #section2 .accordion-section-content{
+                padding-left:10px;
+                padding-right:10px;
+            }
+            #section3 img{
+                width: 80px;
+                margin:0 auto;
+            }
+            #section3 .col-xs-12{
+                margin:0 auto;
+            }
+            #meScore,#meScore2{
+                /*padding-left:100px;*/
+            }
+            .scoreInfo{
+                margin-top: 15px;
+             }
+
+            #section3 .container{
+                margin-bottom: 30%;
+                margin-left:auto;
+                margin-right:auto;
+            }
+            .ranking_section_row_name{
+                padding-left: 15px;
+            }
+            .ranking_section_row_info{
+                right : -1%
+            }
+            .ranking_section_hr{
+                left : 5%;
+                width: 86.4%;
+                margin-left: 5%;
+            }
+            .ranking_section_row_me{
+                left : 5%;
+                width: 96.2%;
+            }
+        }
+        @media screen and (min-height: 700px) and (min-width: 992px) {
+            #section3 .row{
+                margin-bottom:30px;
+                /*margin-right: 30px;*/
+            }
+            #section3 .container{
+                margin-bottom: 15%;
+                margin-left:auto;
+                margin-right:auto;
+            }
+            #section3 .row div{
+                font-size:2rem;
+            }
+            #meScore,#meScore2{
+                font-size:2rem;
+                /*padding-left:350px;*/
+            }
+            .ranking_section_row_name{
+                left : 4%
+            }
+            .ranking_section_row_info{
+                right : -11%
+            }
+            .ranking_section_hr{
+                left : 5%;
+                width: 88.3%;
+                margin-left: 5.7%;
+            }
+            .ranking_section_row_me{
+                left : 5.3%;
+                width: 89.4%;
+            }
+        }
+
+        @media screen and (min-height: 700px) and (max-width: 991px)  {
+            #section3 .row{
+                margin-bottom:30px;
+                /*margin-right: 30px;*/
+            }
+            #section3 .container{
+                margin-bottom: 15%;
+                margin-left:auto;
+                margin-right:auto;
+            }
+            #section3 .row div{
+                font-size:2rem;
+            }
+            #meScore,#meScore2{
+                font-size:2rem;
+                /*padding-left:350px;*/
+            }
+            .ranking_section_row_name{
+                left : 2%
+            }
+            .ranking_section_row_info{
+                right : 2%
+            }
+            .ranking_section_hr{
+                left : 5%;
+                width: 93.2%;
+                margin-left: 4%;
+            }
+            .ranking_section_row_me{
+                left : 3.7%;
+                width: 94.27%
+            }
+        }
+
+        #menu li{
+        }
+        /* Sections
+         * --------------------------------------- */
+        @font-face {
+            font-family: morris;
+            src: url("./fonts/morris.ttf") format('truetype');
+        }
+        body{
+            font-family: morris;
+            background-image: url('back2.jpeg');
+            background-color: #D9E5FF;
+            background-repeat: no-repeat;
+        }
+
+        #section1 .fp-controlArrow {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            margin-top: -45px;
+            width: 70px;
+            height: 90px;
+            z-index: 99;
+            -webkit-appearance: none;
+            background: 0 0;
+            border: 0;
+            outline: 0;
+        }
+
+        #section1 .fp-controlArrow.fp-prev {
+            left: 35px;
+        }
+        #section1 .fp-controlArrow.fp-next {
+            right: 35px;
+        }
+
+        .tut_div{
+            max-width: 100%;
+            max-height: 100%;
+            bottom: 0;
+            left: 0;
+            margin: auto;
+            overflow: auto;
+
+            right: 0;
+            top: 0;
+        }
+        .tut_img{
+            max-width: 100%;
+            max-height: 100%;
+            bottom: 0;
+            left: 0;
+            margin: auto;
+            overflow: auto;
+
+            right: 0;
+            top: 0;
+        }
+        .col-md-12 .img-responsive {
+            margin: 0 auto;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script type="text/javascript" src="accordion.js"></script>
+    <script type="text/javascript" src="jquery.fullPage.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+    </script>
+
+</head>
+<body>
+
+
+
+
+<div id="fullpage" class="background">
+  <section id="section1" class="section">
+        <div class="container">
+            <div class="container">
+                <img class="tut_img"  src="intro/준식1.png" >
+            </div>
+        </div>
+    </section>
+    <section id="section2" class="section">
+        <div class="container">
+            <div class="container">
+                <img class="tut_img"  src="intro/준식1.png" >
+            </div>
+        </div>
+    </section>
+    <section id="section99" class="section">
+        <div class="container">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12"><img class="img-responsive" src="title.png" style="max-height:280px;" alt=""></div>
+                    <div class="col-md-offset-4 col-md-4" style="    right: 0px;    left: 0px;">
+                        <div class="form-login">
+                            <!--<h1 style="text-align: center">너로 정했다! 시작하기!</h1>-->
+                            <div class="wrapper">
+                            <span class="group-btn">
+                                <a id="go_button" class="btn btn-primary btn-md">시작하기!<i class="fa fa-sign-in"></i></a>
+                            </span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+<script>
+    // 쿠키 생성
+    function setCookie(cName, cValue, cDay){
+        var expire = new Date();
+        expire.setDate(expire.getDate() + cDay);
+        var cookies = cName + '=' + escape(cValue) + '; path=/ '; // 한글 깨짐을 막기위해 escape(cValue)를 합니다.
+        if(typeof cDay != 'undefined') cookies += ';expires=' + expire.toGMTString() + ';';
+        document.cookie = cookies;
+    }
+    // 쿠키 가져오기
+    function getCookie(cName) {
+        cName = cName + '=';
+        var cookieData = document.cookie;
+        var start = cookieData.indexOf(cName);
+        var cValue = '';
+        if(start != -1){
+            start += cName.length;
+            var end = cookieData.indexOf(';', start);
+            if(end == -1)end = cookieData.length;
+            cValue = cookieData.substring(start, end);
+        }
+        return unescape(cValue);
+    }
+    $(document).ready(function () {
+        $('#fullpage').fullpage({
+            // sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff','deepskyblue','tomato'],
+            anchors: ['1', '2', '3', '4'],
+            menu: '#menu',
+            afterLoad: function(anchorLink, index){
+                $("#section"+index+" .fp-controlArrow").show();
+            },
+            onLeave: function(index, nextIndex, direction){
+
+            }
+        });
+    })
+
+    $('body').on('click', '#go_button', function() {
+        var headers={};
+        headers['x-access-token']=getCookie('x-access-token');
+        $.ajax({
+            url : "http://52.79.41.31:3000/api/v1g1/user/" + getCookie('id'),
+            headers : headers,
+            type : "get",
+            accept: "application/json",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function(data) {
+                console.log(data);
+                if(data.quest_id === -1){
+                    location.href='http://ssumon.com/junior';
+                }else{
+                    location.href='http://ssumon.com/senior';
+                }
+            },
+            error: function(jqXHR,textStatus,errorThrown) {
+                $('#fail_change_password').text('서버 에러 또는 점검중');
+            }
+        });
+    });
+
+
+</script>
+</body>
+</html>
