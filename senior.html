@@ -1249,7 +1249,7 @@
         targetIndex=event.target.id;
         dogamNum = targetIndex.replace(/[^0-9]/g,"");
         $("#section2 a").hide();
-        // $("#accordion-"+dogamNum).css("display","block");
+        $("#accordion-"+dogamNum).css("display","block");
         $("body").removeAttr("class");
     });
     $("#section2 button").click(function(){
