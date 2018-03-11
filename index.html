@@ -204,10 +204,10 @@ $('body').on('click', '#login_button', function(){
             error: function(jqXHR,textStatus,errorThrown) {
                 if(jqXHR.status === 401){
                     $('#fail_login').show();
-                    $('#fail_login').text('Password 가 잘못되었습니다');
+                    $('#fail_login').text('PW 가 잘못되었습니다');
                 }else{
                     $('#fail_login').show();
-                    $('#fail_login').text('Id 가 잘못되었습니다');
+                    $('#fail_login').text('ID 가 잘못되었습니다');
                 }
             }
         });
