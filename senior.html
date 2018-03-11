@@ -1244,19 +1244,17 @@
 
     var dogamNum = 0;
     $("#section2 a").click(function(){
-        console.log('here');
         $("#section2 .fp-controlArrow").css({ 'pointer-events': 'none' });
         targetIndex=event.target.id;
         dogamNum = targetIndex.replace(/[^0-9]/g,"");
         $("#section2 a").hide();
-        $("#accordion-"+dogamNum).css("display","block");
+        // $("#accordion-"+dogamNum).css("display","block");
         $("body").removeAttr("class");
     });
     $("#section2 button").click(function(){
-        console.log('there');
         $("#section2 .fp-controlArrow").css({ 'pointer-events': 'auto' });
         $("#section2 a").show();
-        $("#accordion-"+dogamNum).css("display","none");
+        $("#accordion-"+dogamNum).removeAttr("style").css("overflow","hidden");
         dogamNum = targetIndex = 0;
     });
     $('body').on('click', '#logout_button', function(){
