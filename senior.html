@@ -1229,6 +1229,26 @@
                                 accept_user_list_length =data.result.accept_user_list.length;
                                 $("#dump_button_img").show();
                             }
+                            $("#section2 a").click(function(){
+                                $("#section2 .fp-controlArrow").css({ 'pointer-events': 'none' });
+                                targetIndex=event.target.id;
+                                dogamNum = targetIndex.replace(/[^0-9]/g,"");
+                                $("#section2 a").hide();
+                                $("#accordion-"+dogamNum).css("display","block");
+                                $("body").removeAttr("class");
+                                if(questNum != 0){
+                                    $("#quest_accordion-"+questNum).css("display","block");
+                                }
+                            });
+                            $("#section2 button").click(function(){
+                                $("#section2 .fp-controlArrow").css({ 'pointer-events': 'auto' });
+                                $("#section2 a").show();
+                                $("#accordion-"+dogamNum).css("display","none");
+                                if(questNum != 0){
+                                    $("#quest_accordion-"+questNum).css("display","block");
+                                }
+                                dogamNum = targetIndex = 0;
+                            });
                         },
                         error: function(jqXHR,textStatus,errorThrown) {
                             console.log(jqXHR);
@@ -1244,26 +1264,27 @@
         });
     });
 
-    var dogamNum = 0;
-    var dogamNumtmp = 0;
-    $("#section2 a").click(function(){
-        $("#section2 .fp-controlArrow").css({ 'pointer-events': 'none' });
-        targetIndex=event.target.id;
-        dogamNum = targetIndex.replace(/[^0-9]/g,"");
-        $("#section2 a").hide();
-        if(dogamNumtmp == dogamNum)
-            $("#accordion-"+dogamNum).css("display","block");
-        else{
-            dogamNumtmp = dogamNum;
-        }
-        $("body").removeAttr("class");
-    });
-    $("#section2 button").click(function(){
-        $("#section2 .fp-controlArrow").css({ 'pointer-events': 'auto' });
-        $("#section2 a").show();
-        $("#accordion-"+dogamNum).css("display","none");
-        dogamNum = targetIndex = 0;
-    });
+    // var dogamNum = 0;
+    // var dogamNumtmp = 0;
+    // $("#section2 a").click(function(){
+    //     $("#section2 .fp-controlArrow").css({ 'pointer-events': 'none' });
+    //     targetIndex=event.target.id;
+    //     dogamNum = targetIndex.replace(/[^0-9]/g,"");
+    //     $("#section2 a").hide();
+    //     if(dogamNumtmp == dogamNum){
+    //         // $("#accordion-"+dogamNum).css("display","block");
+    //     }
+    //     else{
+    //         dogamNumtmp = dogamNum;
+    //     }
+    //     $("body").removeAttr("class");
+    // });
+    // $("#section2 button").click(function(){
+    //     $("#section2 .fp-controlArrow").css({ 'pointer-events': 'auto' });
+    //     $("#section2 a").show();
+    //     $("#accordion-"+dogamNum).css("display","none");
+    //     dogamNum = targetIndex = 0;
+    // });
     $('body').on('click', '#logout_button', function(){
         setCookie('x-access-token', "", -1);
         setCookie('id', "", -1);
