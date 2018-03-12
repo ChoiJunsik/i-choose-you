@@ -1037,6 +1037,7 @@
     var before_quest_id = undefined;
     var data_url = '';
     var accept_user_list_length = undefined;
+    var before_index = undefined;
     //<![CDATA[
     // // 사용할 앱의 JavaScript 키를 설정해 주세요.
     Kakao.init('5d654cdd07d375ebcb6f95df92741523');
@@ -1190,7 +1191,7 @@
                                     inner_html = inner_html + 'Hard 모드 수락!\n';
                                 }
                                 console.log("data.result.accept_user_list[i].quest_id : ", data.result.accept_user_list[i].quest_id);
-                                inner_html = inner_html + '<div style="background-color: black;" value="ho" id="success_' + data.result.accept_user_list[i].quest_id + '"><button style=" background-color: black;" class="goto_success_button" type = "button" junior_id="'+data.result.accept_user_list[i].id+'" quest_id = "'+ data.result.accept_user_list[i].quest_id +'"><img style="opacity: 1.0; background-color: black;" src="complete.png"  width="25%" height="25%"></button></div>'
+                                inner_html = inner_html + '<div index = "' + i + '" style="background-color: black;" value="ho" id="success_' + data.result.accept_user_list[i].quest_id + '"><button index = "' + i + '" style=" background-color: black;" class="goto_success_button" type = "button" junior_id="'+data.result.accept_user_list[i].id+'" quest_id = "'+ data.result.accept_user_list[i].quest_id +'"><img index = "' + i + '" style="opacity: 1.0; background-color: black;" src="complete.png"  width="25%" height="25%"></button></div>'
                                 if(length == i+1 || cnt == 2){
                                     inner_html = inner_html +
                                         '</p>\n' +
@@ -1305,6 +1306,7 @@
         var global_data;
         var quest_id = $(this).attr('quest_id');
         var junior_id = $(this).attr('junior_id');
+        var index = $(this).attr('index');
         var id = getCookie('id');
         var headers={};
         headers['x-access-token']=getCookie('x-access-token');
@@ -1325,7 +1327,7 @@
                     '                  <img src="//developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png"/>\n' +
                     '              </a>'
                 data_url = data.link;
-                $('#success_' + quest_id).html(inner_html);
+                $('#success_' + index).html(inner_html);
                 if(data_url_bool === false){
                     before_id = junior_id;
                     before_quest_id = quest_id;
@@ -1334,8 +1336,8 @@
 
                     var before_inner_html = '<button class="goto_success_button" type = "button" junior_id="'+ before_id +'" quest_id = "'+ before_quest_id +'"> 의뢰 완료 </button>'
 
-                    $('#success_' + before_quest_id).html(before_inner_html);
-
+                    $('#success_' + before_index).html(before_inner_html);
+                    before_index = index;
                     before_id = junior_id;
                     before_quest_id = quest_id;
                     data_url_bool = true;
