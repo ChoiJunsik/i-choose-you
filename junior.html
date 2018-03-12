@@ -2025,6 +2025,8 @@
                     var dogamNum = 0;
                     $("#section1 a").click(function(){
                         $("#section1 .fp-controlArrow").css({ 'pointer-events': 'none' });
+                        $("#section1 .fp-pre").css({ 'pointer-events': 'none' });
+                        $("#section1 .fp-next").css({ 'pointer-events': 'none' });
                         console.log('here');
                         targetIndex=event.target.id;
                         console.log('targetIndex : ', targetIndex);
@@ -2058,6 +2060,8 @@
                     });
                     $('body').on('click', '.class_return', function(){
                         $("#section1 .fp-controlArrow").css({ 'pointer-events': 'auto' });
+                        $("#section1 .fp-pre").css({ 'pointer-events': 'auto' });
+                        $("#section1 .fp-next").css({ 'pointer-events': 'auto' });
                         console.log('there');
                         $("#section1 a").show();
                         targetIndex=event.target.id;
@@ -2072,6 +2076,8 @@
 
                     $("#section2 a").click(function(){
                         $("#section2 .fp-controlArrow").css({ 'pointer-events': 'none' });
+                        $("#section2 .fp-pre").css({ 'pointer-events': 'none' });
+                        $("#section2 .fp-next").css({ 'pointer-events': 'none' });
                         targetIndex=event.target.id;
                         dogamNum = targetIndex.replace(/[^0-9]/g,"");
                         $("#section2 a").hide();
@@ -2083,6 +2089,8 @@
                     });
                     $("#section2 button").click(function(){
                         $("#section2 .fp-controlArrow").css({ 'pointer-events': 'auto' });
+                        $("#section2 .fp-pre").css({ 'pointer-events': 'auto' });
+                        $("#section2 .fp-next").css({ 'pointer-events': 'auto' });
                         $("#section2 a").show();
                         $("#accordion-"+dogamNum).css("display","none");
                         if(questNum != 0){
