@@ -1189,7 +1189,7 @@
                                 else{
                                     inner_html = inner_html + 'Hard 모드 수락!\n';
                                 }
-                                inner_html = inner_html + '<div style="background-color: black;" value="ho" id="success_' + i + '"><button style=" background-color: black;" class="goto_success_button" type = "button" junior_id="'+data.result.accept_user_list[i].id+'" quest_id = "'+ i +'"><img style="opacity: 1.0; background-color: black;" src="complete.png"  width="25%" height="25%"></button></div>'
+                                inner_html = inner_html + '<div style="background-color: black;" value="ho" id="success_' + data.result.accept_user_list[i].quest_id + '"><button style=" background-color: black;" class="goto_success_button" type = "button" junior_id="'+data.result.accept_user_list[i].id+'" quest_id = "'+ data.result.accept_user_list[i].quest_id +'"><img style="opacity: 1.0; background-color: black;" src="complete.png"  width="25%" height="25%"></button></div>'
                                 if(length == i+1 || cnt == 2){
                                     inner_html = inner_html +
                                         '</p>\n' +
