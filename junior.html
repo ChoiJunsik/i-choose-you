@@ -2137,6 +2137,9 @@
         headers['x-access-token'] = getCookie('x-access-token');
         var quest_id = $(this).attr('questId');
         var random = $(this).attr('random');
+
+        $(this).hide();
+
         $.ajax({
             url : "http://52.79.41.31:3000/api/v1g1/quest/start/" + id +  "/" + quest_id,
             headers : headers,
