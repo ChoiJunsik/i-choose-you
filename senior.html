@@ -1189,7 +1189,7 @@
                                 else{
                                     inner_html = inner_html + 'Hard 모드 수락!\n';
                                 }
-                                inner_html = inner_html + '<div style="background-color: black;" value="ho" id="success_' + data.result.accept_user_list[i].quest_id + '"><button style=" background-color: black;" class="goto_success_button" type = "button" junior_id="'+data.result.accept_user_list[i].id+'" quest_id = "'+ data.result.accept_user_list[i].quest_id +'"><img style="opacity: 1.0; background-color: black;" src="complete.png"  width="25%" height="25%"></button></div>'
+                                inner_html = inner_html + '<div style="background-color: black;" value="ho" id="success_' + i + '"><button style=" background-color: black;" class="goto_success_button" type = "button" junior_id="'+data.result.accept_user_list[i].id+'" quest_id = "'+ i +'"><img style="opacity: 1.0; background-color: black;" src="complete.png"  width="25%" height="25%"></button></div>'
                                 if(length == i+1 || cnt == 2){
                                     inner_html = inner_html +
                                         '</p>\n' +
@@ -1324,7 +1324,7 @@
                     '                  <img src="//developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png"/>\n' +
                     '              </a>'
                 data_url = data.link;
-                console.log($('#success_' + quest_id).html(inner_html));
+                $('#success_' + quest_id).html(inner_html);
                 if(data_url_bool === false){
                     before_id = junior_id;
                     before_quest_id = quest_id;
@@ -1333,7 +1333,7 @@
 
                     var before_inner_html = '<button class="goto_success_button" type = "button" junior_id="'+ before_id +'" quest_id = "'+ before_quest_id +'"> 의뢰 완료 </button>'
 
-                    console.log($('#success_' + before_quest_id).html(before_inner_html));
+                    $('#success_' + before_quest_id).html(before_inner_html);
 
                     before_id = junior_id;
                     before_quest_id = quest_id;
