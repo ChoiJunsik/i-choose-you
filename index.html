@@ -119,9 +119,9 @@
         var id = getCookie('id');
         var headers={};
         headers['x-access-token']=getCookie('x-access-token');
-        console.log('check start');
+
         if(id === undefined || id === null || headers === undefined || headers === null){
-            console.log('check undefined or null');
+
         }else{
             $.ajax({
                 url : "http://52.79.41.31:3000/api/v1g1/user/" + getCookie('id'),
@@ -131,17 +131,17 @@
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
                 success: function(data) {
-                    console.log('check ajax success');
+
                     if(data.first_login === false){
                         location.href='http://ssumon.com/ChangePassword';
                     }else{
                         if(data.quest_id === -1){
                             // location.href='http://ssumon.com/junior';
-                            console.log('후배 로그인');
+
                         }else{
 
                             location.href='http://ssumon.com/senior';
-                            console.log('선배 로그인');
+
                         }
                     }
                 },
@@ -181,17 +181,17 @@ $('body').on('click', '#login_button', function(){
                     contentType: "application/json; charset=utf-8",
                     dataType: "json",
                     success: function(data) {
-                        console.log(data);
+
                         if(data.first_login === false){
                             location.href='http://ssumon.com/ChangePassword';
                         }else{
                             if(data.quest_id === -1){
                                 location.href='http://ssumon.com/junior';
-                                console.log('후배 로그인');
+
                             }else{
 
                                 location.href='http://ssumon.com/senior';
-                                console.log('선배 로그인');
+
                             }
                         }
                     },

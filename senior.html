@@ -1044,7 +1044,7 @@
     // // 카카오링크 버튼을 생성합니다. 처음 한번만 호출하면 됩니다.
 
     function sendLink() {
-        console.log(data_url);
+
                      Kakao.Link.sendDefault({
                             objectType: 'feed',
                             content: {
@@ -1121,7 +1121,7 @@
             contentType: "application/json; charset=utf-8",
             dataType: "json",
             success: function(data) {
-                console.log(data);
+
                 if(data.quest_id === -1){
                     location.href='http://ssumon.com/junior';
                 }else{
@@ -1129,15 +1129,14 @@
                     var headers={};
                     headers['x-access-token']=getCookie('x-access-token');
                     var id = getCookie('id');
-                    console.log("id : " + id);
-                    console.log("headers : " + JSON.stringify(headers));
+
                     $.ajax({
                         url : "http://52.79.41.31:3000/api/v1g1/user/older_ranking/" + id,
                         type:'get',
                         dataType : "json",
                         headers : headers,
                         success : function(data){
-                            console.log("data" , data);
+
                             $("#rankName1").append(data.top_ranking[0].name);
                             $("#rankScore1").append(data.top_ranking[0].score * -1000+" 점");
                             $("#rankName2").append(data.top_ranking[1].name);
@@ -1156,11 +1155,11 @@
                         dataType: "json",
                         headers: headers,
                         success: function(data) {
-                            console.log(data);
+
                             var cnt=0;
                             var inner_html = "";
                             var length=data.result.accept_user_list.length;
-                            console.log(length);
+
                             if(data.result.accept_user_list.length === 0){
                                 var inner_html = '<div class="container">\n' +
                                     '<div class="container">\n' +
@@ -1175,7 +1174,7 @@
 
                             for(var i=0; i < data.result.accept_user_list.length;i++){
                                 if(cnt == 0){
-                                    console.log("cnt in 0",cnt);
+
                                     inner_html = inner_html + '<div class="slide">\n';
                                 }
                                 // inner_html = inner_html + '<section class="w3-container" style="text-align:left;">\n'+
@@ -1190,7 +1189,7 @@
                                 else{
                                     inner_html = inner_html + 'Hard 모드 수락!\n';
                                 }
-                                console.log("data.result.accept_user_list[i].quest_id : ", data.result.accept_user_list[i].quest_id);
+
                                 inner_html = inner_html + '<div index = "' + i + '" style="background-color: black;" value="ho" id="success_' + i + '"><button index = "' + i + '" style=" background-color: black;" class="goto_success_button" type = "button" junior_id="'+data.result.accept_user_list[i].id+'" quest_id = "'+ data.result.accept_user_list[i].quest_id +'"><img index = "' + i + '" style="opacity: 1.0; background-color: black;" src="complete.png"  width="25%" height="25%"></button></div>'
                                 if(length == i+1 || cnt == 2){
                                     inner_html = inner_html +
@@ -1203,7 +1202,7 @@
                                     cnt++;
                                 }
                             }
-                            console.log(inner_html);
+
                             $('#accept_list').html(inner_html);
 
 
@@ -1222,7 +1221,7 @@
                                     }
                                     if(index === 1){
                                         if(accept_user_list_length === undefined){
-                                            console.log('length : undefined');
+
                                         }else{
                                             $("#dump_button_img").show();
                                         }
@@ -1235,7 +1234,7 @@
                                 }
                             });
                             if(data.result.accept_user_list.length <= 3){
-                                console.log('data.result.accept_user_list.length : ', data.result.accept_user_list.length);
+
                                 accept_user_list_length =data.result.accept_user_list.length;
                                 $("#dump_button_img").show();
                             }
@@ -1261,9 +1260,7 @@
                             });
                         },
                         error: function(jqXHR,textStatus,errorThrown) {
-                            console.log(jqXHR);
-                            console.log(textStatus);
-                            console.log(errorThrown);
+
                         }
                     })
                 }
@@ -1320,9 +1317,9 @@
             data : JSON.stringify({}),
             dataType: "json",
             success: function(data) {
-                console.log(data);
+
                 global_data = data;
-                console.log('#success_' + quest_id);
+
                 var inner_html = '<a id="kakao-link-btn" href="javascript:sendLink()">\n' +
                     '                  <img src="//developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png"/>\n' +
                     '              </a>'
@@ -1344,12 +1341,10 @@
                 }
             },
             error: function(jqXHR,textStatus,errorThrown) {
-                console.log(jqXHR);
-                console.log(textStatus);
-                console.log(errorThrown);
+
             },
             complete: function(data){
-                console.log(global_data);
+
             }
         });
 
