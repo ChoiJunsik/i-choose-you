@@ -124,7 +124,7 @@
 
         }else{
             $.ajax({
-                url : "https://52.79.41.31:3000/api/v1g1/user/" + getCookie('id'),
+                url : "https://ssumon.com/api/v1g1/user/" + getCookie('id'),
                 headers : headers,
                 type : "get",
                 accept: "application/json",
@@ -161,7 +161,7 @@
 
 $('body').on('click', '#login_button', function(){
         $.ajax({
-            url : "https://52.79.41.31:3000/api/v1g1/user/authenticate",
+            url : "https://ssumon.com/api/v1g1/user/authenticate",
             type : "post",
             accept: "application/json",
             contentType: "application/json; charset=utf-8",
@@ -174,7 +174,7 @@ $('body').on('click', '#login_button', function(){
                 var headers={};
                 headers['x-access-token']=getCookie('x-access-token');
                 $.ajax({
-                    url : "https://52.79.41.31:3000/api/v1g1/user/" + getCookie('id'),
+                    url : "https://ssumon.com/api/v1g1/user/" + getCookie('id'),
                     headers : headers,
                     type : "get",
                     accept: "application/json",
