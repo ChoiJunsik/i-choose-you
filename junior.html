@@ -1837,8 +1837,8 @@
             dataType: "json",
             success: function(data) {
                 var people_num = 0;
-                if(data.quest_info.people_num >= 4){
-                    people_num = 4;
+                if(data.quest_info.people_num >= 6){
+                    people_num = 6;
                 }else{
                     people_num = data.quest_info.people_num;
                 }
@@ -1872,7 +1872,7 @@
                     '</tr>\n' +
                     '<tr>\n' +
                     '<td style="text-align: right;">현재</td>\n' +
-                    '<td colspan="2" style="text-align: left;width:60%;""> '+ people_num + ' / 4 명 진행 중</td>\n' +
+                    '<td colspan="2" style="text-align: left;width:60%;""> '+ people_num + ' / 6 명 진행 중</td>\n' +
                     '<td style = "border-bottom : 1px #ddd solid";></td>' +
                     '</tr>\n' +
                     '<tr>\n' +
