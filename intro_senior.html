@@ -181,7 +181,7 @@
         var headers={};
         headers['x-access-token']=getCookie('x-access-token');
         $.ajax({
-            url : "http://ssumon.com/api/v1g1/user/" + getCookie('id'),
+            url : "https://ssumon.com/api/v1g1/user/" + getCookie('id'),
             headers : headers,
             type : "get",
             accept: "application/json",
@@ -190,9 +190,9 @@
             success: function(data) {
                 console.log(data);
                 if(data.quest_id === -1){
-                    location.href='http://ssumon.com/junior';
+                    location.href='https://ssumon.com/junior';
                 }else{
-                    location.href='http://ssumon.com/senior';
+                    location.href='https://ssumon.com/senior';
                 }
             },
             error: function(jqXHR,textStatus,errorThrown) {

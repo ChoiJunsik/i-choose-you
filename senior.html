@@ -1050,7 +1050,7 @@
                             content: {
                                 title: '너로 정했다! 의뢰 완료!',
                                 description: '#너로 정했다! #선배님 밥사주세요',
-                                imageUrl: 'http://ssumon.com/kakao.jpeg',
+                                imageUrl: 'https://ssumon.com/kakao.jpeg',
                                 link: {
                                     mobileWebUrl: data_url,
                                     webUrl: data_url
@@ -1111,10 +1111,10 @@
         var headers={};
         headers['x-access-token']=getCookie('x-access-token');
         if(id === undefined || id === null || headers === undefined || headers === null){
-            location.href='http://ssumon.com/';
+            location.href='https://ssumon.com/';
         }
         $.ajax({
-            url : "http://ssumon.com/api/v1g1/user/" + getCookie('id'),
+            url : "https://ssumon.com/api/v1g1/user/" + getCookie('id'),
             headers : headers,
             type : "get",
             accept: "application/json",
@@ -1123,7 +1123,7 @@
             success: function(data) {
 
                 if(data.quest_id === -1){
-                    location.href='http://ssumon.com/junior';
+                    location.href='https://ssumon.com/junior';
                 }else{
 
                     var headers={};
@@ -1131,7 +1131,7 @@
                     var id = getCookie('id');
 
                     $.ajax({
-                        url : "http://ssumon.com/api/v1g1/user/older_ranking/" + id,
+                        url : "https://ssumon.com/api/v1g1/user/older_ranking/" + id,
                         type:'get',
                         dataType : "json",
                         headers : headers,
@@ -1148,7 +1148,7 @@
                         }
                     });
                     $.ajax({
-                        url : "http://ssumon.com/api/v1g1/senior/" + id,
+                        url : "https://ssumon.com/api/v1g1/senior/" + id,
                         type : "get",
                         accept: "application/json",
                         contentType: "application/json; charset=utf-8",
@@ -1295,7 +1295,7 @@
     $('body').on('click', '#logout_button', function(){
         setCookie('x-access-token', "", -1);
         setCookie('id', "", -1);
-        location.href = "http://ssumon.com/"
+        location.href = "https://ssumon.com/"
     });
 
     $('body').on('click', '.goto_success_button', function(){
@@ -1307,7 +1307,7 @@
         var id = getCookie('id');
         var headers={};
         headers['x-access-token']=getCookie('x-access-token');
-        var url = "http://ssumon.com/api/v1g1/senior/complete_quest_init/" + id + "/" + junior_id + "/" + quest_id;
+        var url = "https://ssumon.com/api/v1g1/senior/complete_quest_init/" + id + "/" + junior_id + "/" + quest_id;
         $.ajax({
             url : url,
             type : "post",
