@@ -1114,7 +1114,7 @@
             location.href='http://ssumon.com/';
         }
         $.ajax({
-            url : "http://52.79.41.31:3000/api/v1g1/user/" + getCookie('id'),
+            url : "http://ssumon.com/api/v1g1/user/" + getCookie('id'),
             headers : headers,
             type : "get",
             accept: "application/json",
@@ -1131,7 +1131,7 @@
                     var id = getCookie('id');
 
                     $.ajax({
-                        url : "http://52.79.41.31:3000/api/v1g1/user/older_ranking/" + id,
+                        url : "http://ssumon.com/api/v1g1/user/older_ranking/" + id,
                         type:'get',
                         dataType : "json",
                         headers : headers,
@@ -1148,7 +1148,7 @@
                         }
                     });
                     $.ajax({
-                        url : "http://52.79.41.31:3000/api/v1g1/senior/" + id,
+                        url : "http://ssumon.com/api/v1g1/senior/" + id,
                         type : "get",
                         accept: "application/json",
                         contentType: "application/json; charset=utf-8",
@@ -1307,7 +1307,7 @@
         var id = getCookie('id');
         var headers={};
         headers['x-access-token']=getCookie('x-access-token');
-        var url = "http://52.79.41.31:3000/api/v1g1/senior/complete_quest_init/" + id + "/" + junior_id + "/" + quest_id;
+        var url = "http://ssumon.com/api/v1g1/senior/complete_quest_init/" + id + "/" + junior_id + "/" + quest_id;
         $.ajax({
             url : url,
             type : "post",

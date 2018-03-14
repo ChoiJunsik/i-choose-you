@@ -1677,7 +1677,7 @@
         headers['x-access-token'] = getCookie('x-access-token');
         //이거 밖으로 빼서 해봤는데 안되더라고.. 토큰 쓸떄마다 위 문장처럼 계속 해더 변수를 만들고 지우고 해야할듯.
         $.ajax({
-            url : "http://52.79.41.31:3000/api/v1g1/user/questtable/" + id,
+            url : "http://ssumon.com/api/v1g1/user/questtable/" + id,
             headers : headers,
             type : "get",
             accept: "application/json",
@@ -1714,7 +1714,7 @@
                     var id = getCookie('id');
                     var headers = {};
                     headers['x-access-token'] = getCookie('x-access-token');
-                    var url = "http://52.79.41.31:3000/api/v1g1/quest/" + id + "/" + questId;
+                    var url = "http://ssumon.com/api/v1g1/quest/" + id + "/" + questId;
 
                     if(data.result.quest_bool[q_index] === 0){
                         checkArray[q_index] = true;
@@ -1768,7 +1768,7 @@
                         var id = getCookie('id');
                         var headers = {};
                         headers['x-access-token'] = getCookie('x-access-token');
-                        var url = "http://52.79.41.31:3000/api/v1g1/quest/" + id + "/" + questId;
+                        var url = "http://ssumon.com/api/v1g1/quest/" + id + "/" + questId;
 
 
                         random = randomItem(myTestOne);
@@ -1800,7 +1800,7 @@
                         var id = getCookie('id');
                         var headers = {};
                         headers['x-access-token'] = getCookie('x-access-token');
-                        var url = "http://52.79.41.31:3000/api/v1g1/quest/" + id + "/" + questId;
+                        var url = "http://ssumon.com/api/v1g1/quest/" + id + "/" + questId;
 
 
                         random = randomItem(myTestTwo);
@@ -1939,7 +1939,7 @@
     function push_user_info(id, olderId, quest_id,random){
         var headers = {};
         headers['x-access-token'] = getCookie('x-access-token');
-        var url = "http://52.79.41.31:3000/api/v1g1/quest/push/" + id + "/" + olderId + "/" + quest_id;
+        var url = "http://ssumon.com/api/v1g1/quest/push/" + id + "/" + olderId + "/" + quest_id;
         $.ajax({
             url : url,
             type : "post",
@@ -1952,7 +1952,7 @@
                 var id = getCookie('id');
                 var headers = {};
                 headers['x-access-token'] = getCookie('x-access-token');
-                var url = "http://52.79.41.31:3000/api/v1g1/quest/" + id + "/" + quest_id;
+                var url = "http://ssumon.com/api/v1g1/quest/" + id + "/" + quest_id;
                 getOneQuestInfo(id, headers, url, quest_id,random, 0);
             },
             error: function(jqXHR,textStatus,errorThrown) {
@@ -1985,7 +1985,7 @@
             location.href='http://ssumon.com/';
         }
         $.ajax({
-            url : "http://52.79.41.31:3000/api/v1g1/user/" + getCookie('id'),
+            url : "http://ssumon.com/api/v1g1/user/" + getCookie('id'),
             headers : headers,
             type : "get",
             accept: "application/json",
@@ -1999,7 +1999,7 @@
                     var id = getCookie('id');
 
                     $.ajax({
-                        url : "http://52.79.41.31:3000/api/v1g1/user/ranking/" + id,
+                        url : "http://ssumon.com/api/v1g1/user/ranking/" + id,
                         type:'get',
                         dataType : "json",
                         headers : headers,
@@ -2142,7 +2142,7 @@
         $(this).hide();
 
         $.ajax({
-            url : "http://52.79.41.31:3000/api/v1g1/quest/start/" + id +  "/" + quest_id,
+            url : "http://ssumon.com/api/v1g1/quest/start/" + id +  "/" + quest_id,
             headers : headers,
             type : "post",
             accept: "application/json",
@@ -2151,7 +2151,7 @@
             dataType: "json",
             success: function(data) {
 
-                var url = "http://52.79.41.31:3000/api/v1g1/quest/" + id + "/" + quest_id;
+                var url = "http://ssumon.com/api/v1g1/quest/" + id + "/" + quest_id;
                 getOneQuestInfo(id, headers, url, quest_id,random, 1);
             },
             error: function(jqXHR,textStatus,errorThrown) {
