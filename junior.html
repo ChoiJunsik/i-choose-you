@@ -1907,11 +1907,11 @@
                     img_html = img_html + '<del random = "' + random + '" style="opacity:0.5;">';
 
                     // img_html = img_html + data.quest_info.title;
-                    img_html = img_html + '<div random = "' + random + '" id="title_quest_id_' + quest_id + '" align="center" >' + data.quest_info.title + '&nbsp;&nbsp;&nbsp;( ' + data.quest_info.people_num + ' / 4)</div>';
+                    img_html = img_html + '<div random = "' + random + '" id="title_quest_id_' + quest_id + '" align="center" >' + data.quest_info.title + '&nbsp;&nbsp;&nbsp;( ' + data.quest_info.people_num + ' / 6)</div>';
                 }else{
                     inner_html = inner_html + '<button id="yes_1" questId = ' + quest_id + '><img class="class_return" src="okbutton.png"  style="height:100px;"></button>\n</td><td><button id="backToList' + random + '" class="class_return"><img id="return_button_index' + random + '" random = "' + random + '" class="img-responsive" src="return.png" alt="return" style="height:30px;"></button></td>\n';
                     // img_html = img_html + data.quest_info.title ;
-                    img_html = img_html + '<div random = "' + random + '" id="title_quest_id_' + quest_id + '" align="center"  >' + data.quest_info.title + '&nbsp;&nbsp;&nbsp;( ' + data.quest_info.people_num + ' / 4)</div>';
+                    img_html = img_html + '<div random = "' + random + '" id="title_quest_id_' + quest_id + '" align="center"  >' + data.quest_info.title + '&nbsp;&nbsp;&nbsp;( ' + data.quest_info.people_num + ' / -613135)</div>';
                 }
                 $('#quest_index_' + random).html(img_html);
                 $('#quest_index_' + random).attr('random', random);
@@ -2140,7 +2140,7 @@
         var random = $(this).attr('random');
 
         $(this).hide();
-
+        var me = this;
         $.ajax({
             url : "https://ssumon.com/api/v1g1/quest/start/" + id +  "/" + quest_id,
             headers : headers,
@@ -2156,6 +2156,7 @@
             },
             error: function(jqXHR,textStatus,errorThrown) {
                 alert('인원 초과');
+                me.show();
             }
         })
     });
